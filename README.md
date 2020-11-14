@@ -1,13 +1,16 @@
 **Seeschlacht**
 
   1. Einleitung: 
-	Mit diesem Programm wollen wir Seeschlacht spielen können. Wir wollen unsere eigene Version des Spiels programmieren, also mit zusätzlichen Optionen wie zum beispiel die Punktzahl berechnen um einen Leaderboard zu erstellen, oder auch die restliche  Anzahl der Schläge. In unserer Version gibt es nur einen Spieler, nicht 2 wie üblich. Der Spieler soll so schnell wie möglich auf dem User Interface die Schiffe des Computers finden, die zufällig erzeugt werden. Aber die Rundenanzahl ist begrenzt, damit man nicht einfach alle Felder anklicken kann, um schnell fertig zu werden. Alle Informationen werden auf dem User Interface gezeigt.
+
+Mit diesem Programm wollen wir Seeschlacht spielen können. Wir wollen unsere eigene Version des Spiels programmieren, also mit zusätzlichen Optionen wie zum beispiel die Punktzahl berechnen um einen Leaderboard zu erstellen, oder auch die restliche  Anzahl der Schläge. In unserer Version gibt es nur einen Spieler, nicht 2 wie üblich. Der Spieler soll so schnell wie möglich auf dem User Interface die Schiffe des Computers finden, die zufällig erzeugt werden. Aber die Rundenanzahl ist begrenzt, damit man nicht einfach alle Felder anklicken kann, um schnell fertig zu werden. Alle Informationen werden auf dem User Interface gezeigt.
 
   2. Ziel : 
-	Unsere Ziele während dem Projekt waren, die in den Fächer erlernten Kompetenzen in Java und Javafx anhand des Projekt Seeschlacht umzusetzen. Wir wollen ein Spiel gegen den Computer spielen und raten, wo seine Schiffe sind. Der Computer generiert zufällig, wo die Schiff sich befinden. Der Spieler kann die Karte immer sehen und ein Feld anklicken, um es auszuwählen. Es soll dann nach dem Ergebnis gefärbt werden (“nichts” oder “getroffen”). Der Administrator kann mit einem geheimen Code sehen, wo die Schiffe waren. Um zu gewinnen, hat der Spieler eine beschränkte Zahl von Runden. Auf dem User Interface wird die Zeit, die Punktzahl und die verbleibenden Schiffe gezeigt. Je weniger Runden und Zeit der Spieler gebraucht hat gibt es, desto mehr Punkte. Am Ende des Spiels kann er seinen Namen schreiben, um es in einen Leaderboard zu sehen. Falls er irgendwann den Spiel neu starten will, kann er auf einen Knopf drücken.
+
+Unsere Ziele während dem Projekt waren, die in den Fächer erlernten Kompetenzen in Java und Javafx anhand des Projekt Seeschlacht umzusetzen. Wir wollen ein Spiel gegen den Computer spielen und raten, wo seine Schiffe sind. Der Computer generiert zufällig, wo die Schiff sich befinden. Der Spieler kann die Karte immer sehen und ein Feld anklicken, um es auszuwählen. Es soll dann nach dem Ergebnis gefärbt werden (“nichts” oder “getroffen”). Der Administrator kann mit einem geheimen Code sehen, wo die Schiffe waren. Um zu gewinnen, hat der Spieler eine beschränkte Zahl von Runden. Auf dem User Interface wird die Zeit, die Punktzahl und die verbleibenden Schiffe gezeigt. Je weniger Runden und Zeit der Spieler gebraucht hat gibt es, desto mehr Punkte. Am Ende des Spiels kann er seinen Namen schreiben, um es in einen Leaderboard zu sehen. Falls er irgendwann den Spiel neu starten will, kann er auf einen Knopf drücken.
 
   3. Randbedingungen :
-	Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt werden. 
+
+Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt werden. 
 
 
 | Numero  | User Story | Story Points | Priorität | Beschreibung |
@@ -45,3 +48,4 @@
 | User Story 4 | User Story 7 | User Story 5 |
 | User Story 2 | User Story 3 | User Story 1 |
 |  | User Story 6 |  |
+| Velocity 7 | Velocity 8 | Velocity 8 |
