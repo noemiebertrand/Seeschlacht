@@ -9,28 +9,12 @@
 
 
 
-| First Header  | Second Header | test    |
-| --------------|---------------|---------|
-|               |               |         |
-| --------------|---------------|---------|
-
-
-![image](https://user-images.githubusercontent.com/73691422/99147846-67909800-2684-11eb-9483-3cf9acfef7c3.png)
-
-
-![image](https://user-images.githubusercontent.com/73691422/99147894-b2aaab00-2684-11eb-91b2-d63371f36e04.png)
-
-
-![image](https://user-images.githubusercontent.com/73691422/99147943-1d5be680-2685-11eb-999e-03e428f7ef9c.png)
-
-
-![image](https://user-images.githubusercontent.com/73691422/99147922-edacde80-2684-11eb-83e8-987190e59e8d.png)
-
-
-![image](https://user-images.githubusercontent.com/73691422/99147970-454b4a00-2685-11eb-9562-84050ee9ba5a.png)
-
-
-![image](https://user-images.githubusercontent.com/73691422/99147991-7b88c980-2685-11eb-9127-c17796026b41.png)
-
-
-![image](https://user-images.githubusercontent.com/73691422/99148020-ad9a2b80-2685-11eb-85db-5fc5f1d93c8f.png)
+| Numero  | User Story | Story Points | Priorität | Beschreibung |
+| --------------|---------------|---------| ------------- | ------- |
+| 1 | Als Administrator möchte ich das mein Programm ohne Probleme läuft damit die User es spielen können | 5 | 1 |         |
+| 2 | Als Administrator möchte ich den Standort von den Schiffen sehen, um zu wissen ob die Schiffe korrekt vom Programm Platziert wurden | 2 | 3 |         |
+| 3 | Als Spieler möchte ich das Programm beginnen können, um das Spiel zu spielen. | 1 | 2 | ------  |
+| 4 | Als Spieler möchte ich die interaktive Karte immer sehen, um meine Strategie zu entwickeln. | 5 | 1 | ------  |
+| 5 | Als Spieler möchte ich meinen Namen eintragen, um mein Score in einen Leaderboard zu speichern | 3 | 3 | ------  |
+| 6 | Als Spieler möchte ich Informationen wie die Zeit, die Punktzahl, den Leaderboard sehen, um meine Punkte zu verstehen | 5 | 3 | ------  |
+| 7 | Als Spieler auf einem Knopf drücken um das  Spiel neu zu starten  | 2 | 2 | ------  |
