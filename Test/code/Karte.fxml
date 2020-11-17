@@ -138,7 +138,7 @@
          </children>
       </GridPane>
       <Button fx:id="restart" layoutX="224.0" layoutY="461.0" mnemonicParsing="false" onAction="#restart" text="Restart" />
-      <Label layoutX="58.0" layoutY="36.0" text="Nombres de coups" />
+      <Label layoutX="58.0" layoutY="36.0" text="Nombres DE coups" />
       <Label layoutX="58.0" layoutY="63.0" text="Score" />
    </children>
 </AnchorPane>
