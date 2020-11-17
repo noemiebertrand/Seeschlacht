@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane layoutX="84.0" layoutY="116.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
         <columnConstraints>
@@ -139,7 +138,7 @@
          </children>
       </GridPane>
       <Button fx:id="restart" layoutX="224.0" layoutY="461.0" mnemonicParsing="false" onAction="#restart" text="Restart" />
-      <Label layoutX="58.0" layoutY="36.0" text="Nombre de coups" />
+      <Label layoutX="58.0" layoutY="36.0" text="Nombres de coups" />
       <Label layoutX="58.0" layoutY="63.0" text="Score" />
    </children>
 </AnchorPane>
