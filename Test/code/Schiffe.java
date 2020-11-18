@@ -167,76 +167,44 @@ public class Schiffe {
 		
 	}
 	
-public boolean error2 (int t) {    //revoir partie collision
+public boolean error2 (int t) {   
 		
 		if ( sens == "bas" && (coy + t) < 10) {
 			for (int i = 0; i < t; i++) {
-				if (map[coy + i][cox] != '*') {
-					System.out.println("pas de collision");
-					return false;
+				if (map[coy + i][cox] == 'O') {
+					System.out.println("collision");
+					return true;
 				}}
+			return false;
 		}
 		if ( sens == "haut" && (coy - t) >= 0) {
 			for (int i = 0; i < t; i++) {
-				if (map[coy - i][cox] != '*') {
-					System.out.println("pas de collision");
-					return false;
+				if (map[coy - i][cox] == 'O') {
+					System.out.println("collision");
+					return true;
 				}}
+			return false;
 		}
 		if ( sens == "droite" && (cox + t) < 10) {
 			for (int i = 0; i < t; i++) {
-				if (map[coy][cox + i] != '*') {
-					System.out.println("pas de collision");
-					return false;
+				if (map[coy][cox + i] == 'O') {
+					System.out.println("collision");
+					return true;
 				}}
+			return false;
 		}
 		if ( sens == "gauche" && (cox - t) >= 0) {
 			for (int i = 0; i < t; i++) {
-				if (map[coy][cox - i] != '*') {
-					System.out.println("pas de collision");
-					return false;
+				if (map[coy][cox - i] == 'O') {
+					System.out.println("collision");
+					return true;
 				}}
+			return false;
 		}  
-		
 		
 		System.out.println("problème");
 		return true;
 }
-
-public boolean error (int t) {
-	
-	if ( sens == "bas" && (coy + t) < 10) return false;
-	if ( sens == "haut" && (coy - t) >= 0) return false;
-	if ( sens == "droite" && (cox + t) < 10) return false;
-	if ( sens == "gauche" && (cox - t) >= 0) return false;
-	
-	System.out.println("problème");
-	return true;
-}
-/*
-	public boolean collision (int t, boolean e) {
-		
-		for (int i = 1; i < t; i++) {
-			if ( sens == "bas" && map[coy + i][cox] != '*') {
-				System.out.println("collision");
-				return true;
-			}
-			if ( sens == "haut" && map[coy - i][cox] != '*') {
-				System.out.println("collision");
-				return true;
-			}
-			if ( sens == "droite" && map[coy][cox + i] != '*') {
-				System.out.println("collision");
-				return true;
-			}
-			if ( sens == "gauche" && map[coy][cox - i] != '*') {
-				System.out.println("collision");
-				return true;
-			}
-	}
-		
-	return false;
-}*/
 	
 	public boolean collision (int x, int y, String s, int t) {
 		
