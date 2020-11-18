@@ -7,7 +7,11 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
+<<<<< HEAD
 <AnchorPane prefHeight="500.0" prefWidth="500.0" styleClass="background" stylesheets="@farben.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.Controller">
+=======
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+>>>>>>> branch 'main' of https://github.com/noemiebertrand/Seeschlacht.git
    <children>
       <GridPane layoutX="84.0" layoutY="116.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
         <columnConstraints>
@@ -137,8 +141,13 @@
             <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="69.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
          </children>
       </GridPane>
+<<<<<<< HEAD
       <Button layoutX="224.0" layoutY="461.0" mnemonicParsing="false" text="Restart" />
       <Label layoutX="58.0" layoutY="36.0" text="Nombre de coups" />
+=======
+      <Button fx:id="restart" layoutX="224.0" layoutY="461.0" mnemonicParsing="false" onAction="#restart" text="Restart" />
+      <Label layoutX="58.0" layoutY="36.0" text="Nombres de coups" />
+>>>>>>> branch 'main' of https://github.com/noemiebertrand/Seeschlacht.git
       <Label layoutX="58.0" layoutY="63.0" text="Score" />
    </children>
 </AnchorPane>
