@@ -95,7 +95,7 @@ public class Schiffe {
 		
 		System.out.println((cox + 1) + ", " + (coy +1) + ", " + this.sens + ", " + t);
 		
-		error = error2(t);
+		error = error(t);
 		if (error == false) {
 			
 		for ( int i = 0; i < t; i++) {
@@ -179,29 +179,29 @@ public boolean error2 (int t) {    //revoir partie collision
 		if ( sens == "bas" && (coy + t) < 10) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy + i][cox] != '*') {
-					System.out.println("collision");
-					return true;
+					System.out.println("pas de collision");
+					return false;
 				}}
 		}
 		if ( sens == "haut" && (coy - t) >= 0) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy - i][cox] != '*') {
-					System.out.println("collision");
-					return true;
+					System.out.println("pas de collision");
+					return false;
 				}}
 		}
 		if ( sens == "droite" && (cox + t) < 10) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy][cox + i] != '*') {
-					System.out.println("collision");
-					return true;
+					System.out.println("pas de collision");
+					return false;
 				}}
 		}
 		if ( sens == "gauche" && (cox - t) >= 0) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy][cox - i] != '*') {
-					System.out.println("collision");
-					return true;
+					System.out.println("pas de collision");
+					return false;
 				}}
 		}  
 		
@@ -209,7 +209,7 @@ public boolean error2 (int t) {    //revoir partie collision
 		System.out.println("problème");
 		return true;
 }
-/*
+
 public boolean error (int t) {
 	
 	if ( sens == "bas" && (coy + t) < 10) return false;
@@ -219,7 +219,7 @@ public boolean error (int t) {
 	
 	System.out.println("problème");
 	return true;
-}*/
+}
 /*
 	public boolean collision (int t, boolean e) {
 		
