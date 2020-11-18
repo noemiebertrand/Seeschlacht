@@ -203,7 +203,7 @@ public boolean error2 (int t) {    //revoir partie collision
 					System.out.println("collision");
 					return true;
 				}}
-		} 
+		}  
 		
 		System.out.println("problème");
 		return true;
