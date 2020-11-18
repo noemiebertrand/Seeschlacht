@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" styleClass="background" stylesheets="@farben.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.Controller">
    <children>
       <GridPane layoutX="84.0" layoutY="116.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
         <columnConstraints>
@@ -35,7 +35,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="100.0" />
+            <Button fx:id="b00" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="74.0" prefWidth="100.0" styleClass="b00" stylesheets="@farben.css" textFill="#ab2020" />
             <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="63.0" GridPane.columnIndex="1" />
             <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="80.0" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" prefHeight="74.0" prefWidth="89.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -137,7 +137,7 @@
             <Button mnemonicParsing="false" prefHeight="62.0" prefWidth="69.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
          </children>
       </GridPane>
-      <Button fx:id="restart" layoutX="224.0" layoutY="461.0" mnemonicParsing="false" text="Restart" />
+      <Button layoutX="224.0" layoutY="461.0" mnemonicParsing="false" text="Restart" />
       <Label layoutX="58.0" layoutY="36.0" text="Nombre de coups" />
       <Label layoutX="58.0" layoutY="63.0" text="Score" />
    </children>

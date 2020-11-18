@@ -1,10 +1,19 @@
 package code;
 
-public class Controller {
+import com.sun.prism.paint.Color;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int coucou;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+
+public class Controller {
+	@FXML
+	private Button b00;
+	 @FXML
+	 protected void handleSubmitButtonAction(ActionEvent event)
+	 {
+	 System.out.println("Signin button user input:");
+
+	 }
 	}
 
-}
