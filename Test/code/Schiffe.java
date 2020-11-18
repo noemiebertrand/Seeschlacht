@@ -10,13 +10,6 @@ public class Schiffe {
 	// 1contre torpilleur et 1sous-marin : 2x 3cases
 	// 1torpilleur : 2cases
 	
-	//ordre des tâches pour génération:
-	//générer 1ère case
-	//choisir une direction
-	//générer une case 
-	//si bordure (ou bateau), repartir dans l'autre sens
-	//
-	
 	int cox, coy;
 	String sens;
 	int taille;
