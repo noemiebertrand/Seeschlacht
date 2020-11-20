@@ -38,7 +38,7 @@
         </rowConstraints>
          <children>
             <Button fx:id="b00" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="500.0" prefWidth="500.0" styleClass="b00" stylesheets="@farben.css" textFill="#ab2020" />
-            <Button fx:id="b01" mnemonicParsing="false" prefHeight="500.0" prefWidth="500" GridPane.columnIndex="1" />
+            <Button fx:id="b01" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="500.0" prefWidth="500" GridPane.columnIndex="1" />
             <Button fx:id="b10" mnemonicParsing="false" prefHeight="500.0" prefWidth="500" GridPane.rowIndex="1" />
             <Button fx:id="b11" mnemonicParsing="false" prefHeight="500.0" prefWidth="500.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Button fx:id="b30" mnemonicParsing="false" prefHeight="500" prefWidth="500" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">

@@ -18,9 +18,11 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 
-			Schiffe test = new Schiffe (0);
+			Schiffe test = new Schiffe ();
 			test.initializeMap();
-
+			
+			//Schiffe point = new Schiffe (0, 0, "bas", 1); 
+			
 			Schiffe porteAvion = new Schiffe(5);
 			Schiffe croiseur = new Schiffe(4);
 			Schiffe contreTorpilleur = new Schiffe (3);
@@ -28,6 +30,8 @@ public class Main extends Application {
 			Schiffe torpilleur = new Schiffe (2);
 
 			test.printMap();
+			
+			
 
 		} catch(Exception e) {
 			e.printStackTrace();
