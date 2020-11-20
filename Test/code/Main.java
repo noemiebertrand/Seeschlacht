@@ -17,6 +17,18 @@ public class Main extends Application {
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.show();
+			
+			Schiffe test = new Schiffe (0);
+			test.initializeMap();
+			
+			Schiffe porteAvion = new Schiffe(5);
+			Schiffe croiseur = new Schiffe(4);
+			Schiffe contreTorpilleur = new Schiffe (3);
+			Schiffe sousMarin = new Schiffe (3);
+			Schiffe torpilleur = new Schiffe (2);
+			
+			test.printMap();
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

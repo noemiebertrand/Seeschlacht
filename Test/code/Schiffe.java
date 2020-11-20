@@ -10,10 +10,7 @@ public class Schiffe {
 
 	public static void main (String[] args) {
 
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++)
-				map [i][j] = '*';
-		}
+		initializeMap();
 
 		//exemple génération manuelle
 		//Schiffe porteAvion = new Schiffe(3, 2, "droite", 5);
@@ -22,7 +19,7 @@ public class Schiffe {
 		//Schiffe sousMarin = new Schiffe (3, 9, "gauche", 3);
 		//Schiffe torpilleur = new Schiffe (5, 4, "bas", 2);
 
-
+		Schiffe test = new Schiffe (0);
 		//exemple génération auto
 		Schiffe porteAvion = new Schiffe(5);
 		Schiffe croiseur = new Schiffe(4);
@@ -30,12 +27,7 @@ public class Schiffe {
 		Schiffe sousMarin = new Schiffe (3);
 		Schiffe torpilleur = new Schiffe (2);
 
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				System.out.print(" " + map [i][j]);
-			}
-			System.out.println();
-		}
+		printMap();
 	}
 
 	//génération manuelle
@@ -194,4 +186,23 @@ public class Schiffe {
 
 		return false;
 	}
+	
+	public static void initializeMap () {
+		
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++)
+				map [i][j] = '*';
+		}
+		
+	}
+	
+	public static void printMap () {
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				System.out.print(" " + map [i][j]);
+			}
+			System.out.println();
+		}
+	}
+	
 }
