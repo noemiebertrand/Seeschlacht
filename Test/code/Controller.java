@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 package code;
 
 import com.sun.prism.paint.Color;
