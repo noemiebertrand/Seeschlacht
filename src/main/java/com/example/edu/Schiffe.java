@@ -1,7 +1,13 @@
 package com.example.edu;
 
 public class Schiffe {
-
+	
+	//à test:
+		// faire une méthode lectureMap
+		//ou utiliser test.map[i][j] (voir si ça fonctionne)
+		//tester de faire un constructor sans argument
+		//
+	
 	int cox, coy;
 	String sens;
 	int taille;
@@ -17,9 +23,10 @@ public class Schiffe {
 		//Schiffe croiseur = new Schiffe( 5, 6, "haut", 4);
 		//Schiffe contreTorpilleur = new Schiffe (2, 5, "haut", 3);
 		//Schiffe sousMarin = new Schiffe (3, 9, "gauche", 3);
-		//Schiffe torpilleur = new Schiffe (5, 4, "bas", 2);
+		//Schiffe torpilleur = new Schiffe (0, 0, "bas", 2);
 
-		Schiffe test = new Schiffe (0);
+		//Schiffe point = new Schiffe (0, 0, "bas", 1); // sert à tester
+		
 		//exemple génération auto
 		Schiffe porteAvion = new Schiffe(5);
 		Schiffe croiseur = new Schiffe(4);
@@ -30,6 +37,11 @@ public class Schiffe {
 		printMap();
 	}
 
+	// default
+	public Schiffe() {
+		
+	}
+	
 	//génération manuelle
 	public Schiffe(int x, int y, String s, int t) {
 
