@@ -1,4 +1,4 @@
-package code;
+package com.example.edu;
 
 public class Schiffe {
 
@@ -39,7 +39,7 @@ public class Schiffe {
 
 			map [y][x] = 'O';
 
-			switch(s) 
+			switch(s)
 			{
 			case "bas":
 				y++;
@@ -79,7 +79,7 @@ public class Schiffe {
 
 					map [coy][cox] = 'O';
 
-					switch(sens) 
+					switch(sens)
 					{
 					case "bas":
 						coy++;
@@ -94,7 +94,7 @@ public class Schiffe {
 						cox++;
 						break;
 					}
-				}	
+				}
 			}
 
 		}while(error == true);
@@ -112,23 +112,23 @@ public class Schiffe {
 		int sens = (int) (Math.random()*3);
 
 		switch(sens) {
-		case 0: 
+		case 0:
 			this.sens = "gauche";
 			break;
-		case 1: 
+		case 1:
 			this.sens = "droite";
 			break;
-		case 2: 
+		case 2:
 			this.sens = "haut";
 			break;
-		case 3: 
-			this.sens = "bas";	
+		case 3:
+			this.sens = "bas";
 			break;
 		}
 
 	}
 
-	public boolean error2 (int t) {   
+	public boolean error2 (int t) {
 
 		if ( sens == "bas" && (coy + t) < 10) {
 			for (int i = 0; i < t; i++) {
@@ -161,7 +161,7 @@ public class Schiffe {
 					return true;
 				}}
 			return false;
-		}  
+		}
 
 		System.out.println("problème");
 		return true;
@@ -186,16 +186,16 @@ public class Schiffe {
 
 		return false;
 	}
-	
+
 	public static void initializeMap () {
-		
+
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++)
 				map [i][j] = '*';
 		}
-		
+
 	}
-	
+
 	public static void printMap () {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
@@ -204,5 +204,5 @@ public class Schiffe {
 			System.out.println();
 		}
 	}
-	
+
 }

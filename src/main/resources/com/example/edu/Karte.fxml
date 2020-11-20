@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" styleClass="background" stylesheets="@farben.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.Controller">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" styleClass="background" stylesheets="@farben.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edu.Controller">
 
    <children>
       <GridPane layoutX="84.0" layoutY="116.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
@@ -88,7 +88,7 @@
             <Button fx:id="b96" mnemonicParsing="false" prefHeight="500" prefWidth="500" GridPane.columnIndex="6" GridPane.rowIndex="9" />
             <Button fx:id="b95" mnemonicParsing="false" prefHeight="500" prefWidth="500" GridPane.columnIndex="5" GridPane.rowIndex="9" />
             <Button fx:id="b71" mnemonicParsing="false" prefHeight="500" prefWidth="500" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Button fx:id="b21" mnemonicParsing="false" prefHeight="500" prefWidth="500" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Button fx:id="b173" mnemonicParsing="false" prefHeight="500" prefWidth="500" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Button fx:id="b50" mnemonicParsing="false" prefHeight="500" prefWidth="500" GridPane.rowIndex="5" />
             <Button fx:id="b41" mnemonicParsing="false" prefHeight="500" prefWidth="500" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Button fx:id="b54" mnemonicParsing="false" prefHeight="500" prefWidth="500" GridPane.columnIndex="4" GridPane.rowIndex="5" />
