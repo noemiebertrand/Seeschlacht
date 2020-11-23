@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" styleClass="background" stylesheets="@farben.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edu.Controller">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" styleClass="background" stylesheets="@farben.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edu.Controller">
 
    <children>
       <GridPane layoutX="84.0" layoutY="116.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="100.0">
@@ -147,13 +147,18 @@
       <Button layoutX="35.0" layoutY="461.0" mnemonicParsing="false" text="Restart" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="50.0" />
       <Label layoutX="58.0" layoutY="36.0" text="Nombre de coups :" />
 
-      <Label layoutX="58.0" layoutY="63.0" text="Score" />
+      <Label layoutX="58.0" layoutY="63.0" text="Score :" />
       <Label fx:id="coups" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="36.0" prefHeight="17.0" prefWidth="18.0" text="0" />
+
       <Label fx:id="GameOver" alignment="CENTER" contentDisplay="TOP" layoutX="256.0" layoutY="219.0" prefHeight="107.0" prefWidth="386.0" text="GAME OVER" visible="false" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="220.0">
          <font>
             <Font size="69.0" />
          </font>
       </Label>
       <Label layoutX="181.0" layoutY="36.0" text="/35" />
+
+      <Label layoutX="181.0" layoutY="36.0" text="/ 35" />
+      <Label fx:id="lblScore" layoutX="109.0" layoutY="63.0" text="0" />
+
    </children>
 </AnchorPane>

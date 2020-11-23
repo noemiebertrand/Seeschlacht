@@ -10,7 +10,12 @@ import javafx.scene.layout.AnchorPane;
 
 public class Controller {
 	@FXML
+
 	Label coups,GameOver;
+
+	Label lblScore;
+	Label coups;
+
 	Button bouton;
 	@FXML
 	private Button b00,b01,b02,b03,b04,b05,b06,b07,b08,b09;
@@ -34,21 +39,27 @@ public class Controller {
 	private Button b90,b91,b92,b93,b94,b95,b96,b97,b98,b99;
 
 	Schiffe test = new Schiffe();
-	int NbCoups=0;
+	int NbCoups = 0;
+	int score = 0;
 	@FXML
+
 	protected void handleSubmitButtonAction(ActionEvent event)
 	{ 	bouton = (Button)event.getSource();
 	if (bouton.getText()!=" " ) {
 	String nom=bouton.getId();
 	char [] char_variabel = nom.toCharArray();
 
-	for (int i=0;i<nom.length();i++) {
-		Character.getNumericValue(char_variabel[i]);}
 
-	int[] int_variabel = new int[nom.length()];
+		for (int i = 0; i < nom.length(); i++) {
+			Character.getNumericValue(char_variabel[i]);
+		}
 
-	for (int i=0;i<nom.length();i++) {
-		int_variabel[i]=Character.getNumericValue(char_variabel[i]);}
+		int[] int_variabel = new int[nom.length()];
+
+		for (int i = 0; i < nom.length();i++) {
+			int_variabel[i]=Character.getNumericValue(char_variabel[i]);
+		}
+
 
 	if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
 		bouton.setStyle("-fx-background-color:BLUE;");
@@ -71,3 +82,30 @@ public class Controller {
 	if (NbCoups==6) {
 	Platform.exit();}
 	}}
+
+		if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
+			bouton.setStyle("-fx-background-color:BLUE;");
+		}
+		else {
+			bouton.setStyle("-fx-background-color:RED;");	
+			Score();
+		}
+
+		CompteCoups();
+	}
+
+	public void Score() {
+		score = score + 10;
+		String sco = String.valueOf(score);
+		lblScore.setText(sco);
+		System.out.print(score);
+
+	}
+
+	public void CompteCoups () {
+		NbCoups = NbCoups + 1;
+		String CoupsJoues = String.valueOf(NbCoups);
+		coups.setText(CoupsJoues);
+		System.out.println(NbCoups);
+	}
+}
