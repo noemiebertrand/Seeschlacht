@@ -38,6 +38,7 @@ public class Controller {
 	@FXML
 	protected void handleSubmitButtonAction(ActionEvent event)
 	{ 	bouton = (Button)event.getSource();
+	if (bouton.getText()!=" " ) {
 	String nom=bouton.getId();
 	char [] char_variabel = nom.toCharArray();
 
@@ -51,16 +52,17 @@ public class Controller {
 
 	if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
 		bouton.setStyle("-fx-background-color:BLUE;");
+		bouton.setText(" ");
 	}
 	else {
-		bouton.setStyle("-fx-background-color:RED;");	 
+		bouton.setStyle("-fx-background-color:RED;");
+		bouton.setText(" ");
 	}
 	CompteCoups();
-	 }
+	 }}
 	
 	public void CompteCoups () {
 	NbCoups=NbCoups+1;
-	System.out.println(NbCoups);
 	String CoupsJoues = Integer.toString(NbCoups);
 	coups.setText(CoupsJoues);
 	if (NbCoups==5) {
