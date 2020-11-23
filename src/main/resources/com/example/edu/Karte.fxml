@@ -144,8 +144,10 @@
       </GridPane>
 
       <Button layoutX="35.0" layoutY="461.0" mnemonicParsing="false" text="Restart" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="50.0" />
-      <Label layoutX="58.0" layoutY="36.0" text="Nombre de coups" />
+      <Label layoutX="58.0" layoutY="36.0" text="Nombre de coups :" />
 
       <Label layoutX="58.0" layoutY="63.0" text="Score" />
+      <Label fx:id="coups" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="36.0" prefHeight="17.0" prefWidth="18.0" text="0" />
+      <Label layoutX="181.0" layoutY="36.0" text="/ 35" />
    </children>
 </AnchorPane>

@@ -8,11 +8,13 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 
 public class Controller {
-
+	@FXML
+	Label coups;
 	Button bouton;
 	@FXML
 	private Button b00,b01,b02,b03,b04,b05,b06,b07,b08,b09;
@@ -25,30 +27,35 @@ public class Controller {
 	private Button b70,b71,b72,b73,b74,b75,b76,b77,b78,b79;
 	private Button b80,b81,b82,b83,b84,b85,b86,b87,b88,b89;
 	private Button b90,b91,b92,b93,b94,b95,b96,b97,b98,b99;
-	
-	Schiffe test = new Schiffe();
 
+	Schiffe test = new Schiffe();
+	int NbCoups=0;
 	@FXML
 	protected void handleSubmitButtonAction(ActionEvent event)
 	{ 	bouton = (Button)event.getSource();
-		String nom=bouton.getId();
-		char [] char_variabel = nom.toCharArray();
+	String nom=bouton.getId();
+	char [] char_variabel = nom.toCharArray();
 
-		for (int i=0;i<nom.length();i++) {
-			Character.getNumericValue(char_variabel[i]);}
+	for (int i=0;i<nom.length();i++) {
+		Character.getNumericValue(char_variabel[i]);}
 
-		int[] int_variabel = new int[nom.length()];
+	int[] int_variabel = new int[nom.length()];
 
-		for (int i=0;i<nom.length();i++) {
-			int_variabel[i]=Character.getNumericValue(char_variabel[i]);}
+	for (int i=0;i<nom.length();i++) {
+		int_variabel[i]=Character.getNumericValue(char_variabel[i]);}
 
-		if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
-			bouton.setStyle("-fx-background-color:BLUE;");
-		}
-		else {
-			bouton.setStyle("-fx-background-color:RED;");	 
-		}
+	if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
+		bouton.setStyle("-fx-background-color:BLUE;");
 	}
-
-
-}
+	else {
+		bouton.setStyle("-fx-background-color:RED;");	 
+	}
+	CompteCoups();
+	 }
+	
+	public void CompteCoups () {
+	NbCoups=NbCoups+1;
+	System.out.println(NbCoups);
+	String CoupsJoues = Integer.toString(NbCoups);
+	coups.setText(CoupsJoues);
+	}}
