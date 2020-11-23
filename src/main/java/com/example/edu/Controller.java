@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent;
 
 public class Controller {
 	@FXML
+	Label lblScore;
 	Label coups;
 	Button bouton;
 	@FXML
@@ -29,33 +30,82 @@ public class Controller {
 	private Button b90,b91,b92,b93,b94,b95,b96,b97,b98,b99;
 
 	Schiffe test = new Schiffe();
-	int NbCoups=0;
+	int NbCoups = 0;
+	int score = 0;
 	@FXML
-	protected void handleSubmitButtonAction(ActionEvent event)
-	{ 	bouton = (Button)event.getSource();
-	String nom=bouton.getId();
-	char [] char_variabel = nom.toCharArray();
+	protected void handleSubmitButtonAction(ActionEvent event){
+		bouton = (Button)event.getSource();
+		String nom = bouton.getId();
+		char [] char_variabel = nom.toCharArray();
 
-	for (int i=0;i<nom.length();i++) {
-		Character.getNumericValue(char_variabel[i]);}
+		for (int i = 0; i < nom.length(); i++) {
+			Character.getNumericValue(char_variabel[i]);
+		}
 
-	int[] int_variabel = new int[nom.length()];
+		int[] int_variabel = new int[nom.length()];
 
-	for (int i=0;i<nom.length();i++) {
-		int_variabel[i]=Character.getNumericValue(char_variabel[i]);}
+		for (int i = 0; i < nom.length();i++) {
+			int_variabel[i]=Character.getNumericValue(char_variabel[i]);
+		}
 
-	if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
-		bouton.setStyle("-fx-background-color:BLUE;");
+		if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
+			bouton.setStyle("-fx-background-color:BLUE;");
+		}
+		else {
+			bouton.setStyle("-fx-background-color:RED;");	
+			Score();
+		}
+
+		CompteCoups();
 	}
-	else {
-		bouton.setStyle("-fx-background-color:RED;");	 
+
+	public void Score() {
+		score = score + 10;
+		String sco = String.valueOf(score);
+		lblScore.setText(sco);
+		System.out.print(score);
+
 	}
-	CompteCoups();
-	 }
-	
+
 	public void CompteCoups () {
-	NbCoups=NbCoups+1;
-	System.out.println(NbCoups);
-	String CoupsJoues = Integer.toString(NbCoups);
-	coups.setText(CoupsJoues);
-	}}
+		NbCoups = NbCoups + 1;
+		String CoupsJoues = String.valueOf(NbCoups);
+		coups.setText(CoupsJoues);
+		System.out.println(NbCoups);
+	}
+}
+/*int [][] verifIfDouble = new int [int_variabel[1]][int_variabel[2]];
+
+if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
+	bouton.setStyle("-fx-background-color:BLUE;");
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+			if (verifIfDouble[i][j] =! [int_variabel[1]][int_variabel[2]]) {
+
+			}
+
+			System.out.print(verifIfDouble[i][j]);
+		}
+
+	}
+
+
+}
+else {
+	bouton.setStyle("-fx-background-color:RED;");
+	//Score();
+}
+}
+
+public void Score() {
+score = score + 10;
+/*String sco = String.valueOf(score);
+TextField showScore = new TextField(sco);
+VBox root = new VBox();
+root.getChildren().add(showScore);
+System.out.print(score);
+
+}
+
+}
+ */
