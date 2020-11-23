@@ -1,31 +1,36 @@
 package com.example.edu;
 
-import com.sun.prism.paint.Color;
 
-import javafx.beans.property.ObjectProperty;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseDragEvent;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 public class Controller {
 	@FXML
-	Label coups;
+	Label coups,GameOver;
 	Button bouton;
 	@FXML
 	private Button b00,b01,b02,b03,b04,b05,b06,b07,b08,b09;
+	@FXML
 	private Button b10,b11,b12,b13,b14,b15,b16,b17,b18,b19;
+	@FXML
 	private Button b20,b21,b22,b23,b24,b25,b26,b27,b28,b29;
+	@FXML
 	private Button b30,b31,b32,b33,b34,b35,b36,b37,b38,b39;
+	@FXML
 	private Button b40,b41,b42,b43,b44,b45,b46,b47,b48,b49;
+	@FXML
 	private Button b50,b51,b52,b53,b54,b55,b56,b57,b58,b59;
+	@FXML
 	private Button b60,b61,b62,b63,b64,b65,b66,b67,b68,b69;
+	@FXML
 	private Button b70,b71,b72,b73,b74,b75,b76,b77,b78,b79;
+	@FXML
 	private Button b80,b81,b82,b83,b84,b85,b86,b87,b88,b89;
+	@FXML
 	private Button b90,b91,b92,b93,b94,b95,b96,b97,b98,b99;
 
 	Schiffe test = new Schiffe();
@@ -58,4 +63,9 @@ public class Controller {
 	System.out.println(NbCoups);
 	String CoupsJoues = Integer.toString(NbCoups);
 	coups.setText(CoupsJoues);
+	if (NbCoups==5) {
+	GameOver.setVisible(true);
+	}
+	if (NbCoups==6) {
+	Platform.exit();}
 	}}
