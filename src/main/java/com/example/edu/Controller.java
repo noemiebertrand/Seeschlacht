@@ -2,34 +2,53 @@ package com.example.edu;
 
 import com.sun.prism.paint.Color;
 
+import javafx.beans.property.ObjectProperty;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseDragEvent;
+import javafx.scene.input.MouseEvent;
 
 public class Controller {
 
+	Button bouton;
 	@FXML
-	private Button b00;
-	Schiffe test = new Schiffe();
+	private Button b00,b01,b02,b03,b04,b05,b06,b07,b08,b09;
+	private Button b10,b11,b12,b13,b14,b15,b16,b17,b18,b19;
+	private Button b20,b21,b22,b23,b24,b25,b26,b27,b28,b29;
+	private Button b30,b31,b32,b33,b34,b35,b36,b37,b38,b39;
+	private Button b40,b41,b42,b43,b44,b45,b46,b47,b48,b49;
+	private Button b50,b51,b52,b53,b54,b55,b56,b57,b58,b59;
+	private Button b60,b61,b62,b63,b64,b65,b66,b67,b68,b69;
+	private Button b70,b71,b72,b73,b74,b75,b76,b77,b78,b79;
+	private Button b80,b81,b82,b83,b84,b85,b86,b87,b88,b89;
+	private Button b90,b91,b92,b93,b94,b95,b96,b97,b98,b99;
 	
-	 @FXML
-	 protected void handleSubmitButtonAction(ActionEvent event)
-	 { 	 String nom=b00.getId();
+	Schiffe test = new Schiffe();
+
+	@FXML
+	protected void handleSubmitButtonAction(ActionEvent event)
+	{ 	bouton = (Button)event.getSource();
+		String nom=bouton.getId();
 		char [] char_variabel = nom.toCharArray();
 
 		for (int i=0;i<nom.length();i++) {
 			Character.getNumericValue(char_variabel[i]);}
-	 
-	 int[] int_variabel = new int[nom.length()];
-	 
-	 for (int i=0;i<nom.length();i++) {
-		 int_variabel[i]=Character.getNumericValue(char_variabel[i]);}
 
-		 if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
-	 b00.setStyle("-fx-background-color:#965866;");
-		 }
-		 else {
-			 
-		 }
-	 }
-	 }
+		int[] int_variabel = new int[nom.length()];
+
+		for (int i=0;i<nom.length();i++) {
+			int_variabel[i]=Character.getNumericValue(char_variabel[i]);}
+
+		if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
+			bouton.setStyle("-fx-background-color:BLUE;");
+		}
+		else {
+			bouton.setStyle("-fx-background-color:RED;");	 
+		}
+	}
+
+
+}
