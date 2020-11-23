@@ -14,7 +14,6 @@ public class Controller {
 	Label coups,GameOver;
 
 	Label lblScore;
-	Label coups;
 
 	Button bouton;
 	@FXML
@@ -81,18 +80,9 @@ public class Controller {
 	}
 	if (NbCoups==6) {
 	Platform.exit();}
-	}}
-
-		if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
-			bouton.setStyle("-fx-background-color:BLUE;");
-		}
-		else {
-			bouton.setStyle("-fx-background-color:RED;");	
-			Score();
-		}
-
-		CompteCoups();
 	}
+
+
 
 	public void Score() {
 		score = score + 10;
@@ -102,10 +92,5 @@ public class Controller {
 
 	}
 
-	public void CompteCoups () {
-		NbCoups = NbCoups + 1;
-		String CoupsJoues = String.valueOf(NbCoups);
-		coups.setText(CoupsJoues);
-		System.out.println(NbCoups);
-	}
+
 }
