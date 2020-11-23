@@ -15,6 +15,7 @@ public class Main extends Application {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("Karte.fxml"));
 			Scene scene = new Scene(root);
+			primaryStage.setTitle("Seeschlacht");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 
