@@ -6,7 +6,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.Effect;
+import javafx.scene.effect.Glow;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 
 public class Controller {
 	@FXML
@@ -76,6 +79,8 @@ public class Controller {
 	String CoupsJoues = Integer.toString(NbCoups);
 	coups.setText(CoupsJoues);
 	if (NbCoups==5) {
+    Effect glow = new Glow(1.0);
+	GameOver.setEffect(glow);
 	GameOver.setVisible(true);
 	}
 	if (NbCoups==6) {

@@ -156,7 +156,7 @@
       <Label fx:id="score" layoutX="644.0" layoutY="13.0" prefHeight="27.0" prefWidth="97.0" text=" Score : " AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="14.0" />
       <Label fx:id="coups" alignment="CENTER_RIGHT" layoutX="188.0" layoutY="14.0" prefHeight="27.0" prefWidth="22.0" text="0" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="14.0" />
 
-      <Label fx:id="GameOver" alignment="CENTER" contentDisplay="TOP" layoutX="93.0" layoutY="220.0" prefHeight="107.0" prefWidth="386.0" text="GAME OVER" visible="false" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="93.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="220.0">
+      <Label fx:id="GameOver" alignment="CENTER" contentDisplay="TOP" layoutX="93.0" layoutY="220.0" prefHeight="107.0" prefWidth="386.0" text="GAME OVER" visible="false" AnchorPane.bottomAnchor="195.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="195.0">
          <font>
             <Font size="69.0" />
          </font>
