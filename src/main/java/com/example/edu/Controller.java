@@ -38,7 +38,11 @@ public class Controller {
 	private Button b90,b91,b92,b93,b94,b95,b96,b97,b98,b99;
 
 	Schiffe test = new Schiffe();
-	int NbCoups = 0;
+	int vie2 = 2, vieA = 3, vieB = 3, vie4 = 4, vie5 = 5;
+	@FXML
+	Label lblVie2, lblVieA, lblVieB, lblVie4, lblVie5;
+	
+ 	int NbCoups = 0;
 	int score = 0;
 	@FXML
 
@@ -47,7 +51,6 @@ public class Controller {
 		if (bouton.getText()!=" " ) {
 			String nom = bouton.getId();
 			char [] char_variabel = nom.toCharArray();
-
 
 			for (int i = 0; i < nom.length(); i++) {
 				Character.getNumericValue(char_variabel[i]);
@@ -71,6 +74,7 @@ public class Controller {
 					Score();
 				}
 				bouton.setText(" ");
+				toucher(int_variabel[1],int_variabel[2]);
 			}
 			CompteCoups();
 		}
@@ -87,21 +91,55 @@ public class Controller {
 			Platform.exit();}
 	}
 
+
 	public void Score () {
+
 		score = score + 10;
 		String sco = Integer.toString(score);
 		lblScore.setText(sco);
+	}
+	
+	public void toucher(int y, int x) {
+		
+		switch(test.map[y][x]) {
+		case '2':
+			vie2=vie2-1;
+			break;
+		case 'A':
+			vieA=vieA-1;
+			break;
+		case 'B':
+			vieB=vieB-1;
+			break;
+		case '4':
+			vie4=vie4-1;
+			break;
+		case '5':
+			vie5=vie5-1;
+			break;	
+		}
+		
+		String vieTorpilleur = Integer.toString(vie2);
+		lblVie2.setText(vieTorpilleur);
+		String vieContreTorpilleur = Integer.toString(vieA);
+		lblVieA.setText(vieContreTorpilleur);
+		String vieSousMarin = Integer.toString(vieB);
+		lblVieB.setText(vieSousMarin);
+		String vieCroiseur = Integer.toString(vie4);
+		lblVie4.setText(vieCroiseur);
+		String viePorteAvion = Integer.toString(vie5);
+		lblVie5.setText(viePorteAvion);
 	}
 	
 	public void restart () {
 		Schiffe test = new Schiffe ();
 		test.initializeMap();
 
-		Schiffe porteAvion = new Schiffe(5);
-		Schiffe croiseur = new Schiffe(4);
-		Schiffe contreTorpilleur = new Schiffe (3);
-		Schiffe sousMarin = new Schiffe (3);
-		Schiffe torpilleur = new Schiffe (2);
+		Schiffe porteAvion = new Schiffe(5, '5');
+		Schiffe croiseur = new Schiffe(4, '4');
+		Schiffe contreTorpilleur = new Schiffe (3, 'A');
+		Schiffe sousMarin = new Schiffe (3, 'B');
+		Schiffe torpilleur = new Schiffe (2, '2');
 
 		test.printMap();
 		
