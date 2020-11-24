@@ -2,12 +2,6 @@ package com.example.edu;
 
 public class Schiffe {
 	
-	//à test:
-		// faire une méthode lectureMap
-		//ou utiliser test.map[i][j] (voir si ça fonctionne)
-		//tester de faire un constructor sans argument
-		//
-	
 	int cox, coy;
 	String sens;
 	int taille;
@@ -28,11 +22,11 @@ public class Schiffe {
 		//Schiffe point = new Schiffe (0, 0, "bas", 1); // sert à tester
 		
 		//exemple génération auto
-		Schiffe porteAvion = new Schiffe(5);
-		Schiffe croiseur = new Schiffe(4);
-		Schiffe contreTorpilleur = new Schiffe (3);
-		Schiffe sousMarin = new Schiffe (3);
-		Schiffe torpilleur = new Schiffe (2);
+		Schiffe porteAvion = new Schiffe(5, '5');
+		Schiffe croiseur = new Schiffe(4, '4');
+		Schiffe contreTorpilleur = new Schiffe (3, 'A');
+		Schiffe sousMarin = new Schiffe (3, 'B');
+		Schiffe torpilleur = new Schiffe (2, '2');
 
 		printMap();
 	}
@@ -44,12 +38,14 @@ public class Schiffe {
 	
 	//génération manuelle
 	public Schiffe(int x, int y, String s, int t) {
-
+		
+		char k = Character.forDigit(t, 10);
+		
 		if (collision(x, y, s, t) == true) System.out.println("collision");
 
 		for ( int i = 0; i < t; i++) {
-
-			map [y][x] = 'O';
+			
+			map [y][x] = k;
 
 			switch(s)
 			{
@@ -72,9 +68,10 @@ public class Schiffe {
 	}
 
 	//génération aléatoire
-	public Schiffe (int t) {
+	public Schiffe (int t, char k) {
 
 		boolean error;
+		
 		do {
 
 			cox = firstCase();
@@ -89,7 +86,7 @@ public class Schiffe {
 
 				for ( int i = 0; i < t; i++) {
 
-					map [coy][cox] = 'O';
+					map [coy][cox] = k;
 
 					switch(sens)
 					{
@@ -144,7 +141,7 @@ public class Schiffe {
 
 		if ( sens == "bas" && (coy + t) < 10) {
 			for (int i = 0; i < t; i++) {
-				if (map[coy + i][cox] == 'O') {
+				if (map[coy + i][cox] != '*') {
 					System.out.println("collision");
 					return true;
 				}}
@@ -152,7 +149,7 @@ public class Schiffe {
 		}
 		if ( sens == "haut" && (coy - t) >= 0) {
 			for (int i = 0; i < t; i++) {
-				if (map[coy - i][cox] == 'O') {
+				if (map[coy - i][cox] != '*') {
 					System.out.println("collision");
 					return true;
 				}}
@@ -160,7 +157,7 @@ public class Schiffe {
 		}
 		if ( sens == "droite" && (cox + t) < 10) {
 			for (int i = 0; i < t; i++) {
-				if (map[coy][cox + i] == 'O') {
+				if (map[coy][cox + i] != '*') {
 					System.out.println("collision");
 					return true;
 				}}
@@ -168,7 +165,7 @@ public class Schiffe {
 		}
 		if ( sens == "gauche" && (cox - t) >= 0) {
 			for (int i = 0; i < t; i++) {
-				if (map[coy][cox - i] == 'O') {
+				if (map[coy][cox - i] != '*') {
 					System.out.println("collision");
 					return true;
 				}}

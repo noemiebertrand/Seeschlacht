@@ -150,8 +150,13 @@
          </children>
       </GridPane>
 
-      <Button fx:id="restart" layoutX="35.0" layoutY="461.0" mnemonicParsing="false" text="Restart" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" />
+
+      <Button fx:id="restart" layoutX="35.0" layoutY="461.0" mnemonicParsing="false" onAction="#restart" text="Restart" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="50.0" />
+      <Label layoutX="58.0" layoutY="36.0" text="Nombre de coups :" />
+
+      <Button fx:id="restart" layoutX="35.0" layoutY="461.0" mnemonicParsing="false" onAction="#restart" text="Restart" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" />
       <Label fx:id="nombre" layoutX="9.0" layoutY="14.0" prefHeight="27.0" prefWidth="255.0" text=" Nombre de coups :        " AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="14.0" />
+
 
       <Label fx:id="score" layoutX="644.0" layoutY="13.0" prefHeight="27.0" prefWidth="97.0" text=" Score : " AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="14.0" />
       <Label fx:id="coups" alignment="CENTER_RIGHT" layoutX="188.0" layoutY="14.0" prefHeight="27.0" prefWidth="22.0" text="0" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="14.0" />
@@ -163,11 +168,26 @@
       </Label>
       <Label fx:id="lblScore" layoutX="713.0" layoutY="14.0" text="0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="14.0" />
 
+
+      <Label layoutX="181.0" layoutY="36.0" text="/ 35" />
+      <Label fx:id="lblScore" layoutX="109.0" layoutY="63.0" text="0" />
+      <Label layoutX="368.0" layoutY="36.0" text="porteAvion" />
+      <Label layoutX="263.0" layoutY="72.0" text="croiseur" />
+      <Label layoutX="368.0" layoutY="55.0" text="contreTorpilleur" />
+      <Label layoutX="262.0" layoutY="36.0" text="sousMarin" />
+      <Label layoutX="263.0" layoutY="55.0" prefHeight="17.0" prefWidth="53.0" text="torpilleur" />
+      <Label fx:id="lblVieB" layoutX="248.0" layoutY="38.0" text="3" />
+      <Label fx:id="lblVie2" layoutX="248.0" layoutY="55.0" text="2" />
+      <Label fx:id="lblVie4" layoutX="248.0" layoutY="72.0" text="4" />
+      <Label fx:id="lblVieA" layoutX="355.0" layoutY="55.0" text="3" />
+      <Label fx:id="lblVie5" layoutX="355.0" layoutY="38.0" text="5" />
+     
       <Label fx:id="t35" layoutX="210.0" layoutY="14.0" prefHeight="27.0" prefWidth="54.0" text="/ 35 " AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="14.0" />
       <ImageView fx:id="screw" fitHeight="100.0" fitWidth="100.0" layoutX="624.0" layoutY="614.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
          <image>
             <Image url="https://user-images.githubusercontent.com/73691422/100022668-e5bb1000-2de3-11eb-9046-1a4e1b3dff6a.png" />
          </image></ImageView>
+
 
    </children>
 </AnchorPane>
