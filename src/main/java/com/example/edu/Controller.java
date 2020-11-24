@@ -1,19 +1,21 @@
 package com.example.edu;
 
 
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class Controller {
 	@FXML
 
 	Label coups,GameOver,lblScore;
 
-	Button bouton;
+	Button bouton, restart;
 	@FXML
 	private Button b00,b01,b02,b03,b04,b05,b06,b07,b08,b09;
 	@FXML
@@ -89,5 +91,24 @@ public class Controller {
 		score = score + 10;
 		String sco = Integer.toString(score);
 		lblScore.setText(sco);
+	}
+	
+	public void restart () {
+		Schiffe test = new Schiffe ();
+		test.initializeMap();
+
+		Schiffe porteAvion = new Schiffe(5);
+		Schiffe croiseur = new Schiffe(4);
+		Schiffe contreTorpilleur = new Schiffe (3);
+		Schiffe sousMarin = new Schiffe (3);
+		Schiffe torpilleur = new Schiffe (2);
+
+		test.printMap();
+		
+		GameOver.setVisible(false);
+		lblScore.setText("0");
+		score=0;
+		coups.setText("0");
+		NbCoups=0;
 	}
 }
