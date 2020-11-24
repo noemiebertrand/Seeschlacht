@@ -38,7 +38,9 @@ public class Controller {
 	private Button b90,b91,b92,b93,b94,b95,b96,b97,b98,b99;
 
 	Schiffe test = new Schiffe();
-	int NbCoups = 0;
+	int vie2 = 2, vieA = 3, vieB = 3, vie4 = 4, vie5 = 5;
+	
+ 	int NbCoups = 0;
 	int score = 0;
 	@FXML
 
@@ -67,6 +69,7 @@ public class Controller {
 	else {
 		bouton.setStyle("-fx-background-color:RED;");
 		bouton.setText(" ");
+		toucher(int_variabel[1],int_variabel[2]);
 	}
 	CompteCoups();
 	 }}
@@ -82,7 +85,7 @@ public class Controller {
 	Platform.exit();}
 	}
 
-
+	
 
 	public void Score() {
 		score = score + 10;
@@ -92,5 +95,25 @@ public class Controller {
 
 	}
 
+	
+	public void toucher(int y, int x) {
+		switch(test.map[y][x]) {
+		case '2':
+			vie2--;
+			break;
+		case 'A':
+			vieA--;
+			break;
+		case 'B':
+			vieB--;
+			break;
+		case '4':
+			vie4--;
+			break;
+		case '5':
+			vie5--;
+			break;	
+		}
+	}
 
 }
