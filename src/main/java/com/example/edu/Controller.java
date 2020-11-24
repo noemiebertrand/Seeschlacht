@@ -103,19 +103,19 @@ public class Controller {
 		
 		switch(test.map[y][x]) {
 		case '2':
-			this.vie2--;
+			vie2=vie2-1;
 			break;
 		case 'A':
-			this.vieA--;
+			vieA=vieA-1;
 			break;
 		case 'B':
-			this.vieB--;
+			vieB=vieB-1;
 			break;
 		case '4':
-			this.vie4--;
+			vie4=vie4-1;
 			break;
 		case '5':
-			this.vie5--;
+			vie5=vie5-1;
 			break;	
 		}
 		

@@ -163,11 +163,11 @@
       <Label layoutX="368.0" layoutY="55.0" text="contreTorpilleur" />
       <Label layoutX="262.0" layoutY="36.0" text="sousMarin" />
       <Label layoutX="263.0" layoutY="55.0" prefHeight="17.0" prefWidth="53.0" text="torpilleur" />
-      <Label layoutX="248.0" layoutY="38.0" text="0" />
-      <Label layoutX="248.0" layoutY="55.0" text="0" />
-      <Label layoutX="248.0" layoutY="72.0" text="0" />
-      <Label layoutX="355.0" layoutY="55.0" text="0" />
-      <Label layoutX="355.0" layoutY="38.0" text="0" />
+      <Label fx:id="lblVieB" layoutX="248.0" layoutY="38.0" text="3" />
+      <Label fx:id="lblVie2" layoutX="248.0" layoutY="55.0" text="2" />
+      <Label fx:id="lblVie4" layoutX="248.0" layoutY="72.0" text="4" />
+      <Label fx:id="lblVieA" layoutX="355.0" layoutY="55.0" text="3" />
+      <Label fx:id="lblVie5" layoutX="355.0" layoutY="38.0" text="5" />
 
    </children>
 </AnchorPane>
