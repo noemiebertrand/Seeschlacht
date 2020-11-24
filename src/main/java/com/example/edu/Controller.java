@@ -39,6 +39,7 @@ public class Controller {
 
 	Schiffe test = new Schiffe();
 	int vie2 = 2, vieA = 3, vieB = 3, vie4 = 4, vie5 = 5;
+	Label lblVie2, lblVieA, lblVieB, lblVie4, lblVie5;
 	
  	int NbCoups = 0;
 	int score = 0;
@@ -49,7 +50,6 @@ public class Controller {
 		if (bouton.getText()!=" " ) {
 			String nom = bouton.getId();
 			char [] char_variabel = nom.toCharArray();
-
 
 			for (int i = 0; i < nom.length(); i++) {
 				Character.getNumericValue(char_variabel[i]);
@@ -99,23 +99,35 @@ public class Controller {
 	}
 	
 	public void toucher(int y, int x) {
+		
 		switch(test.map[y][x]) {
 		case '2':
-			vie2--;
+			this.vie2--;
 			break;
 		case 'A':
-			vieA--;
+			this.vieA--;
 			break;
 		case 'B':
-			vieB--;
+			this.vieB--;
 			break;
 		case '4':
-			vie4--;
+			this.vie4--;
 			break;
 		case '5':
-			vie5--;
+			this.vie5--;
 			break;	
 		}
+		
+		String vie2 = Integer.toString(this.vie2) + "/2";
+		lblVie2.setText(vie2);
+		String vieA = Integer.toString(this.vieA) + "/3";
+		lblVieA.setText(vieA);
+		String vieB = Integer.toString(this.vieB) + "/3";
+		lblVieB.setText(vieB);
+		String vie4 = Integer.toString(this.vie4) + "/4";
+		lblVie4.setText(vie4);
+		String vie5 = Integer.toString(this.vie5) + "/5";
+		lblVie5.setText(vie5);
 	}
 	
 	public void restart () {

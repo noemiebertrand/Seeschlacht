@@ -2,12 +2,6 @@ package com.example.edu;
 
 public class Schiffe {
 	
-	//à test:
-		// faire une méthode lectureMap
-		//ou utiliser test.map[i][j] (voir si ça fonctionne)
-		//tester de faire un constructor sans argument
-		//
-	
 	int cox, coy;
 	String sens;
 	int taille;

@@ -32,7 +32,6 @@ public class Main extends Application {
 
 			test.printMap();
 			
-			
 
 		} catch(Exception e) {
 			e.printStackTrace();
