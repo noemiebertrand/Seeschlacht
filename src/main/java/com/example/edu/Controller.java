@@ -1,21 +1,21 @@
 package com.example.edu;
 
 
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class Controller {
 	@FXML
 
-	Label coups,GameOver;
+	Label coups,GameOver,lblScore;
 
-	Label lblScore;
-
-	Button bouton;
+	Button bouton, restart;
 	@FXML
 	private Button b00,b01,b02,b03,b04,b05,b06,b07,b08,b09;
 	@FXML
@@ -44,57 +44,59 @@ public class Controller {
 	int score = 0;
 	@FXML
 
-	protected void handleSubmitButtonAction(ActionEvent event)
-	{ 	bouton = (Button)event.getSource();
-	if (bouton.getText()!=" " ) {
-	String nom=bouton.getId();
-	char [] char_variabel = nom.toCharArray();
+	protected void handleSubmitButtonAction(ActionEvent event) {
+		bouton = (Button)event.getSource();
+		if (bouton.getText()!=" " ) {
+			String nom = bouton.getId();
+			char [] char_variabel = nom.toCharArray();
 
 
-		for (int i = 0; i < nom.length(); i++) {
-			Character.getNumericValue(char_variabel[i]);
+			for (int i = 0; i < nom.length(); i++) {
+				Character.getNumericValue(char_variabel[i]);
+			}
+
+			int[] int_variabel = new int[nom.length()];
+
+			for (int i = 0; i < nom.length();i++) {
+				int_variabel[i] = Character.getNumericValue(char_variabel[i]);
+			}
+
+
+			if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
+				bouton.setStyle("-fx-background-color:BLUE;");
+				bouton.setText(" ");
+			}
+			else {
+				bouton.setStyle("-fx-background-color:RED;");
+				String empty = bouton.getText();
+				if (empty != " ") {
+					Score();
+				}
+				bouton.setText(" ");
+				toucher(int_variabel[1],int_variabel[2]);
+			}
+			CompteCoups();
 		}
-
-		int[] int_variabel = new int[nom.length()];
-
-		for (int i = 0; i < nom.length();i++) {
-			int_variabel[i]=Character.getNumericValue(char_variabel[i]);
-		}
-
-
-	if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
-		bouton.setStyle("-fx-background-color:BLUE;");
-		bouton.setText(" ");
 	}
-	else {
-		bouton.setStyle("-fx-background-color:RED;");
-		bouton.setText(" ");
-		toucher(int_variabel[1],int_variabel[2]);
-	}
-	CompteCoups();
-	 }}
-	
+
 	public void CompteCoups () {
-	NbCoups=NbCoups+1;
-	String CoupsJoues = Integer.toString(NbCoups);
-	coups.setText(CoupsJoues);
-	if (NbCoups==5) {
-	GameOver.setVisible(true);
-	}
-	if (NbCoups==6) {
-	Platform.exit();}
+		NbCoups = NbCoups + 1;
+		String CoupsJoues = Integer.toString(NbCoups);
+		coups.setText(CoupsJoues);
+		if (NbCoups == 35) {
+			GameOver.setVisible(true);
+		}
+		if (NbCoups == 36) {
+			Platform.exit();}
 	}
 
-	
 
-	public void Score() {
+	public void Score () {
+
 		score = score + 10;
-		String sco = String.valueOf(score);
+		String sco = Integer.toString(score);
 		lblScore.setText(sco);
-		System.out.print(score);
-
 	}
-
 	
 	public void toucher(int y, int x) {
 		switch(test.map[y][x]) {
@@ -115,5 +117,23 @@ public class Controller {
 			break;	
 		}
 	}
+	
+	public void restart () {
+		Schiffe test = new Schiffe ();
+		test.initializeMap();
 
+		Schiffe porteAvion = new Schiffe(5, '5');
+		Schiffe croiseur = new Schiffe(4, '4');
+		Schiffe contreTorpilleur = new Schiffe (3, 'A');
+		Schiffe sousMarin = new Schiffe (3, 'B');
+		Schiffe torpilleur = new Schiffe (2, '2');
+
+		test.printMap();
+		
+		GameOver.setVisible(false);
+		lblScore.setText("0");
+		score=0;
+		coups.setText("0");
+		NbCoups=0;
+	}
 }
