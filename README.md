@@ -3,7 +3,7 @@
   Inhaltsverzeichnis
   ---
   <nav>
-  <a href="## Einleitung">Einleitung</a>
+  <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#einleitung">Einleitung</a>
   
   <a href="Ziel">Ziel</a>
   
