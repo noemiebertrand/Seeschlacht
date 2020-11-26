@@ -3,11 +3,24 @@
   Inhaltsverzeichnis
   ---
   <nav>
-  <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#einleitung">Einleitung</a>
   
-  <a href="Ziel">Ziel</a>
+  1. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#einleitung">Einleitung</a>
   
-  <a href="Release Plan">Release Plan</a>
+  2. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#ziel">Ziel</a>
+  
+  3. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#randbedingungen">Randbedingungen</a>
+  
+  4. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#build-anleitung">Build-Anleitung</a>
+  
+  5. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#bedienungsanleitung">Bedienungsanleitung</a>
+  
+  6. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#user-stories">User Stories</a>
+  
+  7. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#release-plan">Release Plan</a>
+  
+  8. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-1">Dokumentation Sprint 1</a>
+  
+  9. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-2">Dokumentation Sprint 2</a>
   </nav>
   
  ## Einleitung 
