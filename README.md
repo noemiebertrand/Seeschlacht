@@ -23,8 +23,8 @@
   9. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-2">Dokumentation Sprint 2</a>
   </nav>
   
- ## Einleitung 
-  
+  Einleitung 
+  ---
 Mit diesem Programm wollen wir Seeschlacht spielen können. Wir wollen unsere eigene Version des Spiels programmieren, also mit zusätzlichen Optionen wie zum beispiel die Punktzahl berechnen um einen Leaderboard zu erstellen, oder auch die restliche  Anzahl der Schläge. In unserer Version gibt es nur einen Spieler, nicht 2 wie üblich. Der Spieler soll so schnell wie möglich auf dem User Interface die Schiffe des Computers finden, die zufällig erzeugt werden. Aber die Rundenanzahl ist begrenzt, damit man nicht einfach alle Felder anklicken kann, um schnell fertig zu werden. Alle Informationen werden auf dem User Interface gezeigt.
 
   Ziel  
@@ -33,15 +33,23 @@ Unsere Ziele während dem Projekt waren, die in den Fächer erlernten Kompetenze
 
   Randbedingungen 
   ---
-
 Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt werden. 
 
   Build-Anleitung
   ---
-  
+  1. Versichern Sie, dass Sie Java Runtime Environment bereit installiert haben.
+  2. Laden Sie die Dateien von unserem Repository runter.
+  3. Entpacken Sie die Dateien in ihrem gewünschten Ordner.
+  4. Viel Spaß !
   
   Bedienungsanleitung
   ---
+  * Nach der Offnung des Programms:
+  * Sie können die Regeln lesen oder verwerfen.
+  * Clicken Sie auf "Start".
+  * Raten Sie, wo die Schiffe würden zufällig erstellt. Sie haben 35 Schlagen, um allen Schiffe zu raten, sonst haben Sie verloren.
+  * Am Ende können Sie ihren Name eingeben, damit ein Leaderboard erstellen kann.
+  * Dann können Sie ein neue Spiel mit dem Knopf "Restart" erstellen.
   
   
   User Stories
