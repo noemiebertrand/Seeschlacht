@@ -147,10 +147,8 @@
       </GridPane>
 
 
-      <Button fx:id="restart" layoutX="35.0" layoutY="461.0" mnemonicParsing="false" onAction="#restart" text="Restart" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="50.0" />
+      <Button fx:id="restart" layoutX="31.0" layoutY="521.0" mnemonicParsing="false" onAction="#restart" text="Restart" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="31.0" />
       <Label layoutX="58.0" layoutY="36.0" text="Nombre de coups :" />
-
-      <Button fx:id="restart" layoutX="35.0" layoutY="461.0" mnemonicParsing="false" onAction="#restart" text="Restart" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" />
       <Label fx:id="nombre" layoutX="9.0" layoutY="14.0" prefHeight="27.0" prefWidth="255.0" text=" Nombre de coups :        " AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="14.0" />
 
 
@@ -183,8 +181,6 @@
          <image>
             <Image url="https://user-images.githubusercontent.com/73691422/100022668-e5bb1000-2de3-11eb-9046-1a4e1b3dff6a.png" />
          </image></ImageView>
-      <Label fx:id="BtnStart" layoutX="1.0" layoutY="240.0" prefHeight="360.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="240.0" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-64.0" layoutY="187.0" pickOnBounds="true" preserveRatio="true" />
 
 
    </children>
