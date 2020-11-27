@@ -1,16 +1,22 @@
 package com.example.edu;
 
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.layout.AnchorPane;
-
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import javafx.scene.paint.Color;
@@ -20,8 +26,8 @@ public class Controller {
 	@FXML
 
 	Label coups,GameOver,lblScore;
-
-	Button bouton, restart;
+	Pane BtnStart;
+	Button bouton, Start;	
 	@FXML
 	private Button b00,b01,b02,b03,b04,b05,b06,b07,b08,b09;
 	@FXML
@@ -50,8 +56,30 @@ public class Controller {
 	
  	int NbCoups = 0;
 	int score = 0;
-	@FXML
+	
+	@FXML 
+	public void StartToKarte (ActionEvent event) throws IOException  {
+			Parent root1 = FXMLLoader.load(getClass().getResource("Karte.fxml"));	
+			Scene scene1 = new Scene(root1);
+			Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();			
+			primaryStage.setScene(scene1);
+			primaryStage.show();
 
+			Schiffe test = new Schiffe ();
+			test.initializeMap();
+
+			//Schiffe point = new Schiffe (0, 0, "bas", 1); 
+
+			Schiffe porteAvion = new Schiffe(5, '5');
+			Schiffe croiseur = new Schiffe(4, '4');
+			Schiffe contreTorpilleur = new Schiffe (3, 'A');
+			Schiffe sousMarin = new Schiffe (3, 'B');
+			Schiffe torpilleur = new Schiffe (2, '2');
+
+			test.printMap();
+	}
+	
+	@FXML
 	protected void handleSubmitButtonAction(ActionEvent event) {
 		bouton = (Button)event.getSource();
 		if (bouton.getText()!=" " ) {
@@ -83,6 +111,7 @@ public class Controller {
 				toucher(int_variabel[1],int_variabel[2]);
 			}
 			CompteCoups();
+			
 		}
 	}
 
@@ -91,12 +120,12 @@ public class Controller {
 	NbCoups=NbCoups+1;
 	String CoupsJoues = Integer.toString(NbCoups);
 	coups.setText(CoupsJoues);
-	if (NbCoups==5) {
+	if (NbCoups==35) {
     Effect glow = new Glow(1.0);
 	GameOver.setEffect(glow);
 	GameOver.setVisible(true);
 	}
-	if (NbCoups==6) {
+	if (NbCoups==36) {
 	Platform.exit();}
 
 	}
