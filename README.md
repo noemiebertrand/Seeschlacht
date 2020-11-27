@@ -45,7 +45,7 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
   Bedienungsanleitung
   ---
   * Nach der Offnung des Programms:
-  * Sie können die Regeln <sup id="ap1"> <a href="#ap1">1</a></sup> lesen oder verwerfen.
+  * Sie können die Regeln <sup id="ap1"> <a href="#nt1">1</a></sup> lesen oder verwerfen.
   * Clicken Sie auf "Start".
   * Raten Sie, wo die Schiffe würden zufällig erstellt. Sie haben 35 Schlagen, um allen Schiffe zu raten, sonst haben Sie verloren.
   * Am Ende können Sie ihren Name eingeben, damit ein Leaderboard erstellen kann.
@@ -100,7 +100,7 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
   ---
   
   
-  
+  <p id="nt1">
    <sup><a href="#nt1">1 </a> Seeschlacht Spielregeln:
 Um das Spiel zu starten drücken sie auf dem “Start“ Knopf. Ein leeres Spielgitter wird auf dem Bildschirm angezeigt und die Zeit fangt an zu laufen. Sie können jetzt auf die Felder klicken um die Schiffe* zu finden, aber Achtung Sie haben nur 35 versuche pro Runde. Ihre abgelaufene Zeit und die Anzahl von Schlage werden oben links ausgeblendet, ihr score wird oben rechts ausgeblendet. Falls Sie eine neue Runde anfangen wollen und die aktuelle nicht fertig ist, dann können Sie auf den “Restart“ Knopf, unten links, drücken um eine neue Runde anzufangen. Jedes Feld mit einem Schiff drauf gibt euch 10 Punkte, am Ende der Runde wird noch eure Zeit umgerechnet um ihr end score zu erhalten. Die Runde ist zu Ende, wenn Sie ihre 35 Schlage ausgeführt haben oder, wenn Sie alle 5 Schiffe gefunden haben. Danach müssen Sie einen Namen eingeben um ihr score in den “Leaderboard“ zu speichern. Sie können dann wieder eine neue Runde Starten oder das Spiel schlissen.
 
@@ -109,4 +109,4 @@ Um das Spiel zu starten drücken sie auf dem “Start“ Knopf. Ein leeres Spiel
 -1x U-Boot (3)
 -1x Torpedo (3)
 -1x Gegentorpedo (2)
-
+</p>
