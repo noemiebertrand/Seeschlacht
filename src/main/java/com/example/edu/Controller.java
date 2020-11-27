@@ -92,7 +92,7 @@ public class Controller {
 
 			for (int i = 0; i < nom.length();i++) {
 				int_variabel[i] = Character.getNumericValue(char_variabel[i]);
-				}
+			}
 
 			//wenn es kein Schiff gibt, wird es blau
 			if (test.map[int_variabel[1]][int_variabel[2]] == '*') { 
@@ -165,9 +165,25 @@ public class Controller {
 		lblVie5.setText(viePorteAvion);
 	}
 
-	public void restart () { // um eine neue Runde zu spielen
+	public void restart (ActionEvent event) throws IOException { // um eine neue Runde zu spielen
+		
+		GameOver.setVisible(false); //setzt alle Variabeln um 0 ein
+		lblScore.setText("0");
+		score=0;
+		coups.setText("0");
+		NbCoups=0;
+		
+		//ladert eine neue Karte
+		Parent root1 = FXMLLoader.load(getClass().getResource("Karte.fxml"));	
+		Scene scene1 = new Scene(root1);
+		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();			
+		primaryStage.setScene(scene1);
+		primaryStage.show();
+
 		Schiffe test = new Schiffe ();
 		test.initializeMap();
+
+		//Schiffe point = new Schiffe (0, 0, "bas", 1); 
 
 		Schiffe porteAvion = new Schiffe(5, '5');
 		Schiffe croiseur = new Schiffe(4, '4');
@@ -177,10 +193,5 @@ public class Controller {
 
 		test.printMap();
 
-		GameOver.setVisible(false); //setzt alle Variabeln um 0 ein
-		lblScore.setText("0");
-		score=0;
-		coups.setText("0");
-		NbCoups=0;
 	}
 }
