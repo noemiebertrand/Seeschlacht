@@ -19,7 +19,7 @@ import javafx.scene.paint.Color;
 public class Controller {
 	@FXML
 
-	Label coups,GameOver,lblScore;
+	Label coups,GameOver,lblScore, WIN;
 
 	Button bouton, restart;
 	@FXML
@@ -70,11 +70,11 @@ public class Controller {
 
 
 			if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
-				bouton.setStyle("-fx-background-color:BLUE;");
+				bouton.setStyle("-fx-border-color:BLUE; -fx-opacity: 1;");
 				bouton.setText(" ");
 			}
 			else {
-				bouton.setStyle("-fx-background-color:RED;");
+				bouton.setStyle("-fx-border-color:RED; -fx-opacity: 1;");
 				String empty = bouton.getText();
 				if (empty != " ") {
 					Score();
@@ -87,19 +87,25 @@ public class Controller {
 	}
 
 	public void CompteCoups () {
-
+    WIN.setVisible(false);	
+	Effect glow = new Glow(1.0);
 	NbCoups=NbCoups+1;
 	String CoupsJoues = Integer.toString(NbCoups);
 	coups.setText(CoupsJoues);
-	if (NbCoups==5) {
-    Effect glow = new Glow(1.0);
+	if (NbCoups==35) {
 	GameOver.setEffect(glow);
 	GameOver.setVisible(true);
 	}
-	if (NbCoups==6) {
+	if (NbCoups==36) {
 	Platform.exit();}
-
+	if (score == 170) {
+		WIN.setEffect(glow);
+		WIN.setVisible(true);
+		final int a = NbCoups;
+		System.out.println(a);
 	}
+	}
+	
 
 
 	public void Score () {
@@ -150,10 +156,10 @@ public class Controller {
 		Schiffe contreTorpilleur = new Schiffe (3, 'A');
 		Schiffe sousMarin = new Schiffe (3, 'B');
 		Schiffe torpilleur = new Schiffe (2, '2');
-
 		test.printMap();
 		
 		GameOver.setVisible(false);
+		WIN.setVisible(false);
 		lblScore.setText("0");
 		score=0;
 		coups.setText("0");
