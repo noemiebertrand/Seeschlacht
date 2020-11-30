@@ -27,6 +27,7 @@ public class Main extends Application {
 			primaryStage.show();
 
 			Schiffe test = new Schiffe ();
+			
 			test.initializeMap();
 			
 			//Schiffe point = new Schiffe (0, 0, "bas", 1); 

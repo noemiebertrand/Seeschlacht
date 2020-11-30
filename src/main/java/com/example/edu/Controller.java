@@ -92,15 +92,46 @@ public class Controller {
 	String CoupsJoues = Integer.toString(NbCoups);
 	coups.setText(CoupsJoues);
 	if (NbCoups==5) {
-    Effect glow = new Glow(1.0);
-	GameOver.setEffect(glow);
-	GameOver.setVisible(true);
+    gameOver();
 	}
 	if (NbCoups==6) {
 	Platform.exit();}
 
 	}
-
+	
+	public void gameOver() {
+		
+		Effect glow = new Glow(1.0);
+		GameOver.setEffect(glow);
+		GameOver.setVisible(true);
+		
+		char [] c = new char [3];
+		String buttonId;
+		Button boutonTest;
+		
+		c[0] = 'b';
+				
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				
+				if (test.map[i][j] != '*') {
+					c[1] = Character.forDigit(i, 10);
+					c[2] = Character.forDigit(j, 10);
+					
+					buttonId = new String(c);
+					
+					//bouton.setId(buttonId);
+					
+					//bouton.setStyle("-fx-background-color:ORANGE;");
+					
+					boutonTest = (Button) buttonId;
+					boutonTest.setStyle("-fx-background-color:ORANGE;");
+					
+				}
+			}
+		}
+		
+	}
 
 	public void Score () {
 

@@ -1,50 +1,27 @@
 package com.example.edu;
 
 public class Schiffe {
-	
+
 	int cox, coy;
 	String sens;
 	int taille;
 
 	static char [][] map = new char [10][10];
 
-	public static void main (String[] args) {
-
-		initializeMap();
-
-		//exemple génération manuelle
-		//Schiffe porteAvion = new Schiffe(3, 2, "droite", 5);
-		//Schiffe croiseur = new Schiffe( 5, 6, "haut", 4);
-		//Schiffe contreTorpilleur = new Schiffe (2, 5, "haut", 3);
-		//Schiffe sousMarin = new Schiffe (3, 9, "gauche", 3);
-		//Schiffe torpilleur = new Schiffe (0, 0, "bas", 2);
-
-		//Schiffe point = new Schiffe (0, 0, "bas", 1); // sert à tester
-		
-		//exemple génération auto
-		Schiffe porteAvion = new Schiffe(5, '5');
-		Schiffe croiseur = new Schiffe(4, '4');
-		Schiffe contreTorpilleur = new Schiffe (3, 'A');
-		Schiffe sousMarin = new Schiffe (3, 'B');
-		Schiffe torpilleur = new Schiffe (2, '2');
-
-		printMap();
-	}
-
 	// default
 	public Schiffe() {
-		
+
 	}
-	
+
 	//génération manuelle
 	public Schiffe(int x, int y, String s, int t) {
-		
+
 		char k = Character.forDigit(t, 10);
-		
+
 		if (collision(x, y, s, t) == true) System.out.println("collision");
 
 		for ( int i = 0; i < t; i++) {
-			
+
 			map [y][x] = k;
 
 			switch(s)
@@ -71,15 +48,13 @@ public class Schiffe {
 	public Schiffe (int t, char k) {
 
 		boolean error;
-		
+
 		do {
 
 			cox = firstCase();
 			coy = firstCase();
 
 			setSens();
-
-			System.out.println((cox + 1) + ", " + (coy +1) + ", " + this.sens + ", " + t);
 
 			error = error2(t);
 			if (error == false) {
@@ -142,41 +117,36 @@ public class Schiffe {
 		if ( sens == "bas" && (coy + t) < 10) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy + i][cox] != '*') {
-					System.out.println("collision");
-					return true;
+					return true;	//Wenn das Standort nicht mehr frei ist
 				}}
-			return false;
+			return false;	//Wenn kein Problem
 		}
 		if ( sens == "haut" && (coy - t) >= 0) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy - i][cox] != '*') {
-					System.out.println("collision");
-					return true;
+					return true;	//Wenn das Standort nicht mehr frei ist
 				}}
-			return false;
+			return false;	//Wenn kein Problem
 		}
 		if ( sens == "droite" && (cox + t) < 10) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy][cox + i] != '*') {
-					System.out.println("collision");
-					return true;
+					return true;	//Wenn das Standort nicht mehr frei ist
 				}}
-			return false;
+			return false;	//Wenn kein Problem
 		}
 		if ( sens == "gauche" && (cox - t) >= 0) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy][cox - i] != '*') {
-					System.out.println("collision");
-					return true;
+					return true;	//Wenn das Standort nicht mehr frei ist
 				}}
-			return false;
+			return false;	//Wenn kein Problem
 		}
 
-		System.out.println("problème");
-		return true;
+		return true; 	//Wenn Problem
 	}
 
-	public boolean collision (int x, int y, String s, int t) {
+	public boolean collision (int x, int y, String s, int t) { // diese Methode dient für die manuelle Initialisierung 
 
 		for (int i = 1; i < t; i++) {
 			if ( s == "bas" && map[y + i][x] != '*') {
@@ -196,7 +166,7 @@ public class Schiffe {
 		return false;
 	}
 
-	public static void initializeMap () {
+	public static void initializeMap () {	 //diese Methode füllt das map mit * Zeichnen
 
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++)
@@ -205,7 +175,7 @@ public class Schiffe {
 
 	}
 
-	public static void printMap () {
+	public static void printMap () { 	//diese Methode gibt das map auf dem Konsole aus
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 				System.out.print(" " + map [i][j]);
