@@ -14,13 +14,15 @@ import javafx.scene.text.Font;
 
 
 public class Main extends Application {
+	boolean start=false;
+
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			Font myFont = null;
 			myFont = Font.loadFont(new FileInputStream(new File("src/main/resources/com/example/edu/Connection-arMJ.otf")), 10);
-			
-			Parent root = FXMLLoader.load(getClass().getResource("Karte.fxml"));
+
+			Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("Seeschlacht");
 			primaryStage.setScene(scene);
@@ -40,7 +42,6 @@ public class Main extends Application {
 
 			test.printMap();
 			
-
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
