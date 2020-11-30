@@ -105,27 +105,22 @@ public class Controller {
 		GameOver.setEffect(glow);
 		GameOver.setVisible(true);
 		
-		char [] c = new char [3];
+		Button [] [] array = new Button [10] [10];
 		String buttonId;
-		Button boutonTest;
+		Button boutonTest = null;
 		
-		c[0] = 'b';
+		array [0][0]=b00;
 				
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 				
 				if (test.map[i][j] != '*') {
-					c[1] = Character.forDigit(i, 10);
-					c[2] = Character.forDigit(j, 10);
-					
-					buttonId = new String(c);
-					
+				
+					buttonId = "b"+i+j;
+					System.out.println(buttonId);
 					//bouton.setId(buttonId);
+					array[0][0].setStyle("-fx-background-color:ORANGE;");
 					
-					//bouton.setStyle("-fx-background-color:ORANGE;");
-					
-					boutonTest = (Button) buttonId;
-					boutonTest.setStyle("-fx-background-color:ORANGE;");
 					
 				}
 			}
