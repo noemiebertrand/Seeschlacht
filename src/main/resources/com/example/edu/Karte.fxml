@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -12,23 +11,24 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="693.0" prefWidth="880.0" styleClass="bodybg" stylesheets="@farben.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edu.Controller">
+
+<AnchorPane prefHeight="593.0" prefWidth="780.0" styleClass="bodybg" stylesheets="@farben.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edu.Controller">
+
 
    <children>
-      <ImageView fx:id="screen" fitHeight="498.0" fitWidth="239.0" layoutX="590.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="121.81155395507812" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="56.0">
+      <ImageView fx:id="screen" fitHeight="448.0" fitWidth="214.0" layoutX="548.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="39.0">
          <image>
             <Image url="@Image13.png" />
          </image>
       </ImageView>
-      <GridPane layoutX="84.0" layoutY="116.0" prefHeight="360.0" prefWidth="338.0" AnchorPane.bottomAnchor="210.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="395.0" AnchorPane.topAnchor="140.0">
+
+      <GridPane layoutX="84.0" layoutY="116.0" prefHeight="360.0" prefWidth="338.0" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="120.0">
 
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -161,56 +161,52 @@
          </children>
       </GridPane>
 
-
-      <Button fx:id="restart" layoutX="5.0" layoutY="14.0" mnemonicParsing="false" onAction="#restart" prefHeight="49.0" prefWidth="53.0" AnchorPane.bottomAnchor="630.0" AnchorPane.leftAnchor="5.0" />
+      <Button fx:id="restart" layoutX="5.0" layoutY="14.0" mnemonicParsing="false" onAction="#restart" prefHeight="49.0" prefWidth="53.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="14.0" />
       <Label fx:id="nombre" layoutX="605.0" layoutY="635.0" prefHeight="27.0" prefWidth="220.0" text=" Nombre de coups :        " AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="100.0" />
-
 
 
       <Label fx:id="score" layoutX="392.0" layoutY="649.0" prefHeight="27.0" prefWidth="97.0" text=" Score : " AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="200.0" />
       <Label fx:id="coups" alignment="CENTER_RIGHT" layoutX="745.0" layoutY="635.0" prefHeight="27.0" prefWidth="36.0" text="0" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="125.0" />
 
-      <Label fx:id="GameOver" alignment="CENTER" contentDisplay="TOP" layoutX="93.0" layoutY="220.0" prefHeight="107.0" prefWidth="386.0" text="GAME OVER" visible="false" AnchorPane.bottomAnchor="195.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="195.0">
+      <Label fx:id="GameOver" alignment="CENTER" contentDisplay="TOP" layoutX="93.0" layoutY="220.0" prefHeight="107.0" prefWidth="386.0" text="GAME OVER" visible="false" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
          <font>
             <Font size="69.0" />
          </font>
       </Label>
-
-      <Label fx:id="WIN" alignment="CENTER" layoutX="315.0" layoutY="266.0" prefHeight="0.0" prefWidth="250.0" text="WIN" visible="false" AnchorPane.bottomAnchor="286.0" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="315.0" AnchorPane.topAnchor="266.0">
+      <Label fx:id="WIN" alignment="CENTER" layoutX="315.0" layoutY="266.0" prefHeight="0.0" prefWidth="250.0" text="WIN" visible="false" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="315.0">
          <font>
             <Font size="96.0" />
          </font>
       </Label>
       <Label fx:id="lblScore" layoutX="269.0" layoutY="636.0" prefHeight="27.0" prefWidth="28.0" text="0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="269.0" />
-      <Label fx:id="lblVieB" layoutX="701.0" layoutY="131.0" text="3" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="131.0" />
-      <Label fx:id="lblVie2" layoutX="701.0" layoutY="208.0" text="2" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="208.0" />
-      <Label fx:id="lblVie4" layoutX="701.0" layoutY="292.0" text="4" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="292.0" />
-      <Label fx:id="lblVieA" layoutX="731.0" layoutY="473.0" text="3" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="473.0" />
-      <Label fx:id="lblVie5" layoutX="701.0" layoutY="377.0" text="5" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="377.0" />
-
+      <Label fx:id="lblVieB" layoutX="650.0" layoutY="97.0" text="3" AnchorPane.rightAnchor="121.0" AnchorPane.topAnchor="97.0" />
+      <Label fx:id="lblVie2" layoutX="651.0" layoutY="159.0" text="2" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="159.0" />
+      <Label fx:id="lblVie4" layoutX="651.0" layoutY="220.0" text="4" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="220.0" />
+      <Label fx:id="lblVieA" layoutX="650.0" layoutY="383.0" text="3" AnchorPane.rightAnchor="121.0" AnchorPane.topAnchor="383.0" />
+      <Label fx:id="lblVie5" layoutX="651.0" layoutY="297.0" text="5" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="297.0" />
      
       <Label fx:id="t35" layoutX="760.0" layoutY="635.0" prefHeight="27.0" prefWidth="53.0" text="/ 35 " AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="67.0" />
-      <ImageView fx:id="marin" fitHeight="28.0" fitWidth="154.0" layoutX="636.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="77.6649169921875" AnchorPane.topAnchor="103.0">
+      <ImageView fx:id="marin" fitHeight="28.0" fitWidth="154.0" layoutX="587.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="56.6649169921875" AnchorPane.topAnchor="69.0">
          <image>
             <Image url="@sousmarin.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="174.0" layoutX="635.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="56.05503845214844" AnchorPane.topAnchor="257.0">
+      <ImageView fitHeight="35.0" fitWidth="174.0" layoutX="575.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="46.05503845214844" AnchorPane.topAnchor="185.0">
          <image>
             <Image url="@Image6.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="167.0" layoutX="626.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="66.36111450195312" AnchorPane.topAnchor="183.0">
+      <ImageView fitHeight="25.0" fitWidth="167.0" layoutX="576.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="46.361114501953125" AnchorPane.topAnchor="128.0">
          <image>
             <Image url="@torpilleur.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="51.0" fitWidth="154.0" layoutX="633.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="336.54589462280273">
+      <ImageView fitHeight="51.0" fitWidth="154.0" layoutX="577.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="253.0">
          <image>
             <Image url="@contretorpilleur2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="51.0" fitWidth="154.0" layoutX="663.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="422.0">
+      <ImageView fitHeight="51.0" fitWidth="154.0" layoutX="578.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="327.0">
          <image>
             <Image url="@porteavion.png" />
          </image>
