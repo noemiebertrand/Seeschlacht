@@ -1,5 +1,37 @@
+#screen { 
+    -fx-background-image: url("restart.png");
+    -fx-background-size: 50px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 100%
+}
+
+#lblVieB{
+	-fx-font-family: 'Connection';
+}
+
+#lblVieA{
+	-fx-font-family: 'Connection';
+}
+
+#lblVie4{
+	-fx-font-family: 'Connection';
+}
+
+#lblVie5{
+	-fx-font-family: 'Connection';
+}
+
+#lblVie2{
+	-fx-font-family: 'Connection';
+}
+
 #GameOver{
-	-fx-text-fill: white;
+	-fx-text-fill: red;
+	-fx-font-family: 'Connection';
+}
+
+#WIN{
+	-fx-text-fill: green;
 	-fx-font-family: 'Connection';
 }
 
@@ -9,7 +41,7 @@
     -fx-background-insets: 0,1,1;
     -fx-text-fill: green;
     -fx-font-family: 'Connection';
-    -fx-font-size: 18px;
+    -fx-font-size: 16px;
 }
 
 #nombre{
@@ -18,7 +50,7 @@
     -fx-background-insets: 0,1,1;
     -fx-text-fill: green;
     -fx-font-family: 'Connection';
-    -fx-font-size: 18px;
+    -fx-font-size: 16px;
 }
 
 
@@ -28,7 +60,7 @@
     -fx-background-insets: 0,1,1;
     -fx-text-fill: green;
     -fx-font-family: 'Connection';
-    -fx-font-size: 18px;
+    -fx-font-size: 16px;
 }
 
 
@@ -38,7 +70,7 @@
     -fx-background-insets: 0,1,1;
     -fx-text-fill: green;
     -fx-font-family: 'Connection';
-    -fx-font-size: 18px;
+    -fx-font-size: 16px;
 }
 
 #score{
@@ -47,38 +79,28 @@
     -fx-background-insets: 0,1,1;
     -fx-text-fill: green;
     -fx-font-family: 'Connection';
-    -fx-font-size: 18px;
+    -fx-font-size: 16px;
 }
 
 
 .bodybg{
-	-fx-background-image: url("final2.gif");
-	-fx-background-transperency: 0.5;
+	-fx-background-image: url("touch5.gif");
 	-fx-background-size: 100% 100%;
 }
 
-#restart {
-    -fx-background-color: 
-        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
-        linear-gradient(#020b02, #3a3a3a),
-        linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%),
-        linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%);
-    -fx-background-insets: 0,1,4,5;
-    -fx-background-radius: 9,8,5,4;
-    -fx-padding: 15 30 15 30;
-    -fx-font-family: 'Connection';
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #333333;
-    -fx-effect: dropshadow( three-pass-box , rgba(255,255,255,0.2) , 1, 0.0 , 0 , 1);
+#restart { 
+    -fx-background-color: transparent;
+    -fx-background-image: url("restart.png");
+    -fx-background-size: 50px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 100%
 }
 
 #restart:hover {
-      -fx-background-color: 
-        linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%),
-        linear-gradient(#020b02, #3a3a3a),
-         linear-gradient(#f5f5f5 0%, #dbdbdb 50%, #cacaca 51%, #d7d7d7 100%),
-               linear-gradient(#b9b9b9 0%, #c2c2c2 20%, #afafaf 80%, #c8c8c8 100%);
+    -fx-background-image: url("restart2.png");
+    -fx-background-size: 50px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 100%
 }
 
 
@@ -695,5 +717,719 @@
 
 
 #b32:hover {
+      -fx-opacity: 1;
+}
+
+
+#b33 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b33:hover {
+      -fx-opacity: 1;
+}
+
+
+#b34 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b34:hover {
+      -fx-opacity: 1;
+}
+
+
+#b35 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b35:hover {
+      -fx-opacity: 1;
+}
+
+
+#b36 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b36:hover {
+      -fx-opacity: 1;
+}
+
+
+#b37 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b37:hover {
+      -fx-opacity: 1;
+}
+
+
+#b38 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b38:hover {
+      -fx-opacity: 1;
+}
+
+
+#b39 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b39:hover {
+      -fx-opacity: 1;
+}
+
+
+#b42 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b42:hover {
+      -fx-opacity: 1;
+}
+
+#b43 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b43:hover {
+      -fx-opacity: 1;
+}
+
+
+#b44 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b44:hover {
+      -fx-opacity: 1;
+}
+
+
+#b45 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b45:hover {
+      -fx-opacity: 1;
+}
+
+
+#b46 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b46:hover {
+      -fx-opacity: 1;
+}
+
+
+#b47 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b47:hover {
+      -fx-opacity: 1;
+}
+
+
+#b48 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b48:hover {
+      -fx-opacity: 1;
+}
+
+
+#b49 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b49:hover {
+      -fx-opacity: 1;
+}
+
+
+#b52 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b52:hover {
+      -fx-opacity: 1;
+}
+
+
+#b53 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b53:hover {
+      -fx-opacity: 1;
+}
+
+
+#b54 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b54:hover {
+      -fx-opacity: 1;
+}
+
+
+#b55 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b55:hover {
+      -fx-opacity: 1;
+}
+
+
+#b56 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b56:hover {
+      -fx-opacity: 1;
+}
+
+
+#b57 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b57:hover {
+      -fx-opacity: 1;
+}
+
+
+#b58 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b58:hover {
+      -fx-opacity: 1;
+}
+
+
+#b59 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b59:hover {
+      -fx-opacity: 1;
+}
+
+
+#b62 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b62:hover {
+      -fx-opacity: 1;
+}
+
+
+#b63 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b63:hover {
+      -fx-opacity: 1;
+}
+
+
+#b64 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b64:hover {
+      -fx-opacity: 1;
+}
+
+
+#b65 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b65:hover {
+      -fx-opacity: 1;
+}
+
+
+#b66 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b66:hover {
+      -fx-opacity: 1;
+}
+
+
+#b67 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b67:hover {
+      -fx-opacity: 1;
+}
+
+
+#b68 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b68:hover {
+      -fx-opacity: 1;
+}
+
+
+#b69 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b69:hover {
+      -fx-opacity: 1;
+}
+
+
+#b72 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b72:hover {
+      -fx-opacity: 1;
+}
+
+
+#b73 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b73:hover {
+      -fx-opacity: 1;
+}
+
+
+#b74 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b74:hover {
+      -fx-opacity: 1;
+}
+
+
+#b75 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b75:hover {
+      -fx-opacity: 1;
+}
+
+
+#b76 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b76:hover {
+      -fx-opacity: 1;
+}
+
+
+#b77 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b77:hover {
+      -fx-opacity: 1;
+}
+
+
+#b78 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b78:hover {
+      -fx-opacity: 1;
+}
+
+
+#b79 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b79:hover {
+      -fx-opacity: 1;
+}
+
+
+#b82 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b82:hover {
+      -fx-opacity: 1;
+}
+
+
+#b83 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b83:hover {
+      -fx-opacity: 1;
+}
+
+
+#b84 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b84:hover {
+      -fx-opacity: 1;
+}
+
+
+#b85 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b85:hover {
+      -fx-opacity: 1;
+}
+
+
+#b86 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b86:hover {
+      -fx-opacity: 1;
+}
+
+
+#b87 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b87:hover {
+      -fx-opacity: 1;
+}
+
+
+#b88 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b88:hover {
+      -fx-opacity: 1;
+}
+
+
+#b89 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b89:hover {
+      -fx-opacity: 1;
+}
+
+
+#b92 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b92:hover {
+      -fx-opacity: 1;
+}
+
+
+#b93 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b93:hover {
+      -fx-opacity: 1;
+}
+
+
+#b94 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b94:hover {
+      -fx-opacity: 1;
+}
+
+
+#b95 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b95:hover {
+      -fx-opacity: 1;
+}
+
+
+#b96 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b96:hover {
+      -fx-opacity: 1;
+}
+
+
+#b97 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b97:hover {
+      -fx-opacity: 1;
+}
+
+
+#b98 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b98:hover {
+      -fx-opacity: 1;
+}
+
+
+#b99 { 
+	-fx-background-color: black;
+	-fx-border-color:#5CEC58;
+	-fx-border-width: 3 3 3 3;
+}
+
+
+
+#b99:hover {
       -fx-opacity: 1;
 }

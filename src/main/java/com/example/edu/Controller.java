@@ -24,8 +24,12 @@ import javafx.scene.paint.Color;
 
 public class Controller {
 	@FXML
-	Label coups,GameOver,lblScore; // Deklaration Felder
-	Button bouton, Start;	
+
+
+	Label coups,GameOver,lblScore, WIN;
+
+	Button bouton, restart, Start;
+
 	@FXML
 	private Button b00,b01,b02,b03,b04,b05,b06,b07,b08,b09;
 	@FXML
@@ -94,13 +98,13 @@ public class Controller {
 				int_variabel[i] = Character.getNumericValue(char_variabel[i]);
 			}
 
-			//wenn es kein Schiff gibt, wird es blau
-			if (test.map[int_variabel[1]][int_variabel[2]] == '*') { 
-				bouton.setStyle("-fx-background-color:BLUE;");
+
+			if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
+				bouton.setStyle("-fx-border-color:BLUE; -fx-opacity: 1;");
 				bouton.setText(" ");
 			}
-			else { //wenn es ein Schiff gibt, wird es rot
-				bouton.setStyle("-fx-background-color:RED;");
+			else {
+				bouton.setStyle("-fx-border-color:RED; -fx-opacity: 1;");
 				String empty = bouton.getText();
 				Score(); // Ruf für die Punktzahl
 				bouton.setText(" "); //das Feld wird markiert, damit man es nicht 2 Mal rufft
@@ -111,19 +115,27 @@ public class Controller {
 		}
 	}
 
-	public void CompteCoups () { //Zaelher fuer die Runden
-		NbCoups=NbCoups+1; 
-		String CoupsJoues = Integer.toString(NbCoups);
-		coups.setText(CoupsJoues);
-		if (NbCoups==35) { //wenn 35 Runden gespielt werden, dann drückt sich GAME OVER aus
-			Effect glow = new Glow(1.0);
-			GameOver.setEffect(glow);
-			GameOver.setVisible(true);
-		}
-		if (NbCoups==36) {
-			Platform.exit();}
 
+	public void CompteCoups () {
+    WIN.setVisible(false);	
+	Effect glow = new Glow(1.0);
+	NbCoups=NbCoups+1;
+	String CoupsJoues = Integer.toString(NbCoups);
+	coups.setText(CoupsJoues);
+	if (NbCoups==35) {
+	GameOver.setEffect(glow);
+	GameOver.setVisible(true);
 	}
+	if (NbCoups==36) {
+	Platform.exit();}
+	if (score == 170) {
+		WIN.setEffect(glow);
+		WIN.setVisible(true);
+		final int a = NbCoups;
+		System.out.println(a);
+	}
+	}
+	
 
 
 	public void Score () {
@@ -190,8 +202,16 @@ public class Controller {
 		Schiffe contreTorpilleur = new Schiffe (3, 'A');
 		Schiffe sousMarin = new Schiffe (3, 'B');
 		Schiffe torpilleur = new Schiffe (2, '2');
-
 		test.printMap();
+
+
+		
+		GameOver.setVisible(false);
+		WIN.setVisible(false);
+		lblScore.setText("0");
+		score=0;
+		coups.setText("0");
+		NbCoups=0;
 
 	}
 }
