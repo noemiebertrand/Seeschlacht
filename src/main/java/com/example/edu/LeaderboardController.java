@@ -22,11 +22,24 @@ public class LeaderboardController {
 	Button Exit, Restart;
 	@FXML
 	TextField EnterName, Score;
-	String classement [][] = new String [10][2];
+	static String classement [][] = new String [10][2];
 	Label Player [][] = new Label [10][2];
+	static int rangement [][] = new int [10][2];
 	int i=0;
 
-
+	public static String[][] declarationClassement () {
+		for (int j=0; j<10; j++) {
+			classement[j][0]=" ";
+			classement[j][1]="0";}
+		return classement;
+	}
+	public static int[][] declarationRangement () {
+		for (int j=0; j<10; j++) {
+			for (int k=0; k<2; k++) {
+			rangement[j][k]=0;}}
+		return rangement;
+	}
+	
 	@FXML  
 	public int classement (ActionEvent event) {
 		Player[0][0]=Player1;
@@ -50,12 +63,7 @@ public class LeaderboardController {
 		Player[7][1]=Score8;
 		Player[8][1]=Score9;
 		Player[9][1]=Score10;
-		
-		
-		for (int j=0; j<10; j++) {
-			for (int k=0; k<2; k++) {
-			classement[j][k]=" ";}}
-		
+				
 
 		classement[i][0]=EnterName.getText();
 		Player[i][0].setText(classement[i][0]);
@@ -66,7 +74,25 @@ public class LeaderboardController {
 		Player[i][1].setText(classement[i][1]);
 		
 		
-		 
+		for (int j=1; j<10; j++) {
+				int PlusGrand;
+			rangement[j-1][1]= Integer.parseInt(classement[j-1][1]);
+				if (rangement [j][1]>rangement[j-1][1]) {
+				PlusGrand= rangement [j+1][1];
+				rangement[j+1][1]=rangement[j][1];
+				rangement[j][1]= PlusGrand;
+				System.out.println("ok"+rangement [j][1]);
+				System.out.println("ok"+rangement [j-1][1]);
+				}	
+		}System.out.println("classement");
+		for (int j=0; j<10; j++) {
+			
+			System.out.println(rangement[j][1]);
+		}
+		
+		for (int j=0; j<10; j++) {
+			Player[j][1].setText(Integer.toString(rangement[j][1]));
+		}
 		
 		i=i+1;
 		

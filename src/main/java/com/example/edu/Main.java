@@ -24,6 +24,8 @@ public class Main extends Application {
 			Parent root = FXMLLoader.load(getClass().getResource("Leaderboard.fxml"));	
 			//Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
 			//Parent root = FXMLLoader.load(getClass().getResource("Karte.fxml"));
+			LeaderboardController.declarationClassement ();
+			LeaderboardController.declarationRangement ();
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("Seeschlacht");
 			primaryStage.setScene(scene);
