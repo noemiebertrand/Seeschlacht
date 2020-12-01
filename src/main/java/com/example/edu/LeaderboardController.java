@@ -73,17 +73,19 @@ public class LeaderboardController {
 		System.out.println(classement[i][1]);
 		Player[i][1].setText(classement[i][1]);
 		
-		
+		int PlusGrand;
+		for (int j=0; j<10; j++) {
+				
+			rangement[j][1]= Integer.parseInt(classement[j][1]);}
+		for (int k=0; k<i; k++) {
 		for (int j=1; j<10; j++) {
-				int PlusGrand;
-			rangement[j-1][1]= Integer.parseInt(classement[j-1][1]);
 				if (rangement [j][1]>rangement[j-1][1]) {
-				PlusGrand= rangement [j+1][1];
-				rangement[j+1][1]=rangement[j][1];
-				rangement[j][1]= PlusGrand;
+				PlusGrand= rangement [j][1];
+				rangement[j][1]=rangement[j-1][1];
+				rangement[j-1][1]= PlusGrand;
 				System.out.println("ok"+rangement [j][1]);
 				System.out.println("ok"+rangement [j-1][1]);
-				}	
+				}	}
 		}System.out.println("classement");
 		for (int j=0; j<10; j++) {
 			
