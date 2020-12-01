@@ -21,8 +21,9 @@ public class Main extends Application {
 		try {
 			Font myFont = null;
 			myFont = Font.loadFont(new FileInputStream(new File("src/main/resources/com/example/edu/Connection-arMJ.otf")), 10);
-
-			Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("Leaderboard.fxml"));	
+			//Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
+			//Parent root = FXMLLoader.load(getClass().getResource("Karte.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("Seeschlacht");
 			primaryStage.setScene(scene);

@@ -55,14 +55,21 @@ public class Controller {
 	private Button b80,b81,b82,b83,b84,b85,b86,b87,b88,b89;
 	@FXML
 	private Button b90,b91,b92,b93,b94,b95,b96,b97,b98,b99;
-
+	@FXML
+	public void printLeaderboard (ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("Leaderboard.fxml"));	
+		Scene scene = new Scene(root);
+		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();			
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
 	Schiffe test = new Schiffe();
 	int vie2 = 2, vieA = 3, vieB = 3, vie4 = 4, vie5 = 5;
 	@FXML
 	Label lblVie2, lblVieA, lblVieB, lblVie4, lblVie5;
 
 	int NbCoups = 0;
-	int score = 0;
+	static int score = 54;
 
 	@FXML // zur Karte und zum Spiel wechseln
 	public void StartToKarte (ActionEvent event) throws IOException  {
