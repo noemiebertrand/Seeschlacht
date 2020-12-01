@@ -29,11 +29,13 @@ import javafx.scene.paint.Color;
 
 public class Controller {
 	@FXML
-
-
-	Label coups,GameOver,lblScore, WIN;
-
-	Button bouton, restart, Start;
+	Label coups,GameOver;
+	@FXML
+	Label lblScore;
+	@FXML
+	Label WIN;
+	@FXML
+	Button bouton, restart, Start, Leaderboard;
 
 	@FXML
 	private Button b00,b01,b02,b03,b04,b05,b06,b07,b08,b09;
@@ -55,14 +57,7 @@ public class Controller {
 	private Button b80,b81,b82,b83,b84,b85,b86,b87,b88,b89;
 	@FXML
 	private Button b90,b91,b92,b93,b94,b95,b96,b97,b98,b99;
-	@FXML
-	public void printLeaderboard (ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("Leaderboard.fxml"));	
-		Scene scene = new Scene(root);
-		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();			
-		primaryStage.setScene(scene);
-		primaryStage.show();
-	}
+
 	Schiffe test = new Schiffe();
 	int vie2 = 2, vieA = 3, vieB = 3, vie4 = 4, vie5 = 5;
 	@FXML
@@ -72,11 +67,11 @@ public class Controller {
 	static int score = 54;
 
 	@FXML // zur Karte und zum Spiel wechseln
-	public void StartToKarte (ActionEvent event) throws IOException  {
-		Parent root1 = FXMLLoader.load(getClass().getResource("Karte.fxml"));	
-		Scene scene1 = new Scene(root1);
+	public void ToKarte (ActionEvent event) throws IOException  {
+		Parent root = FXMLLoader.load(getClass().getResource("Karte.fxml"));	
+		Scene scene = new Scene(root);
 		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();			
-		primaryStage.setScene(scene1);
+		primaryStage.setScene(scene);
 		primaryStage.show();
 
 		Schiffe test = new Schiffe ();
@@ -93,6 +88,15 @@ public class Controller {
 		test.printMap();
 	}
 
+	public void ToLeaderboard (ActionEvent event) throws IOException {	
+		Parent root = FXMLLoader.load(getClass().getResource("Leaderboard.fxml"));	
+		Scene scene = new Scene(root);
+		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();			
+		primaryStage.setScene(scene);
+		primaryStage.show();
+
+	}
+	
 	@FXML // 
 	protected void handleSubmitButtonAction(ActionEvent event) {
 		bouton = (Button)event.getSource(); //Ruf nur für das Feld, auf dem man klickt
@@ -135,17 +139,16 @@ public class Controller {
 	String CoupsJoues = Integer.toString(NbCoups);
 	coups.setText(CoupsJoues);
 
-	if (NbCoups==35) {
+	if (NbCoups==5) {
       gameOver();
 	}
-	if (NbCoups==36) {
-	Platform.exit();}
 	if (score == 170) {
 		WIN.setEffect(glow);
 		WIN.setVisible(true);
 		final int a = NbCoups;
 		System.out.println(a);
 	}
+
 	}
 	
 	public void gameOver() {
@@ -183,11 +186,12 @@ public class Controller {
 				if (test.map[i][j] != '*')	arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
 			}
 		}
+		Leaderboard.setVisible(true);
+		LeaderboardController.getScore(score);
 		
 	}
 
 	public void Score () {
-
 		score = score + 10;
 		String sco = Integer.toString(score);
 		lblScore.setText(sco);
@@ -262,4 +266,7 @@ public class Controller {
 		NbCoups=0;
 
 	}
+
+
+	
 }

@@ -7,8 +7,8 @@
 
 <AnchorPane onMouseDragOver="#classement" prefHeight="500.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edu.LeaderboardController">
    <children>
-      <Button fx:id="Restart" layoutX="149.0" layoutY="374.0" mnemonicParsing="false" text="Restart" />
-      <Button fx:id="Exit" layoutX="455.0" layoutY="374.0" mnemonicParsing="false" text="Exit" />
+      <Button fx:id="Restart" layoutX="149.0" layoutY="374.0" mnemonicParsing="false" onAction="#ToKarte" text="Restart" />
+      <Button fx:id="Exit" layoutX="455.0" layoutY="374.0" mnemonicParsing="false" onAction="#Exit" text="Exit" />
       <Label layoutX="335.0" layoutY="109.0" text="Enter your name:" />
       <Label layoutX="363.0" layoutY="152.0" text="Your score:" />
       <Label layoutX="135.0" layoutY="67.0" text="Leaderboard" />
@@ -33,7 +33,6 @@
       <Label fx:id="Player9" layoutX="121.0" layoutY="267.0" text="Player9" />
       <Label fx:id="Player10" layoutX="121.0" layoutY="284.0" text="Player10" />
       <TextField fx:id="EnterName" layoutX="442.0" layoutY="105.0" onAction="#classement" text=" " />
-      <TextField fx:id="Score" layoutX="442.0" layoutY="140.0" text="999" />
       <Label fx:id="Score1" layoutX="176.0" layoutY="126.0" text="Score1" />
       <Label fx:id="Score2" layoutX="176.0" layoutY="144.0" text="Score2" />
       <Label fx:id="Score3" layoutX="176.0" layoutY="161.0" text="Score3" />
@@ -44,5 +43,6 @@
       <Label fx:id="Score8" layoutX="176.0" layoutY="250.0" text="Score8" />
       <Label fx:id="Score9" layoutX="176.0" layoutY="267.0" text="Score9" />
       <Label fx:id="Score10" layoutX="176.0" layoutY="284.0" text="Score10" />
+      <Label fx:id="Score" layoutX="455.0" layoutY="153.0" text="0" />
    </children>
 </AnchorPane>
