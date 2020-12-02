@@ -19,7 +19,7 @@
 }
 
 #Start:pressed {
-    -fx-background-image: url("start3.png");
+    -fx-background-image: url("start3.png"); 
     -fx-background-size: 90px;
     -fx-background-repeat: no-repeat;
     -fx-background-position: 100%
