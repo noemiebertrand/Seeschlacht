@@ -173,7 +173,7 @@ public class Controller {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 				
-				if (test.map[i][j] != '*')	arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
+				if (test.map[i][j] != '*')	arrayButton[i][j].setStyle("-fx-border-color:ORANGE; -fx-opacity: 1;");
 			}
 		}
 		
