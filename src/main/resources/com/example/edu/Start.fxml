@@ -9,6 +9,7 @@
 
 <AnchorPane prefHeight="593.0" prefWidth="780.0" styleClass="bodybg" stylesheets="@Start.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edu.Controller">
    <children>
+
       <Button fx:id="Start" layoutX="608.0" layoutY="472.0" mnemonicParsing="false" onAction="#StartToKarte" prefHeight="31.0" prefWidth="104.0" AnchorPane.bottomAnchor="90.0" AnchorPane.rightAnchor="68.0" />
       <ImageView fitHeight="69.0" fitWidth="271.0" layoutX="14.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="14.136646270751953" AnchorPane.leftAnchor="14.0">
          <image>
@@ -20,5 +21,6 @@
             <Image url="@../../../../../../../../Users/batma/OneDrive/Images/titre.PNG" />
          </image>
       </ImageView>
+
    </children>
 </AnchorPane>
