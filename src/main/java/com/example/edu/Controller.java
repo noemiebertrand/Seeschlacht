@@ -164,11 +164,13 @@ public class Controller {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 				
+
 				if (test.map[i][j] != '*') {
 					
 					if ( arrayButton[i][j].getStyle() != "-fx-border-color:RED; -fx-opacity: 1;") arrayButton[i][j].setStyle("-fx-border-color:ORANGE; -fx-opacity: 1.5;");
 				
 				}
+
 			}
 		}
 		

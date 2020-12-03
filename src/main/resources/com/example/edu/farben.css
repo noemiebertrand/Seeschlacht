@@ -74,7 +74,7 @@
 }
 
 #score{
-	  -fx-background-color: black;
+	-fx-background-color: black;
     -fx-background-radius: 30;
     -fx-background-insets: 0,1,1;
     -fx-text-fill: green;
@@ -87,6 +87,7 @@
 	-fx-background-image: url("touch5.gif");
 	-fx-background-size: 100% 100%;
 }
+
 
 #restart { 
     -fx-background-color: transparent;
