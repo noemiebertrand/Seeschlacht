@@ -1,13 +1,6 @@
 package com.example.edu;
 
-
-
-import java.util.List;
-import java.util.Vector;
-
 import java.io.IOException;
-
-
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -74,8 +67,6 @@ public class Controller {
 
 		Schiffe test = new Schiffe ();
 		test.initializeMap();
-
-		//Schiffe point = new Schiffe (0, 0, "bas", 1); 
 
 		Schiffe porteAvion = new Schiffe(5, '5');
 		Schiffe croiseur = new Schiffe(4, '4');
@@ -173,7 +164,13 @@ public class Controller {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 				
-				if (test.map[i][j] != '*')	arrayButton[i][j].setStyle("-fx-border-color:ORANGE; -fx-opacity: 1;");
+
+				if (test.map[i][j] != '*') {
+					
+					if ( arrayButton[i][j].getStyle() != "-fx-border-color:RED; -fx-opacity: 1;") arrayButton[i][j].setStyle("-fx-border-color:ORANGE; -fx-opacity: 1.5;");
+				
+				}
+
 			}
 		}
 		
