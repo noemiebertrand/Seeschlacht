@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="593.0" prefWidth="780.0" styleClass="bodybg" stylesheets="@farben.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edu.Controller">
+<AnchorPane prefHeight="593.0" prefWidth="780.0" styleClass="bodybg" stylesheets="@farben.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edu.Controller">
 
 
    <children>
@@ -177,38 +172,39 @@
          </font>
       </Label>
       <Label fx:id="lblScore" layoutX="269.0" layoutY="636.0" prefHeight="27.0" prefWidth="28.0" text="0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="269.0" />
-      <Label fx:id="lblVieB" layoutX="648.0" layoutY="97.0" text="3" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="97.0" />
-      <Label fx:id="lblVie2" layoutX="648.0" layoutY="173.0" text="2" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="173.0" />
-      <Label fx:id="lblVie4" layoutX="648.0" layoutY="250.0" text="4" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="250.0" />
-      <Label fx:id="lblVieA" layoutX="648.0" layoutY="326.0" text="3" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="326.0" />
-      <Label fx:id="lblVie5" layoutX="648.0" layoutY="413.0" text="5" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="413.0" />
+      <Label fx:id="lblVieB" layoutX="650.0" layoutY="97.0" text="3" AnchorPane.rightAnchor="121.0" AnchorPane.topAnchor="97.0" />
+      <Label fx:id="lblVie2" layoutX="651.0" layoutY="159.0" text="2" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="159.0" />
+      <Label fx:id="lblVie4" layoutX="651.0" layoutY="220.0" text="4" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="220.0" />
+      <Label fx:id="lblVieA" layoutX="650.0" layoutY="383.0" text="3" AnchorPane.rightAnchor="121.0" AnchorPane.topAnchor="383.0" />
+      <Label fx:id="lblVie5" layoutX="651.0" layoutY="297.0" text="5" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="297.0" />
      
       <Label fx:id="t35" layoutX="760.0" layoutY="635.0" prefHeight="27.0" prefWidth="53.0" text="/ 35 " AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="67.0" />
-      <ImageView fx:id="marin" fitHeight="27.0" fitWidth="130.0" layoutX="595.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="70.0">
+      <ImageView fx:id="marin" fitHeight="28.0" fitWidth="154.0" layoutX="587.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="56.6649169921875" AnchorPane.topAnchor="69.0">
          <image>
             <Image url="@sousmarin.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="41.0" fitWidth="130.0" layoutX="588.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="62.0" AnchorPane.topAnchor="213.0">
+      <ImageView fitHeight="35.0" fitWidth="174.0" layoutX="575.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="46.05503845214844" AnchorPane.topAnchor="185.0">
          <image>
             <Image url="@Image6.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="21.0" fitWidth="130.0" layoutX="590.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="152.0">
+      <ImageView fitHeight="25.0" fitWidth="167.0" layoutX="576.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="46.361114501953125" AnchorPane.topAnchor="128.0">
          <image>
             <Image url="@torpilleur.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="35.0" fitWidth="130.0" layoutX="591.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="59.0" AnchorPane.topAnchor="285.0">
+      <ImageView fitHeight="51.0" fitWidth="154.0" layoutX="577.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="253.0">
          <image>
             <Image url="@contretorpilleur2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="41.0" fitWidth="143.0" layoutX="588.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="62.130889892578125" AnchorPane.topAnchor="366.0">
+      <ImageView fitHeight="51.0" fitWidth="154.0" layoutX="578.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="327.0">
          <image>
             <Image url="@porteavion.png" />
          </image>
       </ImageView>
+      <Button fx:id="Leaderboard" layoutX="68.0" layoutY="537.0" mnemonicParsing="false" onAction="#ToLeaderboard" text="Leaderboard" visible="false" />
 
 
    </children>
