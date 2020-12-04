@@ -16,7 +16,7 @@
   
   6. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#user-stories">User Stories</a>
   
-   6.1 <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#task">Task</a>
+        * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#task">Task</a>
    
   7. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#release-plan">Release Plan</a>
   
