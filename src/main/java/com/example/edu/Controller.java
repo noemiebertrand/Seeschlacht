@@ -73,7 +73,7 @@ public class Controller {
 	Label lblVie2, lblVieA, lblVieB, lblVie4, lblVie5;
 
 	int NbCoups = 0;
-	static int score = 54;
+	static int score = 0;
 
 	static String classement [][] = new String [10][2];
 	Label Player [][] = new Label [10][2];
@@ -114,22 +114,32 @@ public class Controller {
 		System.out.println(classement[i][1]);
 		Player[i][1].setText(classement[i][1]);
 
-
+		String PlusGrandNom;
 		int PlusGrand;
-		for (int j=0; j<10; j++) {
+		for (int j=0; j<3; j++) {
 			rangement[j][1]= Integer.parseInt(classement[j][1]);}
-		for (int k=0; k<i; k++) {
-			for (int j=1; j<10; j++) {
+
+			for (int j=1; j<3; j++) {
 				if (rangement [j][1]>rangement[j-1][1]) {
 					PlusGrand= rangement [j][1];
 					rangement[j][1]=rangement[j-1][1];
 					rangement[j-1][1]= PlusGrand;
+
+					PlusGrandNom=classement[j][0];
+					classement[j][0]=classement[j-1][0];
+					classement[j-1][0]= PlusGrandNom;
 				}
+				
 			}
-		}
-
-
 		
+		
+
+
+		for (int j=0; j<3; j++) {
+			Player[j][0].setText((classement[j][0]));
+			Player[j][1].setText(Integer.toString(rangement[j][1]));
+
+		}
 
 		i=i+1;
 
@@ -313,7 +323,7 @@ public class Controller {
 		NbCoups=0;
 
 		//ladert eine neue Karte
-		
+
 		Button [] [] arrayButton = new Button [10] [10];
 
 		Button[] listButton = {
@@ -333,10 +343,23 @@ public class Controller {
 			for (int j = 0; j < 10; j++) {
 				arrayButton [i][j] = listButton [k];
 				arrayButton[i][j] .setStyle("-fx-background-color:BLACK;");
+				arrayButton[i][j].setText(null);
 				k++;
 			}
+			Schiffe test = new Schiffe ();
+			test.initializeMap();
+
+			//Schiffe point = new Schiffe (0, 0, "bas", 1); 
+
+			Schiffe porteAvion = new Schiffe(5, '5');
+			Schiffe croiseur = new Schiffe(4, '4');
+			Schiffe contreTorpilleur = new Schiffe (3, 'A');
+			Schiffe sousMarin = new Schiffe (3, 'B');
+			Schiffe torpilleur = new Schiffe (2, '2');
+
+			test.printMap();
 		}
-		
+
 
 	}
 
