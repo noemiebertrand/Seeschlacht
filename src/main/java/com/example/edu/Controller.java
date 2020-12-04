@@ -119,20 +119,33 @@ public class Controller {
 		for (int j=0; j<3; j++) {
 			rangement[j][1]= Integer.parseInt(classement[j][1]);}
 
-			for (int j=1; j<3; j++) {
-				if (rangement [j][1]>rangement[j-1][1]) {
-					PlusGrand= rangement [j][1];
-					rangement[j][1]=rangement[j-1][1];
-					rangement[j-1][1]= PlusGrand;
 
-					PlusGrandNom=classement[j][0];
-					classement[j][0]=classement[j-1][0];
-					classement[j-1][0]= PlusGrandNom;
+			if (rangement [2][1]>rangement[1][1]) {
+				PlusGrand= rangement [2][1];
+				rangement[2][1]=rangement[1][1];
+				rangement[1][1]= PlusGrand;
+				PlusGrandNom=classement[2][0];
+				classement[2][0]=classement[1][0];
+				classement[1][0]= PlusGrandNom;}
+			
+			if (rangement [1][1]>rangement[0][1]) {
+				PlusGrand= rangement [1][1];
+				rangement[1][1]=rangement[0][1];
+				rangement[0][1]= PlusGrand;
+				PlusGrandNom=classement[1][0];
+				classement[1][0]=classement[0][0];
+				classement[0][0]= PlusGrandNom;}
+			
+			if (rangement [2][1]>rangement[1][1]) {
+				PlusGrand= rangement [2][1];
+				rangement[2][1]=rangement[1][1];
+				rangement[1][1]= PlusGrand;
 				}
-				
-			}
 		
-		
+
+
+
+
 
 
 		for (int j=0; j<3; j++) {
