@@ -139,7 +139,7 @@ public class Controller {
 	String CoupsJoues = Integer.toString(NbCoups);
 	coups.setText(CoupsJoues);
 
-	if (NbCoups==5) {
+	if (NbCoups==35) {
       gameOver();
 	}
 	if (score == 170) {
