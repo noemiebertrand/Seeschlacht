@@ -16,6 +16,8 @@
   
   6. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#user-stories">User Stories</a>
   
+   6.1 <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#task">Task</a>
+   
   7. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#release-plan">Release Plan</a>
   
   8. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-1">Dokumentation Sprint 1</a>
@@ -65,8 +67,8 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
 | 7 | Als Spieler auf einem Knopf drücken um das  Spiel neu zu starten  | 2 | 2 | Angenommen ein Versuch wurde bereits durchgeführt, wenn man auf einem Taste drückt, dann erscheint die Option eines neuen Versuches |
 | 8 | Als Spieler möchte ich das Ergebnis des Spiels sehen und danach es schliessen. | 3 | 2 | Angenommen des Spiels wurde beendet, entsprechend des Ergebnisses soll das Programm “Game Over” oder “Win” generieren. |
 
-
-  <a href="#nt1"> **Task** </a>
+  Task
+  ---
 
 | User Story 1 | Als Administrator möchte ich das mein Programm ohne Probleme läuft damit die User es spielen können  | Schatzungen |
 |-|-|-|
