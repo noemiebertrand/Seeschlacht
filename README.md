@@ -56,16 +56,16 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
   
   User Stories
   ---
-| Numero  | User Story | Story Points | Priorität | Beschreibung |
-|:-:|-|:-:|:-:|-|
-| 1 | Als Administrator möchte ich das mein Programm ohne Probleme läuft damit die User es spielen können | 5 | 1 | Angenommen das Programm wurde korrekt kompiliert, wenn das Programm läuft, dann möchte ich das keine Bugs auftreten |
-| 2 | Als Administrator möchte ich den Standort von den Schiffen sehen, um zu wissen ob die Schiffe korrekt vom Programm Platziert wurden | 2 | 3 | Angenommen das programm hat Schiffe generiert und auf die Felder gestellt, wenn ein geheimcode eingeben wird, dann erscheinen die Standorte der Schiffe.  |
-| 3 | Als Spieler möchte ich das Programm beginnen können, um das Spiel zu spielen. | 1 | 2 | Angenommen das Programm wurde gestartet, wenn ich auf den startknopf drücke, dann startet sich das Spiel |
-| 4 | Als Spieler möchte ich die interaktive Karte immer sehen, um meine Strategie zu entwickeln. | 5 | 1 | Angenommen das Programm hat die Karte generiert,  wenn ich eine Feld anklicke, dann muss er die neue Karte generieren |
-| 5 | Als Spieler möchte ich meinen Namen eintragen, um mein Score in einen Leaderboard zu speichern | 3 | 3 | Angenommen ein Spieler hat das Programm begonnen, wenn der Spieler wechselt, dann sind verschiedene Infos gespeichert |
-| 6 | Als Spieler möchte ich Informationen wie die Zeit, die Punktzahl, den Leaderboard sehen, um meine Punkte zu verstehen | 5 | 3 | Angenommen der Spieler hat das Spiel begonnen, wenn man auf das Scoreboard schaut, dann sieht man die Punkte, die Zeit und das Leaderboard |
-| 7 | Als Spieler auf einem Knopf drücken um das  Spiel neu zu starten  | 2 | 2 | Angenommen ein Versuch wurde bereits durchgeführt, wenn man auf einem Taste drückt, dann erscheint die Option eines neuen Versuches |
-| 8 | Als Spieler möchte ich das Ergebnis des Spiels sehen und danach es schliessen. | 3 | 2 | Angenommen des Spiels wurde beendet, entsprechend des Ergebnisses soll das Programm “Game Over” oder “Win” generieren. |
+| Numero  | Titel | User Story | Story Points | Priorität | Beschreibung |
+|:-:| :-: |-|:-:|:-:|-|
+| 1 | Ohne Probleme laufen | Als Administrator möchte ich das mein Programm ohne Probleme läuft damit die User es spielen können | 5 | 1 | Angenommen das Programm wurde korrekt kompiliert, wenn das Programm läuft, dann möchte ich das keine Bugs auftreten |
+| 2 | Schiff standort | Als Administrator möchte ich den Standort von den Schiffen sehen, um zu wissen ob die Schiffe korrekt vom Programm Platziert wurden | 2 | 3 | Angenommen das programm hat Schiffe generiert und auf die Felder gestellt, wenn ein geheimcode eingeben wird, dann erscheinen die Standorte der Schiffe.  |
+| 3 | Spiel beginnen | Als Spieler möchte ich das Programm beginnen können, um das Spiel zu spielen. | 1 | 2 | Angenommen das Programm wurde gestartet, wenn ich auf den startknopf drücke, dann startet sich das Spiel |
+| 4 | Karte anzeigen | Als Spieler möchte ich die interaktive Karte immer sehen, um meine Strategie zu entwickeln. | 5 | 1 | Angenommen das Programm hat die Karte generiert,  wenn ich eine Feld anklicke, dann muss er die neue Karte generieren |
+| 5 | Namen eingeben | Als Spieler möchte ich meinen Namen eintragen, um mein Score in einen Leaderboard zu speichern | 3 | 3 | Angenommen ein Spieler hat das Programm begonnen, wenn der Spieler wechselt, dann sind verschiedene Infos gespeichert |
+| 6 | Meine informationen | Als Spieler möchte ich Informationen wie die Zeit, die Punktzahl, den Leaderboard sehen, um meine Punkte zu verstehen | 5 | 3 | Angenommen der Spieler hat das Spiel begonnen, wenn man auf das Scoreboard schaut, dann sieht man die Punkte, die Zeit und das Leaderboard |
+| 7 | Neue Spiel starten | Als Spieler auf einem Knopf drücken um das  Spiel neu zu starten  | 2 | 2 | Angenommen ein Versuch wurde bereits durchgeführt, wenn man auf einem Taste drückt, dann erscheint die Option eines neuen Versuches |
+| 8 | Spiel beenden | Als Spieler möchte ich das Ergebnis des Spiels sehen und danach es schliessen. | 3 | 2 | Angenommen des Spiels wurde beendet, entsprechend des Ergebnisses soll das Programm “Game Over” oder “Win” generieren. |
 
   Task
   ---
@@ -133,19 +133,90 @@ Total geschätzte minimale Zeit: 101 Stunden
 
   Release Plan
   ---
-| Iteration 1 | Iteration 2 | Iteration 3-5 |
+| Iteration 1 | Iteration 2 |
 |-|-|-|
-| User Story 4 | User Story 7 | User Story 5 |
-| User Story 2 | User Story 3 | User Story 1 |
-| User Story 8 | User Story 6 |  |
-| Velocity 10 | Velocity 8 | Velocity 8 |
+| User Story 2 | User Story 1 |
+| User Story 3 | User Story 5 |
+| User Story 4 | User Story 6 | 
+| User Story 7 | |
+| User Story 8 | |
+| Velocity 13 | Velocity 13 | 
 
   Dokumentation Sprint 1
   ---
   
+  **Taskliste**
+    
+  | Nummer | User Story | Schätzung |
+  |:-:|:-:|-:|
+  | 2 | Schiff Standort | 6 Stunden |
+  | 3 | Spiel beginnen | 5 Stunden |
+  | 4 | Karte anzeigen | 20 Stunden |
+  | 7 | Neue Spiel starten | 9 Stunden |
+  | 8 | Spiel beenden und Score anzeigen | 10 Stunden |
+
+  **UML Package, Klassen- und Sequenzdiagramm**
+  
+  (steht vollständig in dem 2. Sprint)
+  
+  **Code Snippets**
+  
+  Wir haben ein Konstruktor gemacht, um die zufällige Schiffe zu schaffen.
+  
+  ```Javascript
+  public Schiffe (int t, char k) {
+		boolean error;
+		do {
+			cox = firstCase();
+			coy = firstCase();
+			setSens();
+			error = error2(t);
+			if (error == false) {
+				for ( int i = 0; i < t; i++) {
+					map [coy][cox] = k;
+					switch(sens){
+					case "bas":
+						coy++;
+						break;
+					case "haut":
+						coy--;
+						break;
+					case "gauche":
+						cox--;
+						break;
+					case "droite":
+						cox++;
+						break;
+					}
+				}
+			}
+		}while(error == true);
+	}
+  ```
+  
+  **Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories**
+  (JUnit ?)
+  
   Dokumentation Sprint 2
   ---
   
+  **Taskliste**
+  
+  | Nummer | User Story | Schätzung |
+  |:-:|:-:|-:|
+  | 1 | Ohne Probleme laufen | 14 Stunden |
+  | 5 | Namen eingeben | 12 Stunden |
+  | 6 | Meine informationen | 9 Stunden |
+  
+  
+  **UML Package, Klassen- und Sequenzdiagramm**
+  
+  **Code Snippets**
+  
+  **Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories***
+  (JUnit ?)
+
+ 
   
   <p id="nt1">
    <sup><a href="#nt1">1 </a> Seeschlacht Spielregeln:
