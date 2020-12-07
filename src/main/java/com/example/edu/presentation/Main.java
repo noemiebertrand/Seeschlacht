@@ -23,8 +23,8 @@ public class Main extends Application {
 			Font myFont = null;
 
 			myFont = Font.loadFont(new FileInputStream(new File("src/main/resources/com/example/edu/presentation/Connection-arMJ.otf")), 10);
-			//Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
-			Parent root = FXMLLoader.load(getClass().getResource("Karte.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
+			//Parent root = FXMLLoader.load(getClass().getResource("Karte.fxml"));
 
 			Controller.declarationClassement ();
 			Controller.declarationRangement ();
