@@ -1,15 +1,11 @@
-package com.example.edu;
+package com.example.edu.presentation;
 
 
-
-import java.util.List;
-import java.util.Vector;
 
 import java.io.IOException;
 
 
-import javafx.application.Application;
-import javafx.application.Platform;
+import com.example.edu.domain.Schiffe;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,12 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
-import javafx.scene.paint.Color;
 
 
 public class Controller {
@@ -94,7 +85,7 @@ public class Controller {
 		return rangement;
 	}
 
-	@FXML  
+	@FXML
 	public void classement (ActionEvent event) {
 
 		Player[0][0]=Player1;
@@ -127,7 +118,7 @@ public class Controller {
 				PlusGrandNom=classement[2][0];
 				classement[2][0]=classement[1][0];
 				classement[1][0]= PlusGrandNom;}
-			
+
 			if (rangement [1][1]>rangement[0][1]) {
 				PlusGrand= rangement [1][1];
 				rangement[1][1]=rangement[0][1];
@@ -135,13 +126,13 @@ public class Controller {
 				PlusGrandNom=classement[1][0];
 				classement[1][0]=classement[0][0];
 				classement[0][0]= PlusGrandNom;}
-			
+
 			if (rangement [2][1]>rangement[1][1]) {
 				PlusGrand= rangement [2][1];
 				rangement[2][1]=rangement[1][1];
 				rangement[1][1]= PlusGrand;
 				}
-		
+
 
 
 
@@ -166,16 +157,16 @@ public class Controller {
 
 	@FXML // zur Karte und zum Spiel wechseln
 	public void ToKarte (ActionEvent event) throws IOException  {
-		Parent root = FXMLLoader.load(getClass().getResource("Karte.fxml"));	
+		Parent root = FXMLLoader.load(getClass().getResource("Karte.fxml"));
 		Scene scene = new Scene(root);
-		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();			
+		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
 		Schiffe test = new Schiffe ();
 		test.initializeMap();
 
-		//Schiffe point = new Schiffe (0, 0, "bas", 1); 
+		//Schiffe point = new Schiffe (0, 0, "bas", 1);
 
 		Schiffe porteAvion = new Schiffe(5, '5');
 		Schiffe croiseur = new Schiffe(4, '4');
@@ -186,16 +177,16 @@ public class Controller {
 		test.printMap();
 	}
 
-	public void ToLeaderboard (ActionEvent event) throws IOException {	
-		Parent root = FXMLLoader.load(getClass().getResource("Leaderboard.fxml"));	
+	public void ToLeaderboard (ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("Leaderboard.fxml"));
 		Scene scene = new Scene(root);
-		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();			
+		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
 		primaryStage.setScene(scene);
 		primaryStage.show();
 
 	}
 
-	@FXML // 
+	@FXML //
 	protected void handleSubmitButtonAction(ActionEvent event) {
 		bouton = (Button)event.getSource(); //Ruf nur für das Feld, auf dem man klickt
 		if (bouton.getText()!=" " ) { //um zwei Mal auf demselben Feld klicken zu vermeiden
@@ -231,7 +222,7 @@ public class Controller {
 
 
 	public void CompteCoups () {
-		WIN.setVisible(false);	
+		WIN.setVisible(false);
 		Effect glow = new Glow(1.0);
 		NbCoups=NbCoups+1;
 		String CoupsJoues = Integer.toString(NbCoups);
@@ -312,7 +303,7 @@ public class Controller {
 			break;
 		case '5':
 			vie5=vie5-1;
-			break;	
+			break;
 		}
 
 		String vieTorpilleur = Integer.toString(vie2);
@@ -362,7 +353,7 @@ public class Controller {
 			Schiffe test = new Schiffe ();
 			test.initializeMap();
 
-			//Schiffe point = new Schiffe (0, 0, "bas", 1); 
+			//Schiffe point = new Schiffe (0, 0, "bas", 1);
 
 			Schiffe porteAvion = new Schiffe(5, '5');
 			Schiffe croiseur = new Schiffe(4, '4');
