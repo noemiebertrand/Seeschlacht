@@ -1,4 +1,4 @@
-package com.example.edu;
+package com.example.edu.domain;
 
 public class Schiffe {
 
@@ -6,7 +6,7 @@ public class Schiffe {
 	String sens;
 	int taille;
 
-	static char [][] map = new char [10][10];
+	public static char [][] map = new char [10][10];
 
 	// default
 	public Schiffe() {
@@ -146,7 +146,7 @@ public class Schiffe {
 		return true; 	//Wenn Problem
 	}
 
-	public boolean collision (int x, int y, String s, int t) { // diese Methode dient für die manuelle Initialisierung 
+	public boolean collision (int x, int y, String s, int t) { // diese Methode dient für die manuelle Initialisierung
 
 		for (int i = 1; i < t; i++) {
 			if ( s == "bas" && map[y + i][x] != '*') {
