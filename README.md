@@ -22,6 +22,8 @@
   
   8. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-1">Dokumentation Sprint 1</a>
   
+        * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste1">Taskliste</a>
+
   9. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-2">Dokumentation Sprint 2</a>
   </nav>
   
@@ -145,7 +147,7 @@ Total geschätzte minimale Zeit: 101 Stunden
   Dokumentation Sprint 1
   ---
   
-  **Taskliste**
+  #### Taskliste
     
   | Nummer | User Story | Schätzung |
   |:-:|:-:|-:|
