@@ -23,10 +23,13 @@
   8. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-1">Dokumentation Sprint 1</a>
   
         * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-1">Taskliste</a>
+	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-1">Code Snippets</a>
 
   9. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-2">Dokumentation Sprint 2</a>
   
- 	* <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-2">Taskliste</a>
+  	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-2">Taskliste</a>
+	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-1">Code Snippets</a>
+  
   
   </nav>
   
@@ -164,7 +167,7 @@ Total geschätzte minimale Zeit: 101 Stunden
   
   (steht vollständig in dem 2. Sprint)
   
-  #### Code Snippets
+  #### Code Snippets Sprint 1
   
   Wir haben ein Konstruktor gemacht, um die zufällige Schiffe zu schaffen.
   
@@ -219,7 +222,7 @@ Total geschätzte minimale Zeit: 101 Stunden
   ![image](https://user-images.githubusercontent.com/73692178/101378725-be6c4480-38b3-11eb-8d9b-5d64f59b6efc.png)
 
   
-  #### Code Snippets
+  #### Code Snippets Sprint 2
   
   #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
   (JUnit ?)
