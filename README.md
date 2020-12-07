@@ -22,14 +22,14 @@
   
   8. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-1">Dokumentation Sprint 1</a>
   
-        * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-1">Taskliste</a>
+        *  <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-1">Taskliste</a>
 	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-1">Code Snippets</a>
 
   9. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-2">Dokumentation Sprint 2</a>
   
   	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-2">Taskliste</a>
-	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-1">Code Snippets</a>
-  
+	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-2">Code Snippets</a>
+   	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#uml-package-klassen--und-sequenzdiagramm-1">UML Package, Klassen- und Sequenzdiagramm</a>
   
   </nav>
   
@@ -163,7 +163,7 @@ Total geschätzte minimale Zeit: 101 Stunden
   | 7 | Neue Spiel starten | 9 Stunden |
   | 8 | Spiel beenden und Score anzeigen | 10 Stunden |
 
-  #### UML Package, Klassen- und Sequenzdiagramm
+  **UML Package, Klassen- und Sequenzdiagramm**
   
   (steht vollständig in dem 2. Sprint)
   
