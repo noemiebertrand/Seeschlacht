@@ -31,7 +31,8 @@
   	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-2">Taskliste</a>
 	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-2">Code Snippets</a>
    	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#uml-package-klassen--und-sequenzdiagramm">UML Package, Klassen- und Sequenzdiagramm</a>
-  
+  	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#herleitung-der-testf%C3%A4lle-aus-den-akzeptanzkriterien-der-user-stories-1">Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories</a>
+	 
   </nav>
   
   Einleitung 
