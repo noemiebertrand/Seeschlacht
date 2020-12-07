@@ -134,7 +134,7 @@ Total geschätzte minimale Zeit: 101 Stunden
   Release Plan
   ---
 | Iteration 1 | Iteration 2 |
-|-|-|-|
+|-|-|
 | User Story 2 | User Story 1 |
 | User Story 3 | User Story 5 |
 | User Story 4 | User Story 6 | 
@@ -210,6 +210,9 @@ Total geschätzte minimale Zeit: 101 Stunden
   
   
   **UML Package, Klassen- und Sequenzdiagramm**
+  
+  ![image](https://user-images.githubusercontent.com/73692178/101378725-be6c4480-38b3-11eb-8d9b-5d64f59b6efc.png)
+
   
   **Code Snippets**
   
