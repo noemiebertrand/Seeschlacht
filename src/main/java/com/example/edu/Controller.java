@@ -186,14 +186,6 @@ public class Controller {
 		test.printMap();
 	}
 
-	public void ToLeaderboard (ActionEvent event) throws IOException {	
-		Parent root = FXMLLoader.load(getClass().getResource("Leaderboard.fxml"));	
-		Scene scene = new Scene(root);
-		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();			
-		primaryStage.setScene(scene);
-		primaryStage.show();
-
-	}
 
 	@FXML // 
 	protected void handleSubmitButtonAction(ActionEvent event) {
@@ -285,7 +277,6 @@ public class Controller {
 			}
 		}
 		Leaderboard.setVisible(true);
-		LeaderboardController.getScore(score);
 
 	}
 
