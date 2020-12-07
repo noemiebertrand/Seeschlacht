@@ -25,6 +25,9 @@
         * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-1">Taskliste</a>
 
   9. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-2">Dokumentation Sprint 2</a>
+  
+ 	* <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-2">Taskliste</a>
+  
   </nav>
   
   Einleitung 
@@ -157,11 +160,11 @@ Total geschätzte minimale Zeit: 101 Stunden
   | 7 | Neue Spiel starten | 9 Stunden |
   | 8 | Spiel beenden und Score anzeigen | 10 Stunden |
 
-  **UML Package, Klassen- und Sequenzdiagramm**
+  #### UML Package, Klassen- und Sequenzdiagramm
   
   (steht vollständig in dem 2. Sprint)
   
-  **Code Snippets**
+  #### Code Snippets
   
   Wir haben ein Konstruktor gemacht, um die zufällige Schiffe zu schaffen.
   
@@ -196,13 +199,13 @@ Total geschätzte minimale Zeit: 101 Stunden
 	}
   ```
   
-  **Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories**
+  #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories**
   (JUnit ?)
   
   Dokumentation Sprint 2
   ---
   
-  **Taskliste**
+  #### Taskliste
   
   | Nummer | User Story | Schätzung |
   |:-:|:-:|-:|
@@ -211,14 +214,14 @@ Total geschätzte minimale Zeit: 101 Stunden
   | 6 | Meine informationen | 9 Stunden |
   
   
-  **UML Package, Klassen- und Sequenzdiagramm**
+  #### UML Package, Klassen- und Sequenzdiagramm
   
   ![image](https://user-images.githubusercontent.com/73692178/101378725-be6c4480-38b3-11eb-8d9b-5d64f59b6efc.png)
 
   
-  **Code Snippets**
+  #### Code Snippets
   
-  **Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories***
+  #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
   (JUnit ?)
 
  
