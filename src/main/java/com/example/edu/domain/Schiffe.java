@@ -13,12 +13,29 @@ public class Schiffe {
 
 	}
 
+	
 	//génération manuelle
 	public Schiffe(int x, int y, String s, int t) {
 
 		char k = Character.forDigit(t, 10);
 
-		if (collision(x, y, s, t) == true) System.out.println("collision");
+		cox = x;
+		coy = y;
+		
+		if (t <= 0) 
+			throw new IllegalArgumentException();	
+		if (t > 10) 
+			throw new IllegalArgumentException();	
+		
+		if (error2(t) == true){
+			System.out.println("crash");
+			throw new IllegalArgumentException();
+		}
+		
+		/*if (collision(x, y, s, t) == true) {
+			System.out.println("crash");
+			throw new IllegalArgumentException();
+		}*/
 
 		for ( int i = 0; i < t; i++) {
 
@@ -44,15 +61,22 @@ public class Schiffe {
 
 	}
 
+	
 	//génération aléatoire
 	public Schiffe (int t, char k) {
 
+		if (t <= 0) 
+			throw new IllegalArgumentException();	
+		if (t > 10) 
+			throw new IllegalArgumentException();	
+					
+		
 		boolean error;
 
 		do {
 
-			cox = firstCase();
-			coy = firstCase();
+			cox = getFirstSquare();
+			coy = getFirstSquare();
 
 			setSens();
 
@@ -85,10 +109,10 @@ public class Schiffe {
 
 	}
 
-	public int firstCase () {
+	public int getFirstSquare () {
 
-		int coordonné = (int) (Math.random() * 10 );
-		return coordonné;
+		int coordinate = (int) (Math.random() * 10 );
+		return coordinate;
 	}
 
 	public void setSens () {
@@ -113,7 +137,7 @@ public class Schiffe {
 	}
 
 	public boolean error2 (int t) {
-
+		
 		if ( sens == "bas" && (coy + t) < 10) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy + i][cox] != '*') {
