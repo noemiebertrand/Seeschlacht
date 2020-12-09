@@ -3,9 +3,12 @@ package com.example.edu.presentation;
 
 
 import java.io.IOException;
-
+import java.util.Timer;
+import java.util.TimerTask;
 
 import com.example.edu.domain.Schiffe;
+
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,6 +35,8 @@ public class Controller {
 	Label coups,GameOver;
 	@FXML
 	Label lblScore;
+	@FXML
+	Label lbltime;
 	@FXML
 	Label WIN;
 	@FXML
@@ -111,27 +116,27 @@ public class Controller {
 			rangement[j][1]= Integer.parseInt(classement[j][1]);}
 
 
-			if (rangement [2][1]>rangement[1][1]) {
-				PlusGrand= rangement [2][1];
-				rangement[2][1]=rangement[1][1];
-				rangement[1][1]= PlusGrand;
-				PlusGrandNom=classement[2][0];
-				classement[2][0]=classement[1][0];
-				classement[1][0]= PlusGrandNom;}
+		if (rangement [2][1]>rangement[1][1]) {
+			PlusGrand= rangement [2][1];
+			rangement[2][1]=rangement[1][1];
+			rangement[1][1]= PlusGrand;
+			PlusGrandNom=classement[2][0];
+			classement[2][0]=classement[1][0];
+			classement[1][0]= PlusGrandNom;}
 
-			if (rangement [1][1]>rangement[0][1]) {
-				PlusGrand= rangement [1][1];
-				rangement[1][1]=rangement[0][1];
-				rangement[0][1]= PlusGrand;
-				PlusGrandNom=classement[1][0];
-				classement[1][0]=classement[0][0];
-				classement[0][0]= PlusGrandNom;}
+		if (rangement [1][1]>rangement[0][1]) {
+			PlusGrand= rangement [1][1];
+			rangement[1][1]=rangement[0][1];
+			rangement[0][1]= PlusGrand;
+			PlusGrandNom=classement[1][0];
+			classement[1][0]=classement[0][0];
+			classement[0][0]= PlusGrandNom;}
 
-			if (rangement [2][1]>rangement[1][1]) {
-				PlusGrand= rangement [2][1];
-				rangement[2][1]=rangement[1][1];
-				rangement[1][1]= PlusGrand;
-				}
+		if (rangement [2][1]>rangement[1][1]) {
+			PlusGrand= rangement [2][1];
+			rangement[2][1]=rangement[1][1];
+			rangement[1][1]= PlusGrand;
+		}
 
 
 
@@ -175,8 +180,77 @@ public class Controller {
 		Schiffe torpilleur = new Schiffe (2, '2');
 
 		test.printMap();
+
+		startTime();
 	}
 
+	
+	boolean timerStats;
+	int timerseC, timersec, timermin, timerhr;
+	
+
+	private void startTime(){ 
+		if(timerStats == false) 
+		{ 
+			lbltime.setText("alleluia ca marche");
+			timerStats = true; 
+			Timer timer = new Timer(); 
+			TimerTask timerTask = new TimerTask() { 
+
+				@Override 
+				public void run() { 
+
+					System.out.println("working"); 
+
+					timerseC++; 
+
+					Platform.runLater(new Runnable(){ 
+						public void run(){    
+
+							if (timersec == 60) 
+							{ 
+								timersec = 0; 
+								timermin++; 
+							} 
+							if (timermin == 60) 
+							{ 
+								timermin = 0; 
+								timerhr++; 
+							} 
+
+							String seconds = Integer.toString(timersec); 
+							String minutes = Integer.toString(timermin); 
+							String hours = Integer.toString(timerhr); 
+
+							if (timersec <= 9) 
+							{ 
+								seconds = "0" + Integer.toString(timersec); 
+							} 
+							if (timermin <= 9) 
+							{ 
+								minutes = "0" + Integer.toString(timermin); 
+							} 
+							if (timerhr <= 9) 
+							{ 
+								hours = "0" + Integer.toString(timerhr); 
+							} 
+
+							lbltime.setText(hours + ":" + minutes +":"+ seconds); 
+							System.out.println(lbltime.getText()); 
+						} 
+
+
+					}); 
+
+
+				} 
+
+			}; 
+			timer.schedule(timerTask, 50, 50); //lastone is time, milli second 
+
+		} 
+
+	} 
 
 	@FXML //
 	protected void handleSubmitButtonAction(ActionEvent event) {
