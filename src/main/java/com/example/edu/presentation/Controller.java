@@ -133,12 +133,6 @@ public class Controller {
 				rangement[1][1]= PlusGrand;
 				}
 
-
-
-
-
-
-
 		for (int j=0; j<3; j++) {
 			Player[j][0].setText((classement[j][0]));
 			Player[j][1].setText(Integer.toString(rangement[j][1]));
@@ -148,9 +142,6 @@ public class Controller {
 		i=i+1;
 
 	}
-
-
-
 
 
 
@@ -175,6 +166,7 @@ public class Controller {
 		Schiffe torpilleur = new Schiffe (2, '2');
 
 		test.printMap();
+		System.out.println();
 	}
 
 
@@ -220,7 +212,7 @@ public class Controller {
 		String CoupsJoues = Integer.toString(NbCoups);
 		coups.setText(CoupsJoues);
 
-		if (NbCoups==35) {
+		if (NbCoups >= 35) {
 			gameOver();
 		}
 		if (score == 170) {

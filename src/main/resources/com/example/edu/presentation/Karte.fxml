@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -13,7 +19,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="593.0" prefWidth="780.0" styleClass="bodybg" stylesheets="@farben.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edu.presentation.Controller">
+<AnchorPane prefHeight="593.0" prefWidth="780.0" styleClass="bodybg" stylesheets="@farben.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.edu.presentation.Controller">
 
 
    <children>
@@ -164,14 +170,9 @@
       <Label fx:id="score" layoutX="267.0" layoutY="549.0" prefHeight="27.0" prefWidth="97.0" text=" Score : " AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="267.0" />
       <Label fx:id="coups" alignment="CENTER_RIGHT" layoutX="158.0" layoutY="549.0" prefHeight="27.0" prefWidth="36.0" text="0" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="586.0" />
 
-      <Label fx:id="GameOver" alignment="CENTER" contentDisplay="TOP" layoutX="93.0" layoutY="220.0" prefHeight="107.0" prefWidth="386.0" text="GAME OVER" visible="false" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+      <Label fx:id="GameOver" alignment="CENTER" contentDisplay="TOP" layoutX="93.0" layoutY="220.0" prefHeight="107.0" prefWidth="386.0" text="GAME OVER" visible="false" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="110.0">
          <font>
             <Font size="69.0" />
-         </font>
-      </Label>
-      <Label fx:id="WIN" alignment="CENTER" layoutX="315.0" layoutY="266.0" prefHeight="0.0" prefWidth="250.0" text="WIN" visible="false" AnchorPane.leftAnchor="315.0" AnchorPane.rightAnchor="315.0">
-         <font>
-            <Font size="96.0" />
          </font>
       </Label>
       <Label fx:id="lblScore" layoutX="336.0" layoutY="549.0" prefHeight="27.0" prefWidth="28.0" text="0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="336.0" />
@@ -216,6 +217,11 @@
       <TextField fx:id="EnterName" layoutX="586.0" layoutY="550.0" onAction="#classement" />
       <Label layoutX="475.0" layoutY="554.0" text="Enter my Name:" />
       <Button fx:id="Exit" layoutX="475.0" layoutY="26.0" mnemonicParsing="false" text="Exit" />
+      <Label fx:id="WIN" alignment="CENTER" layoutX="141.0" layoutY="168.0" prefHeight="200.0" prefWidth="509.0" text="WIN" visible="false" AnchorPane.bottomAnchor="110.0" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="110.0">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Label>
 
 
    </children>
