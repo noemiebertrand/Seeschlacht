@@ -18,24 +18,11 @@ public class Schiffe {
 	public Schiffe(int x, int y, String s, int t) {
 
 		char k = Character.forDigit(t, 10);
-
-		cox = x;
-		coy = y;
 		
 		if (t <= 0) 
 			throw new IllegalArgumentException();	
 		if (t > 10) 
 			throw new IllegalArgumentException();	
-		
-		if (error2(t) == true){
-			System.out.println("crash");
-			throw new IllegalArgumentException();
-		}
-		
-		/*if (collision(x, y, s, t) == true) {
-			System.out.println("crash");
-			throw new IllegalArgumentException();
-		}*/
 
 		for ( int i = 0; i < t; i++) {
 
@@ -57,7 +44,12 @@ public class Schiffe {
 				break;
 			}
 		}
-
+		
+		if (error2(t) == true){
+			System.out.println("crash");
+			printMap();
+			throw new IllegalArgumentException();
+		}
 
 	}
 
@@ -65,10 +57,8 @@ public class Schiffe {
 	//génération aléatoire
 	public Schiffe (int t, char k) {
 
-		if (t <= 0) 
-			throw new IllegalArgumentException();	
-		if (t > 10) 
-			throw new IllegalArgumentException();	
+		if (t <= 0 || t > 10) 
+			throw new IllegalArgumentException();
 					
 		
 		boolean error;
@@ -168,26 +158,6 @@ public class Schiffe {
 		}
 
 		return true; 	//Wenn Problem
-	}
-
-	public boolean collision (int x, int y, String s, int t) { // diese Methode dient für die manuelle Initialisierung
-
-		for (int i = 1; i < t; i++) {
-			if ( s == "bas" && map[y + i][x] != '*') {
-				return true;
-			}
-			if ( s == "haut" && map[y - i][x] != '*') {
-				return true;
-			}
-			if ( s == "droite" && map[y][x + i] != '*') {
-				return true;
-			}
-			if ( s == "gauche" && map[y][x - i] != '*') {
-				return true;
-			}
-		}
-
-		return false;
 	}
 
 	public static void initializeMap () {	 //diese Methode füllt das map mit * Zeichnen
