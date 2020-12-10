@@ -49,9 +49,6 @@ public class SchiffeTest {
 		Schiffe shipSizePlus = new Schiffe ( 11, 'Y');
 		Schiffe shipSizeMinus = new Schiffe ( -1, 'Y');
 		
-		//genre si map n'est pas remplie d'* alors erreur "IllegalArgumentException"
-		//si bateau dépasse de la map alors erreur "IllegalArgumentException"
-		
 	}
 
 }
