@@ -2,171 +2,168 @@ package com.example.edu.domain;
 
 public class Schiffe {
 
-	int cox, coy;
-	String sens;
-	int taille;
+	int cox, coy;	//Koordinaten in den Matrix-Karte
+	String sens;	//Richtung von Schiffen 
+	
 
-	public static char [][] map = new char [10][10];
+	public static char [][] map = new char [10][10]; //Matrix-Karte 
 
-	// default
+	//default Konstruktor
 	public Schiffe() {
 
 	}
 
-	//génération manuelle
+	
+	//manuelle Schifferzeugung
 	public Schiffe(int x, int y, String s, int t) {
 
-		char k = Character.forDigit(t, 10);
+		char k = Character.forDigit(t, 10);	//Zeichnen, um das Schiffstandort in dem Matrix-Karte zu speichern
+		
+		if (t <= 0) 
+			throw new IllegalArgumentException();	//Wenn Schiffe kleiner als 1, dann schickt IllegalArgumentException
+		if (t > 10) 
+			throw new IllegalArgumentException();	//Wenn Schiffe größer als 10, dann schickt IllegalArgumentException
 
-		if (collision(x, y, s, t) == true) System.out.println("collision");
+		for ( int i = 0; i < t; i++) {	
 
-		for ( int i = 0; i < t; i++) {
+			map [y][x] = k;		//Einspeicherung des Schiffstandorts
 
-			map [y][x] = k;
-
-			switch(s)
+			switch(s)			
 			{
-			case "bas":
+			case "bottom":		
 				y++;
 				break;
-			case "haut":
+			case "high":
 				y--;
-				break;
-			case "gauche":
+				break; 
+			case "left":
 				x--;
 				break;
-			case "droite":
+			case "right":
 				x++;
 				break;
 			}
 		}
-
+		
+		if (error2(t) == true){	//Wenn Kollision gibt oder das Schiffe außerhalb des Matrix-Karte ist, dann schickt IllegalArgumentException
+								//hire würde die Kollision getestet
+			System.out.println("crash");
+			printMap();
+			throw new IllegalArgumentException();
+		}
 
 	}
 
-	//génération aléatoire
-	public Schiffe (int t, char k) {
+	
+	//zufällige Schifferzeugung
+	public Schiffe (int t, char k) {	
 
-		boolean error;
+		if (t <= 0 || t > 10) 
+			throw new IllegalArgumentException();	//Wenn Schiffe kleiner als 1 oder größer als 10, dann schickt IllegalArgumentException
+					
+		boolean error;	
 
 		do {
 
-			cox = firstCase();
-			coy = firstCase();
+			cox = getFirstSquare();		//set cox Betrag zwischen 0 und 9
+			coy = getFirstSquare();		//set coy Betrag zwischen 0 und 9
+										//cox und coy sind die Koordinaten von dem ersten Feld 
+			setSens();					//set eine zufällige Richtung 
 
-			setSens();
-
-			error = error2(t);
-			if (error == false) {
+			error = error2(t);		//error2() prüft, ob kein Kollision gibt oder das Schiffe außerhalb des Matrix-Karte ist
+									//true heißt "es gibt mindestens ein Problem", false heißt "ist gut"
+			if (error == false) {	//Die Speicherung soll laufen, nur wenn kein Problem gibt
+									//sonst wird die nicht gewünschten Schiffe speichern
 
 				for ( int i = 0; i < t; i++) {
 
-					map [coy][cox] = k;
+					map [coy][cox] = k;	//Einspeicherung des Schiffstandorts
 
 					switch(sens)
 					{
-					case "bas":
+					case "bottom":
 						coy++;
 						break;
-					case "haut":
+					case "high":
 						coy--;
 						break;
-					case "gauche":
+					case "left":
 						cox--;
 						break;
-					case "droite":
+					case "right":
 						cox++;
 						break;
 					}
 				}
 			}
 
-		}while(error == true);
+		}while(error == true);	//Wenn error ist true, dann ist diese Schiffe nicht gespeichert und erzeugt ein neue
+								//Wenn error ist false, dann ist das Schiffe erzeugt 
 
 	}
 
-	public int firstCase () {
+	public int getFirstSquare () { //gibt eine zufällige Betrag von 0 bis 9 
 
-		int coordonné = (int) (Math.random() * 10 );
-		return coordonné;
+		int coordinate = (int) (Math.random() * 10 );
+		return coordinate;
 	}
 
-	public void setSens () {
+	public void setSens () {	//gibt eine zufällige Richtung
 
 		int sens = (int) (Math.random()*3);
 
 		switch(sens) {
 		case 0:
-			this.sens = "gauche";
+			this.sens = "left";
 			break;
 		case 1:
-			this.sens = "droite";
+			this.sens = "right";
 			break;
 		case 2:
-			this.sens = "haut";
+			this.sens = "high";
 			break;
 		case 3:
-			this.sens = "bas";
+			this.sens = "bottom";
 			break;
 		}
 
 	}
 
 	public boolean error2 (int t) {
-
-		if ( sens == "bas" && (coy + t) < 10) {
+		
+		if ( sens == "bottom" && (coy + t) < 10) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy + i][cox] != '*') {
-					return true;	//Wenn das Standort nicht mehr frei ist
+					return true;	//Wenn das Standort nicht mehr frei ist, also Kollision
 				}}
 			return false;	//Wenn kein Problem
 		}
-		if ( sens == "haut" && (coy - t) >= 0) {
+		if ( sens == "high" && (coy - t) >= 0) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy - i][cox] != '*') {
-					return true;	//Wenn das Standort nicht mehr frei ist
+					return true;	//Wenn das Standort nicht mehr frei ist, also Kollision
 				}}
 			return false;	//Wenn kein Problem
 		}
-		if ( sens == "droite" && (cox + t) < 10) {
+		if ( sens == "right" && (cox + t) < 10) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy][cox + i] != '*') {
-					return true;	//Wenn das Standort nicht mehr frei ist
+					return true;	//Wenn das Standort nicht mehr frei ist, also Kollision
 				}}
 			return false;	//Wenn kein Problem
 		}
-		if ( sens == "gauche" && (cox - t) >= 0) {
+		if ( sens == "left" && (cox - t) >= 0) {
 			for (int i = 0; i < t; i++) {
 				if (map[coy][cox - i] != '*') {
-					return true;	//Wenn das Standort nicht mehr frei ist
+					return true;	//Wenn das Standort nicht mehr frei ist, also Kollision
 				}}
 			return false;	//Wenn kein Problem
 		}
 
-		return true; 	//Wenn Problem
+		return true; 	//Wenn Problem, also das Schiffe ist außerhalb von der Karte
 	}
 
-	public boolean collision (int x, int y, String s, int t) { // diese Methode dient für die manuelle Initialisierung
-
-		for (int i = 1; i < t; i++) {
-			if ( s == "bas" && map[y + i][x] != '*') {
-				return true;
-			}
-			if ( s == "haut" && map[y - i][x] != '*') {
-				return true;
-			}
-			if ( s == "droite" && map[y][x + i] != '*') {
-				return true;
-			}
-			if ( s == "gauche" && map[y][x - i] != '*') {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	public static void initializeMap () {	 //diese Methode füllt das map mit * Zeichnen
+	public static void initializeMap () {	 //diese Methode füllt das Matrix-Karte mit * Zeichnen
 
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++)
@@ -175,7 +172,7 @@ public class Schiffe {
 
 	}
 
-	public static void printMap () { 	//diese Methode gibt das map auf dem Konsole aus
+	public static void printMap () { 	//diese Methode gibt das Matrix-Karte auf dem Konsole aus
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 				System.out.print(" " + map [i][j]);
@@ -183,5 +180,5 @@ public class Schiffe {
 			System.out.println();
 		}
 	}
-
+	
 }
