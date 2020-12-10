@@ -22,9 +22,17 @@
   
   8. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-1">Dokumentation Sprint 1</a>
   
-        * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-1">Taskliste</a>
-
+        *  <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-1">Taskliste</a>
+	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-1">Code Snippets</a>
+	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#herleitung-der-testf%C3%A4lle-aus-den-akzeptanzkriterien-der-user-stories">Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories</a>
+	 
   9. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-2">Dokumentation Sprint 2</a>
+  
+  	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-2">Taskliste</a>
+	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-2">Code Snippets</a>
+   	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#uml-package-klassen--und-sequenzdiagramm">UML Package, Klassen- und Sequenzdiagramm</a>
+  	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#herleitung-der-testf%C3%A4lle-aus-den-akzeptanzkriterien-der-user-stories-1">Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories</a>
+	 
   </nav>
   
   Einleitung 
@@ -161,7 +169,7 @@ Total geschätzte minimale Zeit: 101 Stunden
   
   (steht vollständig in dem 2. Sprint)
   
-  **Code Snippets**
+  #### Code Snippets Sprint 1
   
   Wir haben ein Konstruktor gemacht, um die zufällige Schiffe zu schaffen.
   
@@ -196,13 +204,13 @@ Total geschätzte minimale Zeit: 101 Stunden
 	}
   ```
   
-  **Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories**
+  #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
   (JUnit ?)
   
   Dokumentation Sprint 2
   ---
   
-  **Taskliste**
+  #### Taskliste Sprint 2
   
   | Nummer | User Story | Schätzung |
   |:-:|:-:|-:|
@@ -211,18 +219,20 @@ Total geschätzte minimale Zeit: 101 Stunden
   | 6 | Meine informationen | 9 Stunden |
   
   
-  **UML Package, Klassen- und Sequenzdiagramm**
+  #### UML Package, Klassen- und Sequenzdiagramm
   
   ![image](https://user-images.githubusercontent.com/73692178/101378725-be6c4480-38b3-11eb-8d9b-5d64f59b6efc.png)
 
   
-  **Code Snippets**
+  #### Code Snippets Sprint 2
   
-  **Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories***
+  #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
   (JUnit ?)
 
  
   
   <p id="nt1">
    <sup><a href="#nt1">1 </a> Seeschlacht Spielregeln:
-Um das Spiel zu starten drücken Sie auf dem “Start“ Knopf. Ein leeres Spielgitter wird auf dem Bildschirm angezeigt und die Zeit fängt an zu laufen. Sie können jetzt auf die Felder klicken um die Schiffe* zu finden, aber Achtung Sie haben nur 35 versuche pro Runde. Ihr score, Ihre abgelaufene Zeit und die Anzahl von Schlägen werden unten links ausgeblendet. Falls Sie eine neue Runde anfangen wollen und die aktuelle nicht fertig ist, dann können Sie auf den “Restart“ Knopf, oben links, drücken um eine neue Runde anzufangen. Jedes Feld mit einem Schiff drauf gibt Ihnen 10 Punkte, am Ende der Runde wird noch Ihre Zeit umgerechnet um ihr end score zu erhalten. Die Runde ist zu Ende, wenn Sie ihre 35 Schlage ausgeführt haben oder, wenn Sie alle 5 Schiffe gefunden haben. Danach müssen Sie einen Namen eingeben um ihr score in den “Leaderboard“ zu speichern. Sie können dann wieder eine neue Runde Starten oder das Spiel schlissen. -1x Flugzeugträger (5) -1x Kreuzer (4) -1x U-Boot (3) -1x Torpedo (3) -1x Gegentorpedo (2) </p>
+Um das Spiel zu starten drücken Sie auf dem “Start“ Knopf. Ein leeres Spielgitter wird auf dem Bildschirm angezeigt und die Zeit fängt an zu laufen. Sie können jetzt auf die Felder klicken um die Schiffe* zu finden, aber Achtung Sie haben nur 35 versuche pro Runde. Ihr score, Ihre abgelaufene Zeit und die Anzahl von Schlägen werden unten links ausgeblendet. Falls Sie eine neue Runde anfangen wollen und die aktuelle nicht fertig ist, dann können Sie auf den “Restart“ Knopf, oben links, drücken um eine neue Runde anzufangen. Jedes Feld mit einem Schiff drauf gibt Ihnen 10 Punkte, am Ende der Runde wird noch Ihre Zeit umgerechnet um ihr end score zu erhalten. Die Runde ist zu Ende, wenn Sie ihre 35 Schlage ausgeführt haben oder, wenn Sie alle 5 Schiffe gefunden haben. Danach müssen Sie einen Namen eingeben um ihr score in den “Leaderboard“ zu speichern. Sie können dann wieder eine neue Runde Starten oder das Spiel schlissen. (-1x Flugzeugträger (5) -1x Kreuzer (4) -1x U-Boot (3) -1x Torpedo (3) -1x Gegentorpedo (2))
+
+</p>
