@@ -3,6 +3,7 @@ package com.example.edu.presentation;
 
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -19,7 +20,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 
 public class Controller {
@@ -69,7 +72,7 @@ public class Controller {
 	Label lblVie2, lblVieA, lblVieB, lblVie4, lblVie5;
 
 	int NbCoups = 0;
-	static int score = 0;
+	static int scoreschiff = 0;
 
 	static String classement [][] = new String [10][2];
 	Label Player [][] = new Label [10][2];
@@ -184,29 +187,41 @@ public class Controller {
 		startTime();
 	}
 
-	
+	@FXML
 	boolean timerStats;
-	int timerseC, timersec, timermin, timerhr;
-	
+	@FXML
+	String time;
+	@FXML
+	int timersec, timermin, timerhr, countScore;
+	@FXML
+	Text txtSeconds, txtMinutes, txtHours;
 
-	private void startTime(){ 
+	@FXML
+	public void startTime(){ 
 		if(timerStats == false) 
 		{ 
-			lbltime.setText("alleluia ca marche");
+			//lbltime.setText("alleluia ca marche");
+			//System.out.println(lbltime.getText());
 			timerStats = true; 
 			Timer timer = new Timer(); 
 			TimerTask timerTask = new TimerTask() { 
 
 				@Override 
-				public void run() { 
-
-					System.out.println("working"); 
-
-					timerseC++; 
-
+				public void run() {
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					timersec++;
+					countScore++;
+					scoreTime(countScore);
+					
 					Platform.runLater(new Runnable(){ 
-						public void run(){    
-
+						public void run(){   
+							
+							
 							if (timersec == 60) 
 							{ 
 								timersec = 0; 
@@ -222,37 +237,49 @@ public class Controller {
 							String minutes = Integer.toString(timermin); 
 							String hours = Integer.toString(timerhr); 
 
-							if (timersec <= 9) 
-							{ 
+							if (timersec <= 9) { 
 								seconds = "0" + Integer.toString(timersec); 
 							} 
-							if (timermin <= 9) 
-							{ 
+							if (timermin <= 9) { 
 								minutes = "0" + Integer.toString(timermin); 
 							} 
-							if (timerhr <= 9) 
-							{ 
+							if (timerhr <= 9) { 
 								hours = "0" + Integer.toString(timerhr); 
 							} 
 
-							lbltime.setText(hours + ":" + minutes +":"+ seconds); 
-							System.out.println(lbltime.getText()); 
+							time = (hours + ":" + minutes +":"+ seconds); 
+							System.out.println(time);
+							//txtSeconds.setText(seconds);
+							//lbltime.setText(time);
 						} 
-
-
 					}); 
-
-
 				} 
-
 			}; 
 			timer.schedule(timerTask, 50, 50); //lastone is time, milli second 
-
 		} 
 
 	} 
 
-	@FXML //
+	public void scoreTime(int countScore) {
+		int scoretime = 830;
+		scoretime = scoretime - countScore;
+		System.out.println(scoretime);
+	}
+	
+	public int scoreSchiffe () {
+		scoreschiff = scoreschiff + 10;
+		String sco = Integer.toString(scoreschiff);
+		lblScore.setText(sco);
+		return scoreschiff;
+	}
+	
+	public void score() {
+		int endScoreSchiff = scoreSchiffe()
+		
+	}
+
+
+	@FXML 
 	protected void handleSubmitButtonAction(ActionEvent event) {
 		bouton = (Button)event.getSource(); //Ruf nur für das Feld, auf dem man klickt
 		if (bouton.getText()!=" " ) { //um zwei Mal auf demselben Feld klicken zu vermeiden
@@ -277,7 +304,7 @@ public class Controller {
 			else {
 				bouton.setStyle("-fx-border-color:RED; -fx-opacity: 1;");
 				String empty = bouton.getText();
-				Score(); // Ruf für die Punktzahl
+				scoreSchiffe(); // Ruf für die Punktzahl
 				bouton.setText(" "); //das Feld wird markiert, damit man es nicht 2 Mal rufft
 				toucher(int_variabel[1],int_variabel[2]);
 			}
@@ -345,12 +372,7 @@ public class Controller {
 
 	}
 
-	public void Score () {
-		score = score + 10;
-		String sco = Integer.toString(score);
-		lblScore.setText(sco);
-	}
-
+	
 	public void toucher(int y, int x) {
 
 		switch(test.map[y][x]) {
@@ -390,6 +412,10 @@ public class Controller {
 		score=0;
 		coups.setText("0");
 		NbCoups=0;
+		timersec = 0;
+		timermin = 0;
+		timerhr = 0;
+		countScore = 0;
 
 		//ladert eine neue Karte
 
