@@ -63,8 +63,10 @@ public class Controller {
 	@FXML
 	Label lblVie2, lblVieA, lblVieB, lblVie4, lblVie5;
 
+
 	int NbCoups = 0;
 	static int score = 0;
+	Controller controller;
 
 	static String classement [][] = new String [10][2];
 	Label Player [][] = new Label [10][2];
@@ -111,27 +113,27 @@ public class Controller {
 			rangement[j][1]= Integer.parseInt(classement[j][1]);}
 
 
-			if (rangement [2][1]>rangement[1][1]) {
-				PlusGrand= rangement [2][1];
-				rangement[2][1]=rangement[1][1];
-				rangement[1][1]= PlusGrand;
-				PlusGrandNom=classement[2][0];
-				classement[2][0]=classement[1][0];
-				classement[1][0]= PlusGrandNom;}
+		if (rangement [2][1]>rangement[1][1]) {
+			PlusGrand= rangement [2][1];
+			rangement[2][1]=rangement[1][1];
+			rangement[1][1]= PlusGrand;
+			PlusGrandNom=classement[2][0];
+			classement[2][0]=classement[1][0];
+			classement[1][0]= PlusGrandNom;}
 
-			if (rangement [1][1]>rangement[0][1]) {
-				PlusGrand= rangement [1][1];
-				rangement[1][1]=rangement[0][1];
-				rangement[0][1]= PlusGrand;
-				PlusGrandNom=classement[1][0];
-				classement[1][0]=classement[0][0];
-				classement[0][0]= PlusGrandNom;}
+		if (rangement [1][1]>rangement[0][1]) {
+			PlusGrand= rangement [1][1];
+			rangement[1][1]=rangement[0][1];
+			rangement[0][1]= PlusGrand;
+			PlusGrandNom=classement[1][0];
+			classement[1][0]=classement[0][0];
+			classement[0][0]= PlusGrandNom;}
 
-			if (rangement [2][1]>rangement[1][1]) {
-				PlusGrand= rangement [2][1];
-				rangement[2][1]=rangement[1][1];
-				rangement[1][1]= PlusGrand;
-				}
+		if (rangement [2][1]>rangement[1][1]) {
+			PlusGrand= rangement [2][1];
+			rangement[2][1]=rangement[1][1];
+			rangement[1][1]= PlusGrand;
+		}
 
 
 
@@ -203,17 +205,17 @@ public class Controller {
 			else {
 				bouton.setStyle("-fx-border-color:RED; -fx-opacity: 1;");
 				String empty = bouton.getText();
-				Score(); // Ruf für die Punktzahl
+				Score(controller); // Ruf für die Punktzahl
 				bouton.setText(" "); //das Feld wird markiert, damit man es nicht 2 Mal rufft
 				toucher(int_variabel[1],int_variabel[2]);
 			}
-			CompteCoups(); // Ruf für Rundenzaehler
+			CompteCoups(controller); // Ruf für Rundenzaehler
 
 		}
 	}
 
 
-	public void CompteCoups () {
+	public void CompteCoups (Controller controller) {
 		WIN.setVisible(false);
 		Effect glow = new Glow(1.0);
 		NbCoups=NbCoups+1;
@@ -222,6 +224,7 @@ public class Controller {
 
 		if (NbCoups==35) {
 			gameOver();
+			
 		}
 		if (score == 170) {
 			WIN.setEffect(glow);
@@ -230,6 +233,18 @@ public class Controller {
 			System.out.println(a);
 		}
 
+	}
+
+	public Label getWIN() {
+		return WIN;
+	}
+
+	public int getNbCoups() {
+		return this.NbCoups;
+
+	}
+	public int getScore() {
+		return this.score;
 	}
 
 	public void gameOver() {
@@ -271,10 +286,12 @@ public class Controller {
 
 	}
 
-	public void Score () {
-		score = score + 10;
+	public void Score (Controller controller) {
+		score = score + 10; 
+		getScore();
 		String sco = Integer.toString(score);
 		lblScore.setText(sco);
+		
 	}
 
 	public void toucher(int y, int x) {
@@ -316,8 +333,7 @@ public class Controller {
 		score=0;
 		coups.setText("0");
 		NbCoups=0;
-
-		//ladert eine neue Karte
+		
 
 		Button [] [] arrayButton = new Button [10] [10];
 
@@ -341,6 +357,8 @@ public class Controller {
 				arrayButton[i][j].setText(null);
 				k++;
 			}
+			
+			//ladert eine neue Karte
 			Schiffe test = new Schiffe ();
 			test.initializeMap();
 
