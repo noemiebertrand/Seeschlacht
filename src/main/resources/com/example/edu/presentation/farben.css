@@ -5,6 +5,85 @@
     -fx-background-position: 100%
 }
 
+#Exit { 
+    -fx-background-color: transparent;
+    -fx-background-image: url("test.png");
+    -fx-background-size: 50px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 100%
+}
+
+#Exit:hover { 
+    -fx-background-color: transparent;
+    -fx-background-image: url("test2.png");
+    -fx-background-size: 50px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 100%
+}
+
+#EnterName {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+    -fx-control-inner-background: black;
+    -fx-text-fill: green;
+    -fx-font-family: 'Connection';
+    -fx-font-size: 16px;
+}
+
+#Name{
+    -fx-background-color: black;
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,1;
+    -fx-text-fill: green;
+    -fx-font-family: 'Connection';
+    -fx-font-size: 16px;
+}
+
+#trois{
+	-fx-font-family: 'Connection';
+	-fx-font-size: 17 px;
+}
+
+#Score3{
+	-fx-font-family: 'Connection';
+	-fx-font-size: 17 px;
+}
+
+#Player3{
+	-fx-font-family: 'Connection';
+	-fx-font-size: 17 px;
+}
+
+#deux{
+	-fx-font-family: 'Connection';
+	-fx-font-size: 17 px;
+}
+
+#Score2{
+	-fx-font-family: 'Connection';
+	-fx-font-size: 17 px;
+}
+
+#Player2{
+	-fx-font-family: 'Connection';
+	-fx-font-size: 17 px;
+}
+
+#un{
+	-fx-font-family: 'Connection';
+	-fx-font-size: 17 px;
+}
+
+#Score1{
+	-fx-font-family: 'Connection';
+	-fx-font-size: 17 px;
+}
+
+#Player1{
+	-fx-font-family: 'Connection';
+	-fx-font-size: 17 px;
+}
+
 #lblVieB{
 	-fx-font-family: 'Connection';
 }
@@ -74,7 +153,7 @@
 }
 
 #score{
-	  -fx-background-color: black;
+	-fx-background-color: black;
     -fx-background-radius: 30;
     -fx-background-insets: 0,1,1;
     -fx-text-fill: green;

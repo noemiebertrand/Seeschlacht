@@ -259,7 +259,6 @@ public class Controller {
 				if (test.map[i][j] != '*')	arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
 			}
 		}
-		Leaderboard.setVisible(true);
 
 	}
 
