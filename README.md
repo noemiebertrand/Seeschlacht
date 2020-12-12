@@ -24,14 +24,13 @@
   
         *  <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-1">Taskliste</a>
 	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-1">Code Snippets</a>
-	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#herleitung-der-testf%C3%A4lle-aus-den-akzeptanzkriterien-der-user-stories">Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories</a>
 	 
   9. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-2">Dokumentation Sprint 2</a>
   
   	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-2">Taskliste</a>
 	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-2">Code Snippets</a>
    	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#uml-package-klassen--und-sequenzdiagramm">UML Package, Klassen- und Sequenzdiagramm</a>
-  	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#herleitung-der-testf%C3%A4lle-aus-den-akzeptanzkriterien-der-user-stories-1">Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories</a>
+  	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#herleitung-der-testf%C3%A4lle-aus-den-akzeptanzkriterien-der-user-stories">Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories</a>
 	 
   </nav>
   
@@ -175,37 +174,40 @@ Total geschätzte minimale Zeit: 101 Stunden
   
   ```Javascript
   public Schiffe (int t, char k) {
-		boolean error;
-		do {
-			cox = firstCase();
-			coy = firstCase();
-			setSens();
-			error = error2(t);
-			if (error == false) {
-				for ( int i = 0; i < t; i++) {
-					map [coy][cox] = k;
-					switch(sens){
-					case "bas":
-						coy++;
-						break;
-					case "haut":
-						coy--;
-						break;
-					case "gauche":
-						cox--;
-						break;
-					case "droite":
-						cox++;
-						break;
-					}
+ 	if (t <= 0 || t > 10) throw new IllegalArgumentException();	
+						//Wenn Schiffe kleiner als 1 oder größer als 10, dann schickt IllegalArgumentException
+	boolean error;
+	do {
+		cox = getFirstSquare();		//set cox Betrag zwischen 0 und 9
+		coy = getFirstSquare();		//set coy Betrag zwischen 0 und 9
+						//cox und coy sind die Koordinaten von dem ersten Feld 
+		setSens();			//set eine zufällige Richtung 
+		error = error2(t);		//error2() prüft, ob kein Kollision gibt oder das Schiffe außerhalb des Matrix-Karte ist
+						//true heißt "es gibt mindestens ein Problem", false heißt "ist gut"
+		if (error == false) {		//Die Speicherung soll laufen, nur wenn kein Problem gibt
+						//sonst wird die nicht gewünschten Schiffe speichern
+		for ( int i = 0; i < t; i++) {
+			map [coy][cox] = k;	//Einspeicherung des Schiffstandorts
+			switch(sens){
+			 	case "bottom":
+					coy++;
+					break;
+				case "high":
+					coy--;
+					break;
+				case "left":
+					cox--;
+					break;
+				case "right":
+					cox++;
+					break;
+				}
 				}
 			}
-		}while(error == true);
+		}while(error == true);		//Wenn error ist true, dann ist diese Schiffe nicht gespeichert und erzeugt ein neue
+						//Wenn error ist false, dann ist das Schiffe erzeugt 
 	}
   ```
-  
-  #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
-  (JUnit ?)
   
   Dokumentation Sprint 2
   ---
@@ -226,10 +228,95 @@ Total geschätzte minimale Zeit: 101 Stunden
   
   #### Code Snippets Sprint 2
   
+  ```Javascript
+  
+  Coucou genre là il faudrait encore rajouter des ligne de code
+  
+  ```
+  
   #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
-  (JUnit ?)
+  
+  **JUnit:**
+  
+   * Klasse SchiffeTest: 
+  
+  ```Javascript
+  	
+public class SchiffeTest {
+	Schiffe op;
+	int counter = 0;
+	int t = (int)(Math.random() * 10 + 1);
 
+	@Before
+	public void setUp() throws Exception {
+		
+		op.initializeMap();
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				assertSame('*', op.map [i][j]);
+			}
+		}
+		op = new Schiffe(t, 'X');
+		
+	}
+	
+	@Test
+	public void testShipSize() throws Exception{
+		
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				if (op.map [i][j] == 'X') counter++;	
+			}
+		}
+		assertEquals(t, counter);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testCrash() throws Exception{
+		Schiffe crash1 = new Schiffe (1, 1, "right", 2);
+		Schiffe crash2 = new Schiffe (1, 1, "bottom", 2);	
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testInvalid () throws Exception{	
+		Schiffe shipSizePlus = new Schiffe ( 11, 'Y');
+		Schiffe shipSizeMinus = new Schiffe ( -1, 'Y');	
+	}
+}
+  ```
+  
+  **Black Box Testing:**
+  
+   * State Transition Testing:
  
+  ![graph](https://user-images.githubusercontent.com/73692178/101982040-8a0cd580-3c71-11eb-88bb-7a0b90a1bfc6.png)
+
+   * Decision Table Testing:
+  
+   || Fall 1 | Fall 2 | Fall 3 | Fall 4 |
+   |-|-|-|-|-|
+   | Bedingungen |||||
+   | Button geklickt | ja | ja | nein | nein |
+   | Schiff drin | ja | nein | ja | nein |
+   | Folgen |||||
+   | Auf rot gefärbt | ja | nein | nein | nein |
+   | Auf blau gefärbt | nein | ja | nein | nein |
+   | Punktzahl + 10 | ja | nein | nein | nein |
+   
+   || Fall 1 | Fall 2 | Fall 3 | Fall 4 |
+   |-|-|-|-|-|
+   | Bedingungen |||||
+   | alle Runden gespielt | ja | ja | nein | nein |
+   | alle Schiffe versenken | ja | nein | ja | nein |
+   | Folgen |||||
+   | Game over gedrückt | nein | ja | nein | nein |
+   | Win gedrückt | ja | nein | ja | nein |
+   | Bleibende Schiffe werden orange | nein | ja | nein | nein |
+   
+   * Graph-Based Testing:
+
+  ![flou](https://user-images.githubusercontent.com/73692178/101982117-06071d80-3c72-11eb-9f9a-47681c526a55.png)
+
+  ![Graph-Based Testing 2](https://user-images.githubusercontent.com/73692178/101980859-c5ef6d00-3c68-11eb-9404-fef2519089ac.png)
+
   
   <p id="nt1">
    <sup><a href="#nt1">1 </a> Seeschlacht Spielregeln:
