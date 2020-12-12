@@ -105,10 +105,9 @@ public class Controller {
 		if (enterName==false ) {
 			classement[i][0]=EnterName.getText();
 			Player[i][0].setText(classement[i][0]);
-			System.out.println(i);
+	
 
 			classement[i][1]=lblScore.getText();
-			System.out.println(classement[i][1]);
 			Player[i][1].setText(classement[i][1]);
 
 			String PlusGrandNom;
@@ -220,7 +219,7 @@ public class Controller {
 			WIN.setEffect(glow);
 			WIN.setVisible(true);
 			final int a = NbCoups;
-			System.out.println(a);
+			lblCoverLeaderboard.setVisible(false);
 		}
 	}
 
