@@ -228,6 +228,12 @@ Total geschätzte minimale Zeit: 101 Stunden
   
   #### Code Snippets Sprint 2
   
+  ```Javascript
+  
+  Coucou genre là il faudrait encore rajouter des ligne de code
+  
+  ```
+  
   #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
   
   **JUnit:**
@@ -280,9 +286,9 @@ public class SchiffeTest {
   **Black Box Testing:**
   
    * State Transition Testing:
-  
-  ![State Transition Testing](https://user-images.githubusercontent.com/73692178/101980692-7b212580-3c67-11eb-9ca0-88eaa5663eb6.png)
-  
+ 
+  ![graph](https://user-images.githubusercontent.com/73692178/101982040-8a0cd580-3c71-11eb-88bb-7a0b90a1bfc6.png)
+
    * Decision Table Testing:
   
    || Fall 1 | Fall 2 | Fall 3 | Fall 4 |
@@ -307,7 +313,7 @@ public class SchiffeTest {
    
    * Graph-Based Testing:
 
-  ![Graph-Based Testing](https://user-images.githubusercontent.com/73692178/101980800-56797d80-3c68-11eb-862e-579c6e164458.png)
+  ![Graph-Based Testing](https://user-images.githubusercontent.com/73692178/101981901-790f9480-3c70-11eb-9458-2eed67d62c72.png)
 
   ![Graph-Based Testing 2](https://user-images.githubusercontent.com/73692178/101980859-c5ef6d00-3c68-11eb-9404-fef2519089ac.png)
 
