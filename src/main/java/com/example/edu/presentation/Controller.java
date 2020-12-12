@@ -3,8 +3,6 @@ package com.example.edu.presentation;
 
 
 import java.io.IOException;
-
-
 import com.example.edu.domain.Schiffe;
 
 import javafx.application.Platform;
@@ -18,10 +16,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 
 public class Controller {
+    @FXML
+	ImageView best, lcd;
 	@FXML
 	Label Player1,Player2, Player3;
 	@FXML
@@ -135,6 +136,7 @@ public class Controller {
 				PlusGrand= rangement [2][1];
 				rangement[2][1]=rangement[1][1];
 				rangement[1][1]= PlusGrand;
+
 			}
 			for (int j=0; j<3; j++) {
 				Player[j][0].setText((classement[j][0]));
@@ -143,6 +145,7 @@ public class Controller {
 			i=i+1;
 			enterName=true;
 			lblCoverLeaderboard.setVisible(true);
+
 		}
 	}
 
@@ -153,7 +156,6 @@ public class Controller {
 		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
 		primaryStage.setScene(scene);
 		primaryStage.show();
-
 		Schiffe test = new Schiffe ();
 		test.initializeMap();
 
@@ -164,8 +166,10 @@ public class Controller {
 		Schiffe contreTorpilleur = new Schiffe (3, 'A');
 		Schiffe sousMarin = new Schiffe (3, 'B');
 		Schiffe torpilleur = new Schiffe (2, '2');
+		;
 
 		test.printMap();
+		System.out.println();
 	}
 
 	@FXML //
@@ -209,7 +213,7 @@ public class Controller {
 		String CoupsJoues = Integer.toString(NbCoups);
 		coups.setText(CoupsJoues);
 
-		if (NbCoups==35) {
+		if (NbCoups >= 35) {
 			gameOver();
 		}
 		if (score == 170) {
@@ -218,11 +222,13 @@ public class Controller {
 			final int a = NbCoups;
 			System.out.println(a);
 		}
+	}
 
-	} 
 
+	public int getCoups() {
+		return NbCoups;
+	}
 	public void gameOver() {
-
 		Effect glow = new Glow(1.0);
 		GameOver.setEffect(glow);
 		GameOver.setVisible(true);
@@ -318,6 +324,8 @@ public class Controller {
 
 
 		GameOver.setVisible(false); //setzt alle Variabeln um 0 ein
+		WIN.setVisible(false);
+		
 		lblScore.setText("0");
 		score=0;
 		coups.setText("0");
@@ -348,6 +356,8 @@ public class Controller {
 				arrayButton[i][j].setText(null);
 				k++;
 			}
+			
+		}
 			Schiffe test = new Schiffe ();
 			test.initializeMap();
 
@@ -360,7 +370,7 @@ public class Controller {
 			Schiffe torpilleur = new Schiffe (2, '2');
 
 			test.printMap();
-		}
+		
 
 
 	}
