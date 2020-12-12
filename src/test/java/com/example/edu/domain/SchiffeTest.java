@@ -38,8 +38,8 @@ public class SchiffeTest {
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testCrash() throws Exception{
-		Schiffe crash1 = new Schiffe (1, 1, "droite", 2);
-		Schiffe crash2 = new Schiffe (1, 1, "bas", 2);
+		Schiffe crash1 = new Schiffe (1, 1, "right", 2);
+		Schiffe crash2 = new Schiffe (1, 1, "bottom", 2);
 		
 	}
 	
