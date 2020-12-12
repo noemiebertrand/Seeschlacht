@@ -6,6 +6,8 @@ import java.io.IOException;
 
 
 import com.example.edu.domain.Schiffe;
+
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,11 +33,11 @@ public class Controller {
 	@FXML
 	Label coups,GameOver;
 	@FXML
-	Label lblScore;
+	Label lblScore, lblCoverLeaderboard;
 	@FXML
 	Label WIN;
 	@FXML
-	Button bouton, restart, Start, Leaderboard;
+	Button bouton, restart, Start;
 
 	@FXML
 	private Button b00,b01,b02,b03,b04,b05,b06,b07,b08,b09;
@@ -71,11 +73,15 @@ public class Controller {
 	static int rangement [][] = new int [10][2];
 	int i=0;
 	static int points;
+	boolean enterName=false;
 
 	public static String[][] declarationClassement () {
-		for (int j=0; j<10; j++) {
-			classement[j][0]=" ";
-			classement[j][1]="0";}
+		classement[0][0]="Player1";
+		classement[1][0]="Player2";
+		classement[2][0]="Player3";
+		classement[0][1]="0";
+		classement[1][1]="0";
+		classement[2][1]="0";
 		return classement;
 	}
 	public static int[][] declarationRangement () {
@@ -87,7 +93,6 @@ public class Controller {
 
 	@FXML
 	public void classement (ActionEvent event) {
-
 		Player[0][0]=Player1;
 		Player[1][0]=Player2;
 		Player[2][0]=Player3;
@@ -96,20 +101,19 @@ public class Controller {
 		Player[1][1]=Score2;
 		Player[2][1]=Score3;
 
+		if (enterName==false ) {
+			classement[i][0]=EnterName.getText();
+			Player[i][0].setText(classement[i][0]);
+			System.out.println(i);
 
-		classement[i][0]=EnterName.getText();
-		Player[i][0].setText(classement[i][0]);
-		System.out.println(i);
+			classement[i][1]=lblScore.getText();
+			System.out.println(classement[i][1]);
+			Player[i][1].setText(classement[i][1]);
 
-		classement[i][1]=lblScore.getText();
-		System.out.println(classement[i][1]);
-		Player[i][1].setText(classement[i][1]);
-
-		String PlusGrandNom;
-		int PlusGrand;
-		for (int j=0; j<3; j++) {
-			rangement[j][1]= Integer.parseInt(classement[j][1]);}
-
+			String PlusGrandNom;
+			int PlusGrand;
+			for (int j=0; j<3; j++) {
+				rangement[j][1]= Integer.parseInt(classement[j][1]);}
 
 			if (rangement [2][1]>rangement[1][1]) {
 				PlusGrand= rangement [2][1];
@@ -118,7 +122,7 @@ public class Controller {
 				PlusGrandNom=classement[2][0];
 				classement[2][0]=classement[1][0];
 				classement[1][0]= PlusGrandNom;}
-
+ 
 			if (rangement [1][1]>rangement[0][1]) {
 				PlusGrand= rangement [1][1];
 				rangement[1][1]=rangement[0][1];
@@ -131,29 +135,16 @@ public class Controller {
 				PlusGrand= rangement [2][1];
 				rangement[2][1]=rangement[1][1];
 				rangement[1][1]= PlusGrand;
-				}
-
-
-
-
-
-
-
-		for (int j=0; j<3; j++) {
-			Player[j][0].setText((classement[j][0]));
-			Player[j][1].setText(Integer.toString(rangement[j][1]));
-
+			}
+			for (int j=0; j<3; j++) {
+				Player[j][0].setText((classement[j][0]));
+				Player[j][1].setText(Integer.toString(rangement[j][1]));
+			}
+			i=i+1;
+			enterName=true;
+			lblCoverLeaderboard.setVisible(true);
 		}
-
-		i=i+1;
-
 	}
-
-
-
-
-
-
 
 	@FXML // zur Karte und zum Spiel wechseln
 	public void ToKarte (ActionEvent event) throws IOException  {
@@ -176,7 +167,6 @@ public class Controller {
 
 		test.printMap();
 	}
-
 
 	@FXML //
 	protected void handleSubmitButtonAction(ActionEvent event) {
@@ -212,7 +202,6 @@ public class Controller {
 		}
 	}
 
-
 	public void CompteCoups () {
 		WIN.setVisible(false);
 		Effect glow = new Glow(1.0);
@@ -230,13 +219,15 @@ public class Controller {
 			System.out.println(a);
 		}
 
-	}
+	} 
 
 	public void gameOver() {
 
 		Effect glow = new Glow(1.0);
 		GameOver.setEffect(glow);
 		GameOver.setVisible(true);
+		lblCoverLeaderboard.setVisible(false);
+		enterName=false;
 
 		Button [] [] arrayButton = new Button [10] [10];
 
@@ -267,7 +258,6 @@ public class Controller {
 				if (test.map[i][j] != '*')	arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
 			}
 		}
-		Leaderboard.setVisible(true);
 
 	}
 
@@ -310,12 +300,29 @@ public class Controller {
 	}
 
 	public void restart (ActionEvent event) throws IOException { // um eine neue Runde zu spielen
+		vie2 = 2;
+		vieA = 3;
+		vieB = 3;
+		vie4 = 4;
+		vie5 = 5;
+		String vieTorpilleur = Integer.toString(vie2);
+		lblVie2.setText(vieTorpilleur);
+		String vieContreTorpilleur = Integer.toString(vieA);
+		lblVieA.setText(vieContreTorpilleur);
+		String vieSousMarin = Integer.toString(vieB);
+		lblVieB.setText(vieSousMarin);
+		String vieCroiseur = Integer.toString(vie4);
+		lblVie4.setText(vieCroiseur);
+		String viePorteAvion = Integer.toString(vie5);
+		lblVie5.setText(viePorteAvion);
+
 
 		GameOver.setVisible(false); //setzt alle Variabeln um 0 ein
 		lblScore.setText("0");
 		score=0;
 		coups.setText("0");
 		NbCoups=0;
+		lblCoverLeaderboard.setVisible(true);
 
 		//ladert eine neue Karte
 
@@ -358,6 +365,8 @@ public class Controller {
 
 	}
 
-
+	public void exit (ActionEvent event) {
+		Platform.exit();
+	}
 
 }
