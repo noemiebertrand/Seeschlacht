@@ -22,12 +22,16 @@
   
   8. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-1">Dokumentation Sprint 1</a>
   
-        * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-1">Taskliste</a>
-
+        *  <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-1">Taskliste</a>
+	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-1">Code Snippets</a>
+	 
   9. <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#dokumentation-sprint-2">Dokumentation Sprint 2</a>
   
- 	* <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-2">Taskliste</a>
-  
+  	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#taskliste-sprint-2">Taskliste</a>
+	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-2">Code Snippets</a>
+   	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#uml-package-klassen--und-sequenzdiagramm">UML Package, Klassen- und Sequenzdiagramm</a>
+  	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#herleitung-der-testf%C3%A4lle-aus-den-akzeptanzkriterien-der-user-stories">Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories</a>
+	 
   </nav>
   
   Einleitung 
@@ -160,47 +164,50 @@ Total geschätzte minimale Zeit: 101 Stunden
   | 7 | Neue Spiel starten | 9 Stunden |
   | 8 | Spiel beenden und Score anzeigen | 10 Stunden |
 
-  #### UML Package, Klassen- und Sequenzdiagramm
+  **UML Package, Klassen- und Sequenzdiagramm**
   
   (steht vollständig in dem 2. Sprint)
   
-  #### Code Snippets
+  #### Code Snippets Sprint 1
   
   Wir haben ein Konstruktor gemacht, um die zufällige Schiffe zu schaffen.
   
   ```Javascript
   public Schiffe (int t, char k) {
-		boolean error;
-		do {
-			cox = firstCase();
-			coy = firstCase();
-			setSens();
-			error = error2(t);
-			if (error == false) {
-				for ( int i = 0; i < t; i++) {
-					map [coy][cox] = k;
-					switch(sens){
-					case "bas":
-						coy++;
-						break;
-					case "haut":
-						coy--;
-						break;
-					case "gauche":
-						cox--;
-						break;
-					case "droite":
-						cox++;
-						break;
-					}
+ 	if (t <= 0 || t > 10) throw new IllegalArgumentException();	
+						//Wenn Schiffe kleiner als 1 oder größer als 10, dann schickt IllegalArgumentException
+	boolean error;
+	do {
+		cox = getFirstSquare();		//set cox Betrag zwischen 0 und 9
+		coy = getFirstSquare();		//set coy Betrag zwischen 0 und 9
+						//cox und coy sind die Koordinaten von dem ersten Feld 
+		setSens();			//set eine zufällige Richtung 
+		error = error2(t);		//error2() prüft, ob kein Kollision gibt oder das Schiffe außerhalb des Matrix-Karte ist
+						//true heißt "es gibt mindestens ein Problem", false heißt "ist gut"
+		if (error == false) {		//Die Speicherung soll laufen, nur wenn kein Problem gibt
+						//sonst wird die nicht gewünschten Schiffe speichern
+		for ( int i = 0; i < t; i++) {
+			map [coy][cox] = k;	//Einspeicherung des Schiffstandorts
+			switch(sens){
+			 	case "bottom":
+					coy++;
+					break;
+				case "high":
+					coy--;
+					break;
+				case "left":
+					cox--;
+					break;
+				case "right":
+					cox++;
+					break;
+				}
 				}
 			}
-		}while(error == true);
+		}while(error == true);		//Wenn error ist true, dann ist diese Schiffe nicht gespeichert und erzeugt ein neue
+						//Wenn error ist false, dann ist das Schiffe erzeugt 
 	}
   ```
-  
-  #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories**
-  (JUnit ?)
   
   Dokumentation Sprint 2
   ---
@@ -219,13 +226,100 @@ Total geschätzte minimale Zeit: 101 Stunden
   ![image](https://user-images.githubusercontent.com/73692178/101378725-be6c4480-38b3-11eb-8d9b-5d64f59b6efc.png)
 
   
-  #### Code Snippets
+  #### Code Snippets Sprint 2
+  
+  ```Javascript
+  
+  Coucou genre là il faudrait encore rajouter des ligne de code
+  
+  ```
   
   #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
-  (JUnit ?)
+  
+  **JUnit:**
+  
+   * Klasse SchiffeTest: 
+  
+  ```Javascript
+  	
+public class SchiffeTest {
+	Schiffe op;
+	int counter = 0;
+	int t = (int)(Math.random() * 10 + 1);
 
+	@Before
+	public void setUp() throws Exception {
+		
+		op.initializeMap();
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				assertSame('*', op.map [i][j]);
+			}
+		}
+		op = new Schiffe(t, 'X');
+		
+	}
+	
+	@Test
+	public void testShipSize() throws Exception{
+		
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				if (op.map [i][j] == 'X') counter++;	
+			}
+		}
+		assertEquals(t, counter);
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testCrash() throws Exception{
+		Schiffe crash1 = new Schiffe (1, 1, "right", 2);
+		Schiffe crash2 = new Schiffe (1, 1, "bottom", 2);	
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testInvalid () throws Exception{	
+		Schiffe shipSizePlus = new Schiffe ( 11, 'Y');
+		Schiffe shipSizeMinus = new Schiffe ( -1, 'Y');	
+	}
+}
+  ```
+  
+  **Black Box Testing:**
+  
+   * State Transition Testing:
  
+  ![graph](https://user-images.githubusercontent.com/73692178/101982040-8a0cd580-3c71-11eb-88bb-7a0b90a1bfc6.png)
+
+   * Decision Table Testing:
+  
+   || Fall 1 | Fall 2 | Fall 3 | Fall 4 |
+   |-|-|-|-|-|
+   | Bedingungen |||||
+   | Button geklickt | ja | ja | nein | nein |
+   | Schiff drin | ja | nein | ja | nein |
+   | Folgen |||||
+   | Auf rot gefärbt | ja | nein | nein | nein |
+   | Auf blau gefärbt | nein | ja | nein | nein |
+   | Punktzahl + 10 | ja | nein | nein | nein |
+   
+   || Fall 1 | Fall 2 | Fall 3 | Fall 4 |
+   |-|-|-|-|-|
+   | Bedingungen |||||
+   | alle Runden gespielt | ja | ja | nein | nein |
+   | alle Schiffe versenken | ja | nein | ja | nein |
+   | Folgen |||||
+   | Game over gedrückt | nein | ja | nein | nein |
+   | Win gedrückt | ja | nein | ja | nein |
+   | Bleibende Schiffe werden orange | nein | ja | nein | nein |
+   
+   * Graph-Based Testing:
+
+  ![flou](https://user-images.githubusercontent.com/73692178/101982117-06071d80-3c72-11eb-9f9a-47681c526a55.png)
+
+  ![Graph-Based Testing 2](https://user-images.githubusercontent.com/73692178/101980859-c5ef6d00-3c68-11eb-9404-fef2519089ac.png)
+
   
   <p id="nt1">
    <sup><a href="#nt1">1 </a> Seeschlacht Spielregeln:
-Um das Spiel zu starten drücken Sie auf dem “Start“ Knopf. Ein leeres Spielgitter wird auf dem Bildschirm angezeigt und die Zeit fängt an zu laufen. Sie können jetzt auf die Felder klicken um die Schiffe* zu finden, aber Achtung Sie haben nur 35 versuche pro Runde. Ihr score, Ihre abgelaufene Zeit und die Anzahl von Schlägen werden unten links ausgeblendet. Falls Sie eine neue Runde anfangen wollen und die aktuelle nicht fertig ist, dann können Sie auf den “Restart“ Knopf, oben links, drücken um eine neue Runde anzufangen. Jedes Feld mit einem Schiff drauf gibt Ihnen 10 Punkte, am Ende der Runde wird noch Ihre Zeit umgerechnet um ihr end score zu erhalten. Die Runde ist zu Ende, wenn Sie ihre 35 Schlage ausgeführt haben oder, wenn Sie alle 5 Schiffe gefunden haben. Danach müssen Sie einen Namen eingeben um ihr score in den “Leaderboard“ zu speichern. Sie können dann wieder eine neue Runde Starten oder das Spiel schlissen. -1x Flugzeugträger (5) -1x Kreuzer (4) -1x U-Boot (3) -1x Torpedo (3) -1x Gegentorpedo (2) </p>
+Um das Spiel zu starten drücken Sie auf dem “Start“ Knopf. Ein leeres Spielgitter wird auf dem Bildschirm angezeigt und die Zeit fängt an zu laufen. Sie können jetzt auf die Felder klicken um die Schiffe* zu finden, aber Achtung Sie haben nur 35 versuche pro Runde. Ihr score, Ihre abgelaufene Zeit und die Anzahl von Schlägen werden unten links ausgeblendet. Falls Sie eine neue Runde anfangen wollen und die aktuelle nicht fertig ist, dann können Sie auf den “Restart“ Knopf, oben links, drücken um eine neue Runde anzufangen. Jedes Feld mit einem Schiff drauf gibt Ihnen 10 Punkte, am Ende der Runde wird noch Ihre Zeit umgerechnet um ihr end score zu erhalten. Die Runde ist zu Ende, wenn Sie ihre 35 Schlage ausgeführt haben oder, wenn Sie alle 5 Schiffe gefunden haben. Danach müssen Sie einen Namen eingeben um ihr score in den “Leaderboard“ zu speichern. Sie können dann wieder eine neue Runde Starten oder das Spiel schlissen. (-1x Flugzeugträger (5) -1x Kreuzer (4) -1x U-Boot (3) -1x Torpedo (3) -1x Gegentorpedo (2))
+
+</p>
