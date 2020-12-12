@@ -288,9 +288,9 @@ public class Controller {
 
 	public void Score (Controller controller) {
 		score = score + 10; 
-		getScore();
+		controller.getScore();
 		String sco = Integer.toString(score);
-		lblScore.setText(sco);
+	
 		
 	}
 
