@@ -212,7 +212,7 @@ public class Controller {
 		String CoupsJoues = Integer.toString(NbCoups);
 		coups.setText(CoupsJoues);
 
-		if (NbCoups >= 35) {
+		if (NbCoups == 35&&score<170) {
 			gameOver();
 		}
 		if (score == 170) {
@@ -224,9 +224,7 @@ public class Controller {
 	}
 
 
-	public int getCoups() {
-		return NbCoups;
-	}
+
 	public void gameOver() {
 		Effect glow = new Glow(1.0);
 		GameOver.setEffect(glow);
