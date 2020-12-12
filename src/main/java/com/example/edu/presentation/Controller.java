@@ -31,7 +31,7 @@ public class Controller {
 	@FXML
 	Label coups,GameOver;
 	@FXML
-	Label lblScore;
+	Label lblScore, lblCoverLeaderboard;
 	@FXML
 	Label WIN;
 	@FXML
@@ -71,6 +71,7 @@ public class Controller {
 	static int rangement [][] = new int [10][2];
 	int i=0;
 	static int points;
+	boolean enterName=false;
 
 	public static String[][] declarationClassement () {
 		for (int j=0; j<10; j++) {
@@ -87,6 +88,7 @@ public class Controller {
 
 	@FXML
 	public void classement (ActionEvent event) {
+		
 
 		Player[0][0]=Player1;
 		Player[1][0]=Player2;
@@ -96,20 +98,19 @@ public class Controller {
 		Player[1][1]=Score2;
 		Player[2][1]=Score3;
 
+		if (enterName==false ) {
+			classement[i][0]=EnterName.getText();
+			Player[i][0].setText(classement[i][0]);
+			System.out.println(i);
 
-		classement[i][0]=EnterName.getText();
-		Player[i][0].setText(classement[i][0]);
-		System.out.println(i);
+			classement[i][1]=lblScore.getText();
+			System.out.println(classement[i][1]);
+			Player[i][1].setText(classement[i][1]);
 
-		classement[i][1]=lblScore.getText();
-		System.out.println(classement[i][1]);
-		Player[i][1].setText(classement[i][1]);
-
-		String PlusGrandNom;
-		int PlusGrand;
-		for (int j=0; j<3; j++) {
-			rangement[j][1]= Integer.parseInt(classement[j][1]);}
-
+			String PlusGrandNom;
+			int PlusGrand;
+			for (int j=0; j<3; j++) {
+				rangement[j][1]= Integer.parseInt(classement[j][1]);}
 
 			if (rangement [2][1]>rangement[1][1]) {
 				PlusGrand= rangement [2][1];
@@ -131,28 +132,16 @@ public class Controller {
 				PlusGrand= rangement [2][1];
 				rangement[2][1]=rangement[1][1];
 				rangement[1][1]= PlusGrand;
-				}
-
-
-
-
-
-
-
-		for (int j=0; j<3; j++) {
-			Player[j][0].setText((classement[j][0]));
-			Player[j][1].setText(Integer.toString(rangement[j][1]));
-
+			}
+			for (int j=0; j<3; j++) {
+				Player[j][0].setText((classement[j][0]));
+				Player[j][1].setText(Integer.toString(rangement[j][1]));
+			}
+			i=i+1;
+			enterName=true;
+			lblCoverLeaderboard.setVisible(true);
 		}
-
-		i=i+1;
-
 	}
-
-
-
-
-
 
 
 	@FXML // zur Karte und zum Spiel wechseln
@@ -220,7 +209,7 @@ public class Controller {
 		String CoupsJoues = Integer.toString(NbCoups);
 		coups.setText(CoupsJoues);
 
-		if (NbCoups==35) {
+		if (NbCoups==1) {
 			gameOver();
 		}
 		if (score == 170) {
@@ -233,10 +222,12 @@ public class Controller {
 	}
 
 	public void gameOver() {
-
+		
 		Effect glow = new Glow(1.0);
 		GameOver.setEffect(glow);
 		GameOver.setVisible(true);
+		lblCoverLeaderboard.setVisible(false);
+		enterName=false;
 
 		Button [] [] arrayButton = new Button [10] [10];
 
@@ -315,6 +306,7 @@ public class Controller {
 		score=0;
 		coups.setText("0");
 		NbCoups=0;
+		lblCoverLeaderboard.setVisible(true);
 
 		//ladert eine neue Karte
 
