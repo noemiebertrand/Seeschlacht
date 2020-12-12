@@ -32,7 +32,7 @@ public class Schiffe {
 			{
 			case "bottom":		
 				y++;
-				break;
+				break; 
 			case "high":
 				y--;
 				break; 
@@ -179,6 +179,7 @@ public class Schiffe {
 			}
 			System.out.println();
 		}
+		System.out.println();
 	}
 	
 }
