@@ -5,6 +5,19 @@
     -fx-background-position: 100%
 }
 
+#levier { 
+    -fx-background-color: transparent;
+  
+}
+
+
+#levier:pressed { 
+    -fx-background-color: transparent;
+    -fx-background-image: url("vbouton.jpg");
+    -fx-background-size: 55px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: 100%
+}
 
 #Exit { 
     -fx-background-color: transparent;
