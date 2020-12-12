@@ -215,7 +215,7 @@
       <Label fx:id="Score3" layoutX="674.0" layoutY="479.0" text="Score3" />
       <TextField fx:id="EnterName" layoutX="586.0" layoutY="550.0" onAction="#classement" />
       <Label layoutX="475.0" layoutY="554.0" text="Enter my Name:" />
-      <Button fx:id="Exit" layoutX="475.0" layoutY="26.0" mnemonicParsing="false" text="Exit" />
+      <Button fx:id="Exit" layoutX="475.0" layoutY="26.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
       <Label fx:id="lblCoverLeaderboard" layoutX="575.0" layoutY="535.0" prefHeight="49.0" prefWidth="169.0" />
 
 

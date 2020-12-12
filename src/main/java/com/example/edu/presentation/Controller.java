@@ -6,6 +6,8 @@ import java.io.IOException;
 
 
 import com.example.edu.domain.Schiffe;
+
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -88,8 +90,6 @@ public class Controller {
 
 	@FXML
 	public void classement (ActionEvent event) {
-		
-
 		Player[0][0]=Player1;
 		Player[1][0]=Player2;
 		Player[2][0]=Player3;
@@ -143,7 +143,6 @@ public class Controller {
 		}
 	}
 
-
 	@FXML // zur Karte und zum Spiel wechseln
 	public void ToKarte (ActionEvent event) throws IOException  {
 		Parent root = FXMLLoader.load(getClass().getResource("Karte.fxml"));
@@ -165,7 +164,6 @@ public class Controller {
 
 		test.printMap();
 	}
-
 
 	@FXML //
 	protected void handleSubmitButtonAction(ActionEvent event) {
@@ -200,7 +198,6 @@ public class Controller {
 
 		}
 	}
-
 
 	public void CompteCoups () {
 		WIN.setVisible(false);
@@ -349,6 +346,8 @@ public class Controller {
 
 	}
 
-
+	public void exit (ActionEvent event) {
+		Platform.exit();
+	}
 
 }
