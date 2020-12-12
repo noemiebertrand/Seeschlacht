@@ -95,9 +95,8 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
 |User Story 3 | Als Spieler möchte ich das Programm beginnen können, um das Spiel zu spielen | Schatzungen |
 |-|-|-|
 | Task 1 | Start Knopf um das Spiel zu Spielen | 1 Stunde |
-| Task 2 | Regel Knopf um die Regeln zu sehen | 1 Stunde |
-| Task 3 | Design ( Hintergrundbild + Autoren + Titel ) | 2 Stunden 30 Minuten |
-| Task 4 | Testen der Umsetzung | 3 Stunden |
+| Task 2 | Design ( Hintergrundbild + Autoren + Titel ) | 2 Stunden 30 Minuten |
+| Task 3 | Testen der Umsetzung | 3 Stunden |
 
 | User Story 4 | Als Spieler möchte ich die interaktive Karte immer sehen, um meine Strategie zu entwickeln | Schatzungen |
 |-|-|-|
@@ -137,7 +136,7 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
 | Task 3 | Lösung der Karte anzeigen | 3 Stunden |
 | Task 4 | Testen der Umsetzung | 3 Stunden |
 
-Total geschätzte minimale Zeit: 101 Stunden
+Total geschätzte minimale Zeit: 100 Stunden
 
 
   Release Plan
