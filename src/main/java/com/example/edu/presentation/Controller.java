@@ -122,7 +122,7 @@ public class Controller {
 				PlusGrandNom=classement[2][0];
 				classement[2][0]=classement[1][0];
 				classement[1][0]= PlusGrandNom;}
-
+ 
 			if (rangement [1][1]>rangement[0][1]) {
 				PlusGrand= rangement [1][1];
 				rangement[1][1]=rangement[0][1];
