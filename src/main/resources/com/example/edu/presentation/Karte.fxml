@@ -26,7 +26,7 @@
       <Label fx:id="Name" layoutX="444.0" layoutY="549.0" prefHeight="27.0" prefWidth="301.0" text=" Enter your Name:" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="35.0" />
       <ImageView fitHeight="138.0" fitWidth="225.0" layoutX="544.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="76.0">
          <image>
-            <Image url="@../../../../../../../../../Users/batma/Downloads/testgreen.png" />
+            <Image url="@testgreen.png" />
          </image>
       </ImageView>
       <ImageView fx:id="screen" fitHeight="377.0" fitWidth="185.0" layoutX="562.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="5.0">
@@ -227,7 +227,7 @@
       <Button fx:id="Exit" layoutX="71.0" layoutY="10.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="53.0" />
       <ImageView fx:id="best" fitHeight="21.0" fitWidth="130.0" layoutX="591.0" layoutY="399.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="180.90647506713867">
          <image>
-            <Image url="@../../../../../../../../../Users/batma/Downloads/gris4.png" />
+            <Image url="@gris4.png" />
          </image>
       </ImageView>
       <Label fx:id="un" layoutX="565.0" layoutY="416.0" text="1." AnchorPane.bottomAnchor="151.0" />
