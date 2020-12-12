@@ -306,7 +306,6 @@ public class Controller {
 
 		GameOver.setVisible(false); //setzt alle Variabeln um 0 ein
 		WIN.setVisible(false);
-		best.setVisible(false);
 		
 		lblScore.setText("0");
 		score=0;
