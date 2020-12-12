@@ -223,15 +223,68 @@ Total geschätzte minimale Zeit: 101 Stunden
   
   #### UML Package, Klassen- und Sequenzdiagramm
   
-  ![image](https://user-images.githubusercontent.com/73692178/101378725-be6c4480-38b3-11eb-8d9b-5d64f59b6efc.png)
+  Package diagramm:
+  
+  
+ ![image](https://user-images.githubusercontent.com/73692178/101378725-be6c4480-38b3-11eb-8d9b-5d64f59b6efc.png
 
+  Klassendiagramm:
+  
+  
+  
+  Sequenz diagramm:
+  
+  ![Sequenzdiagramm](https://user-images.githubusercontent.com/73692178/101989287-a58ed500-3c9f-11eb-97c5-05c02676f485.png)
   
   #### Code Snippets Sprint 2
   
   ```Javascript
-  
-  Coucou genre là il faudrait encore rajouter des ligne de code
-  
+  	@FXML
+	public void classement (ActionEvent event) {
+		Player[0][0]=Player1;
+		Player[1][0]=Player2;
+		Player[2][0]=Player3;
+		Player[0][1]=Score1;
+		Player[1][1]=Score2;
+		Player[2][1]=Score3;
+		classement[i][0]=EnterName.getText();
+		Player[i][0].setText(classement[i][0]);
+		System.out.println(i);
+
+		classement[i][1]=lblScore.getText();
+		System.out.println(classement[i][1]);
+		Player[i][1].setText(classement[i][1]);
+		
+		String PlusGrandNom;
+		int PlusGrand;
+		for (int j=0; j<3; j++) {
+			rangement[j][1]= Integer.parseInt(classement[j][1]);
+			}
+			if (rangement [2][1]>rangement[1][1]) {
+				PlusGrand= rangement [2][1];
+				rangement[2][1]=rangement[1][1];
+				rangement[1][1]= PlusGrand;
+				PlusGrandNom=classement[2][0];
+				classement[2][0]=classement[1][0];
+				classement[1][0]= PlusGrandNom;}
+			if (rangement [1][1]>rangement[0][1]) {
+				PlusGrand= rangement [1][1];
+				rangement[1][1]=rangement[0][1];
+				rangement[0][1]= PlusGrand;
+				PlusGrandNom=classement[1][0];
+				classement[1][0]=classement[0][0];
+				classement[0][0]= PlusGrandNom;}
+			if (rangement [2][1]>rangement[1][1]) {
+				PlusGrand= rangement [2][1];
+				rangement[2][1]=rangement[1][1];
+				rangement[1][1]= PlusGrand;
+				}
+		for (int j=0; j<3; j++) {
+			Player[j][0].setText((classement[j][0]));
+			Player[j][1].setText(Integer.toString(rangement[j][1]));
+		}
+		i=i+1;
+	} 
   ```
   
   #### Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories
