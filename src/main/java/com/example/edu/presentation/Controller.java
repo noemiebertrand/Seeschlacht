@@ -35,7 +35,7 @@ public class Controller {
 	@FXML
 	Label WIN;
 	@FXML
-	Button bouton, restart, Start, Leaderboard;
+	Button bouton, restart, Start;
 
 	@FXML
 	private Button b00,b01,b02,b03,b04,b05,b06,b07,b08,b09;
@@ -267,7 +267,6 @@ public class Controller {
 				if (test.map[i][j] != '*')	arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
 			}
 		}
-		Leaderboard.setVisible(true);
 
 	}
 
