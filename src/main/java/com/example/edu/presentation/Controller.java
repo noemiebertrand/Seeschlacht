@@ -76,12 +76,12 @@ public class Controller {
 	boolean enterName=false;
 
 	public static String[][] declarationClassement () {
-			classement[0][0]="Player1";
-			classement[1][0]="Player2";
-			classement[2][0]="Player3";
-			classement[0][1]="0";
-			classement[1][1]="0";
-			classement[2][1]="0";
+		classement[0][0]="Player1";
+		classement[1][0]="Player2";
+		classement[2][0]="Player3";
+		classement[0][1]="0";
+		classement[1][1]="0";
+		classement[2][1]="0";
 		return classement;
 	}
 	public static int[][] declarationRangement () {
@@ -209,7 +209,7 @@ public class Controller {
 		String CoupsJoues = Integer.toString(NbCoups);
 		coups.setText(CoupsJoues);
 
-		if (NbCoups==1) {
+		if (NbCoups==35) {
 			gameOver();
 		}
 		if (score == 170) {
@@ -222,7 +222,7 @@ public class Controller {
 	}
 
 	public void gameOver() {
-		
+
 		Effect glow = new Glow(1.0);
 		GameOver.setEffect(glow);
 		GameOver.setVisible(true);
@@ -300,6 +300,22 @@ public class Controller {
 	}
 
 	public void restart (ActionEvent event) throws IOException { // um eine neue Runde zu spielen
+		vie2 = 2;
+		vieA = 3;
+		vieB = 3;
+		vie4 = 4;
+		vie5 = 5;
+		String vieTorpilleur = Integer.toString(vie2);
+		lblVie2.setText(vieTorpilleur);
+		String vieContreTorpilleur = Integer.toString(vieA);
+		lblVieA.setText(vieContreTorpilleur);
+		String vieSousMarin = Integer.toString(vieB);
+		lblVieB.setText(vieSousMarin);
+		String vieCroiseur = Integer.toString(vie4);
+		lblVie4.setText(vieCroiseur);
+		String viePorteAvion = Integer.toString(vie5);
+		lblVie5.setText(viePorteAvion);
+
 
 		GameOver.setVisible(false); //setzt alle Variabeln um 0 ein
 		lblScore.setText("0");
