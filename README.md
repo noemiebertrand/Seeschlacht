@@ -226,7 +226,7 @@ Total geschätzte minimale Zeit: 101 Stunden
   Package diagramm:
   
   
- ![image](https://user-images.githubusercontent.com/73692178/101378725-be6c4480-38b3-11eb-8d9b-5d64f59b6efc.png
+  ![image](https://user-images.githubusercontent.com/73692178/101378725-be6c4480-38b3-11eb-8d9b-5d64f59b6efc.png)
 
   Klassendiagramm:
   
