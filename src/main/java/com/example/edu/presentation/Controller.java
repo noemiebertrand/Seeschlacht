@@ -3,8 +3,6 @@ package com.example.edu.presentation;
 
 
 import java.io.IOException;
-
-
 import com.example.edu.domain.Schiffe;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,10 +14,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 
 public class Controller {
+    @FXML
+	ImageView best, lcd;
 	@FXML
 	Label Player1,Player2, Player3;
 	@FXML
@@ -153,7 +154,6 @@ public class Controller {
 		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
 		primaryStage.setScene(scene);
 		primaryStage.show();
-
 		Schiffe test = new Schiffe ();
 		test.initializeMap();
 
@@ -164,6 +164,7 @@ public class Controller {
 		Schiffe contreTorpilleur = new Schiffe (3, 'A');
 		Schiffe sousMarin = new Schiffe (3, 'B');
 		Schiffe torpilleur = new Schiffe (2, '2');
+		;
 
 		test.printMap();
 		System.out.println();
@@ -221,11 +222,12 @@ public class Controller {
 			final int a = NbCoups;
 			System.out.println(a);
 		}
-
 	}
 
+	public int getCoups() {
+		return NbCoups;
+	}
 	public void gameOver() {
-
 		Effect glow = new Glow(1.0);
 		GameOver.setEffect(glow);
 		GameOver.setVisible(true);
@@ -303,6 +305,9 @@ public class Controller {
 	public void restart (ActionEvent event) throws IOException { // um eine neue Runde zu spielen
 
 		GameOver.setVisible(false); //setzt alle Variabeln um 0 ein
+		WIN.setVisible(false);
+		best.setVisible(false);
+		
 		lblScore.setText("0");
 		score=0;
 		coups.setText("0");
@@ -332,6 +337,8 @@ public class Controller {
 				arrayButton[i][j].setText(null);
 				k++;
 			}
+			
+		}
 			Schiffe test = new Schiffe ();
 			test.initializeMap();
 
@@ -344,7 +351,7 @@ public class Controller {
 			Schiffe torpilleur = new Schiffe (2, '2');
 
 			test.printMap();
-		}
+		
 
 
 	}
