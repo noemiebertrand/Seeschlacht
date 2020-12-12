@@ -76,9 +76,12 @@ public class Controller {
 	boolean enterName=false;
 
 	public static String[][] declarationClassement () {
-		for (int j=0; j<10; j++) {
-			classement[j][0]=" ";
-			classement[j][1]="0";}
+			classement[0][0]="Player1";
+			classement[1][0]="Player2";
+			classement[2][0]="Player3";
+			classement[0][1]="0";
+			classement[1][1]="0";
+			classement[2][1]="0";
 		return classement;
 	}
 	public static int[][] declarationRangement () {
