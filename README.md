@@ -313,7 +313,7 @@ public class SchiffeTest {
    
    * Graph-Based Testing:
 
-  ![Graph-Based Testing](https://user-images.githubusercontent.com/73692178/101981901-790f9480-3c70-11eb-9458-2eed67d62c72.png)
+  ![flou](https://user-images.githubusercontent.com/73692178/101982117-06071d80-3c72-11eb-9f9a-47681c526a55.png)
 
   ![Graph-Based Testing 2](https://user-images.githubusercontent.com/73692178/101980859-c5ef6d00-3c68-11eb-9404-fef2519089ac.png)
 
