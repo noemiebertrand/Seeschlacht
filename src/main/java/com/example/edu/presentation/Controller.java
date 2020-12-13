@@ -82,6 +82,7 @@ public class Controller {
 	static int scoreschiff;
 	int scoretime;
 	int scoreschlage;
+	int endScore ;
 
 	static String classement [][] = new String [10][2];
 	Label Player [][] = new Label [10][2];
@@ -200,7 +201,7 @@ public class Controller {
 
 
 	public void score() {
-		int endScore = scoreschiff + scoretime + scoreschlage;
+		endScore = scoreschiff + scoretime + scoreschlage;
 		String endSco = Integer.toString(endScore);
 		lblScore.setText(endSco);
 		
@@ -249,7 +250,7 @@ public class Controller {
 		String CoupsJoues = Integer.toString(NbCoups);
 		coups.setText(CoupsJoues);
 
-		if (NbCoups == 35&&score<170) {
+		if (NbCoups == 35&& scoreschiff <170) {
 			gameOver();
 			score();
 
@@ -405,7 +406,7 @@ public class Controller {
 		WIN.setVisible(false);
 		
 		lblScore.setText("0");
-		score=0;
+		endScore=0;
 		coups.setText("0");
 		NbCoups=0;
 		lblCoverLeaderboard.setVisible(true);
