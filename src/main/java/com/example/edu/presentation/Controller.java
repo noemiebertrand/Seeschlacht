@@ -102,7 +102,7 @@ public class Controller {
 		Player[1][1]=Score2;
 		Player[2][1]=Score3;
 
-		if (enterName==false ) {
+		if (enterName==false && i<3) {
 			classement[i][0]=EnterName.getText();
 			Player[i][0].setText(classement[i][0]);
 	
@@ -143,7 +143,6 @@ public class Controller {
 			}
 			i=i+1;
 			enterName=true;
-			lblCoverLeaderboard.setVisible(true);
 
 		}
 	}
@@ -222,6 +221,7 @@ public class Controller {
 			WIN.setVisible(true);
 			final int a = NbCoups;
 			lblCoverLeaderboard.setVisible(false);
+			enterName=false;
 		}
 	}
 
