@@ -168,8 +168,8 @@ public class Controller {
 		Schiffe torpilleur = new Schiffe (2, '2');
 		;
 
-		test.printMap();
-		System.out.println();
+		//test.printMap();
+		//System.out.println();
 	}
 
 	@FXML //
@@ -409,7 +409,7 @@ public class Controller {
 			Schiffe sousMarin = new Schiffe (3, 'B');
 			Schiffe torpilleur = new Schiffe (2, '2');
 
-			test.printMap();
+			//test.printMap();
 		
 
 
