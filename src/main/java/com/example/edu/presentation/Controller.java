@@ -1,7 +1,5 @@
 package com.example.edu.presentation;
 
-
-
 import java.io.IOException;
 import com.example.edu.domain.Schiffe;
 
@@ -18,7 +16,6 @@ import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-
 
 public class Controller {
     @FXML
@@ -60,8 +57,9 @@ public class Controller {
 	private Button b80,b81,b82,b83,b84,b85,b86,b87,b88,b89;
 	@FXML
 	private Button b90,b91,b92,b93,b94,b95,b96,b97,b98,b99;
-
-	Schiffe test = new Schiffe();
+	
+	public static char[][] karte = Schiffe.getMap();
+	
 	int vie2 = 2, vieA = 3, vieB = 3, vie4 = 4, vie5 = 5;
 	@FXML
 	Label lblVie2, lblVieA, lblVieB, lblVie4, lblVie5;
@@ -155,10 +153,8 @@ public class Controller {
 		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		Schiffe test = new Schiffe ();
-		test.initializeMap();
-
-		//Schiffe point = new Schiffe (0, 0, "bas", 1);
+		
+		Schiffe.initializeMap();
 
 		Schiffe porteAvion = new Schiffe(5, '5');
 		Schiffe croiseur = new Schiffe(4, '4');
@@ -167,8 +163,8 @@ public class Controller {
 		Schiffe torpilleur = new Schiffe (2, '2');
 		;
 
-		test.printMap();
-		System.out.println();
+		printKarte();
+		
 	}
 
 	@FXML //
@@ -189,7 +185,7 @@ public class Controller {
 			}
 
 
-			if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
+			if (karte[int_variabel[1]][int_variabel[2]] == '*') {
 				bouton.setStyle("-fx-border-color:BLUE; -fx-opacity: 1;");
 				bouton.setText(" ");
 			}
@@ -222,8 +218,6 @@ public class Controller {
 			lblCoverLeaderboard.setVisible(false);
 		}
 	}
-
-
 
 	public int getCoups() {
 		return NbCoups;
@@ -264,7 +258,8 @@ public class Controller {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 
-				if (test.map[i][j] != '*')	arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
+				if (karte[i][j] != '*' && arrayButton[i][j].getStyle() != "-fx-border-color:RED; -fx-opacity: 1;" )	
+					arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
 			}
 		}
 
@@ -299,7 +294,7 @@ public class Controller {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 
-				if (test.map[i][j] != '*')	arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
+				if (karte[i][j] != '*')	arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
 			}
 		}
 
@@ -313,7 +308,7 @@ public class Controller {
 
 	public void toucher(int y, int x) {
 
-		switch(test.map[y][x]) {
+		switch(karte[y][x]) {
 		case '2':
 			vie2=vie2-1;
 			break;
@@ -396,10 +391,7 @@ public class Controller {
 			}
 			
 		}
-			Schiffe test = new Schiffe ();
-			test.initializeMap();
-
-			//Schiffe point = new Schiffe (0, 0, "bas", 1);
+			Schiffe.initializeMap();
 
 			Schiffe porteAvion = new Schiffe(5, '5');
 			Schiffe croiseur = new Schiffe(4, '4');
@@ -407,14 +399,22 @@ public class Controller {
 			Schiffe sousMarin = new Schiffe (3, 'B');
 			Schiffe torpilleur = new Schiffe (2, '2');
 
-			test.printMap();
+			printKarte();
 		
-
-
 	}
 
 	public void exit (ActionEvent event) {
 		Platform.exit();
 	}
 
+	public static void printKarte () { 	//diese Methode gibt das Matrix-Karte auf dem Konsole aus
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				System.out.print(" " + karte [i][j]);
+			}
+			System.out.println();
+		}
+		System.out.println();
+	}
+	
 }
