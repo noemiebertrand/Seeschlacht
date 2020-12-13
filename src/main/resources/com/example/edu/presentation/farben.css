@@ -1,3 +1,4 @@
+/* design fur den grossen background screen der die >chiffe enthält */
 #screen { 
     -fx-background-image: url("restart.png");
     -fx-background-size: 50px;
@@ -5,13 +6,14 @@
     -fx-background-position: 100%
 }
 
-#levier { 
-    -fx-background-color: transparent;
+/* design fûr den mittleren push button der die Felder fur den programmierer ercheinen lässt*/
+#push { 
+    -fx-background-color: transparent; /* transparent um ein Pusch effect zu machen wenn er geklickt wird */
   
 }
 
 
-#levier:pressed { 
+#push:pressed { /* push effect wenn gepresst */
     -fx-background-color: transparent;
     -fx-background-image: url("vbouton.jpg");
     -fx-background-size: 55px;
@@ -19,8 +21,10 @@
     -fx-background-position: 100%
 }
 
+
+/* design fur exit button */
 #Exit { 
-    -fx-background-color: transparent;
+    -fx-background-color: transparent; 
     -fx-background-image: url("test.png");
     -fx-background-size: 50px;
     -fx-background-repeat: no-repeat;
@@ -28,13 +32,14 @@
 }
 
 #Exit:hover { 
-    -fx-background-color: transparent;
+    -fx-background-color: transparent; /* transparent um nur das Bild erscheinen zu lassen */
     -fx-background-image: url("test2.png");
     -fx-background-size: 50px;
     -fx-background-repeat: no-repeat;
     -fx-background-position: 100%
 }
 
+/* textfield design um den Namen am Ende des Spiles  */
 #EnterName {
 	-fx-background-color: transparent;
 	-fx-border-color: transparent;
@@ -44,27 +49,31 @@
     -fx-font-size: 16px;
 }
 
+/* Text bevor den Enter Name Textfield */
 #Name{
     -fx-background-color: black;
     -fx-background-radius: 30;
     -fx-background-insets: 0,1,1;
     -fx-text-fill: green;
-    -fx-font-family: 'Connection';
+    -fx-font-family: 'Connection'; /* Connection font der einen Retro look erzeugt */
     -fx-font-size: 16px;
 }
 
+/*text bevor 3 Player */
 #trois{
 	-fx-font-family: 'Connection';
 	-fx-font-size: 17 px;
 }
 
+/*Score anzeige fur 3 Player */
 #Score3{
 	-fx-font-family: 'Connection';
 	-fx-font-size: 17 px;
 }
 
+/* Name des 3 Players  */
 #Player3{
-	-fx-max-width:78;
+	-fx-max-width:78; /* limit damit der Name nicht zu lang wird */
 	-fx-font-family: 'Connection';
 	-fx-font-size: 17 px;
 }
@@ -101,6 +110,7 @@
 	-fx-font-size: 17 px;
 }
 
+/* Nummern unter der Schiffe */
 #lblVieB{
 	-fx-font-family: 'Connection';
 }
@@ -121,16 +131,19 @@
 	-fx-font-family: 'Connection';
 }
 
+/* Design für Gameover */
 #GameOver{
-	-fx-text-fill: red;
+	-fx-text-fill: red; /* ändert Farbe des Gmovers in Rot */
 	-fx-font-family: 'Connection';
 }
 
+/* Design für WIN */
 #WIN{
 	-fx-text-fill: green;
 	-fx-font-family: 'Connection';
 }
 
+/* Text der die anzahl der max runden anzeigt */
 #t35{
 	  -fx-background-color: black;
     -fx-background-radius: 30;
@@ -140,8 +153,9 @@
     -fx-font-size: 16px;
 }
 
+/* Text bevor der Anzahl der restlichen Runden */
 #nombre{
-	  -fx-background-color: black;
+	-fx-background-color: black;
     -fx-background-radius: 30;
     -fx-background-insets: 0,1,1;
     -fx-text-fill: green;
@@ -149,9 +163,9 @@
     -fx-font-size: 16px;
 }
 
-
+/* Score anzeige */
 #lblScore{
-	  -fx-background-color: black;
+	-fx-background-color: black;
     -fx-background-radius: 30;
     -fx-background-insets: 0,1,1;
     -fx-text-fill: green;
@@ -159,9 +173,9 @@
     -fx-font-size: 16px;
 }
 
-
+/* anzeige die zeigt wie viele Runden gespilet wurden */
 #coups{
-	  -fx-background-color: black;
+	-fx-background-color: black;
     -fx-background-radius: 30;
     -fx-background-insets: 0,1,1;
     -fx-text-fill: green;
@@ -169,6 +183,7 @@
     -fx-font-size: 16px;
 }
 
+/* text bevor des Scores */
 #score{
 	-fx-background-color: black;
     -fx-background-radius: 30;
@@ -178,12 +193,13 @@
     -fx-font-size: 16px;
 }
 
-
+/* background image */
 .bodybg{
 	-fx-background-image: url("touch5.gif");
 	-fx-background-size: 100% 100%;
 }
 
+/* restart Knopf */
 #restart { 
     -fx-background-color: transparent;
     -fx-background-image: url("restart.png");
@@ -207,14 +223,15 @@
 	-fx-border-width: 3 3 3 3;
 }
 
+/* Design für die Knopfe des Spielfeldes */
 .b00:hover {
    -fx-opacity: 1;
 }
 
 #b10 {
-	-fx-background-color: black;
-	-fx-border-color:#5CEC58;
-	 -fx-border-width: 3 3 3 3;
+	-fx-background-color: black; /* bacground Farbe der Knopfe: Schwarz */
+	-fx-border-color:#5CEC58; /* border Farbe der Knopfe: grun */
+	 -fx-border-width: 3 3 3 3; /* Grosse der Knopfe */
 }
 
 

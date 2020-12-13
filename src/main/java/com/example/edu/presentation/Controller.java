@@ -229,10 +229,11 @@ public class Controller {
 		return NbCoups;
 	}
 	
+	// lässt ein Gameover am Ende des Spiles erscheinen, falls der Spieler verloren hat und coloriert die Felder die nicht gefunden worden sind
 	public void gameOver() {
 		Effect glow = new Glow(1.0);
-		GameOver.setEffect(glow);
-		GameOver.setVisible(true);
+		GameOver.setEffect(glow); // effect für den Gameover
+		GameOver.setVisible(true); // lässt den GameOver erscheinen 
 		lblCoverLeaderboard.setVisible(false);
 		enterName=false;
 
@@ -250,6 +251,7 @@ public class Controller {
 				b80,b81,b82,b83,b84,b85,b86,b87,b88,b89,
 				b90,b91,b92,b93,b94,b95,b96,b97,b98,b99};
 
+		// doppeleter for loop der nach besetzten Feldern sucht
 		int k = 0;
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
@@ -268,6 +270,7 @@ public class Controller {
 
 	}
 	
+	// knopf der die Position der Schiffe erscheinen lässst in dem er nach besetzten Felder im Array such und coloriert
 	public void secret() {
 
 		Button [] [] arrayButton = new Button [10] [10];
