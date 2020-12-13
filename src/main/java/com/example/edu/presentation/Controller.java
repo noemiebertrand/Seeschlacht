@@ -1,10 +1,17 @@
 package com.example.edu.presentation;
 
 import java.io.IOException;
+
 import com.example.edu.domain.Schiffe;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent; 
+
+import java.lang.reflect.Field;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,8 +21,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
+
 import javafx.scene.image.ImageView;
+
+import javafx.scene.text.Text;
+
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class Controller {
     @FXML
@@ -32,6 +44,8 @@ public class Controller {
 	Label coups,GameOver;
 	@FXML
 	Label lblScore, lblCoverLeaderboard;
+	@FXML
+	Label lbltime;
 	@FXML
 	Label WIN;
 	@FXML
@@ -65,7 +79,9 @@ public class Controller {
 	Label lblVie2, lblVieA, lblVieB, lblVie4, lblVie5;
 
 	int NbCoups = 0;
-	static int score = 0;
+	static int scoreschiff;
+	int scoretime;
+	int scoreschlage;
 
 	static String classement [][] = new String [10][2];
 	Label Player [][] = new Label [10][2];
@@ -89,7 +105,7 @@ public class Controller {
 				rangement[j][k]=0;}}
 		return rangement;
 	}
-
+	
 	@FXML
 	public void classement (ActionEvent event) {
 		Player[0][0]=Player1;
@@ -112,6 +128,7 @@ public class Controller {
 			int PlusGrand;
 			for (int j=0; j<3; j++) {
 				rangement[j][1]= Integer.parseInt(classement[j][1]);}
+
 
 			if (rangement [2][1]>rangement[1][1]) {
 				PlusGrand= rangement [2][1];
@@ -144,6 +161,7 @@ public class Controller {
 			lblCoverLeaderboard.setVisible(true);
 
 		}
+
 	}
 
 	@FXML // zur Karte und zum Spiel wechseln
@@ -161,13 +179,36 @@ public class Controller {
 		Schiffe contreTorpilleur = new Schiffe (3, 'A');
 		Schiffe sousMarin = new Schiffe (3, 'B');
 		Schiffe torpilleur = new Schiffe (2, '2');
-		;
-
+		
 		printKarte();
+		
+		//Timer timeClass = new Timer();
+		//timeClass.run();
+	}
+
+	public int scoreSchiffe () {
+		scoreschiff = scoreschiff + 10;
+		String scoSch = Integer.toString(scoreschiff);
+		lblScore.setText(scoSch);
+		return scoreschiff;
+	}
+
+	public int scoreSchlage(int schlage) {
+		scoreschlage = (35 - schlage)*10;
+		return scoreschlage;
+	}
+
+
+	public void score() {
+		int endScore = scoreschiff + scoretime + scoreschlage;
+		String endSco = Integer.toString(endScore);
+		lblScore.setText(endSco);
 		
 	}
 
-	@FXML //
+
+	@FXML 
+
 	protected void handleSubmitButtonAction(ActionEvent event) {
 		bouton = (Button)event.getSource(); //Ruf nur für das Feld, auf dem man klickt
 		if (bouton.getText()!=" " ) { //um zwei Mal auf demselben Feld klicken zu vermeiden
@@ -192,7 +233,7 @@ public class Controller {
 			else {
 				bouton.setStyle("-fx-border-color:RED; -fx-opacity: 1;");
 				String empty = bouton.getText();
-				Score(); // Ruf für die Punktzahl
+				scoreSchiffe(); // Ruf für die Punktzahl
 				bouton.setText(" "); //das Feld wird markiert, damit man es nicht 2 Mal rufft
 				toucher(int_variabel[1],int_variabel[2]);
 			}
@@ -210,12 +251,20 @@ public class Controller {
 
 		if (NbCoups == 35&&score<170) {
 			gameOver();
+			score();
+
 		}
-		if (score == 170) {
+		if (scoreschiff == 170) {
 			WIN.setEffect(glow);
 			WIN.setVisible(true);
 			final int a = NbCoups;
+
 			lblCoverLeaderboard.setVisible(false);
+
+			scoreSchlage(a);
+			System.out.println(a);
+			score();
+
 		}
 	}
 
@@ -300,11 +349,6 @@ public class Controller {
 
 	}
 
-	public void Score () {
-		score = score + 10;
-		String sco = Integer.toString(score);
-		lblScore.setText(sco);
-	}
 
 	public void toucher(int y, int x) {
 
@@ -337,6 +381,7 @@ public class Controller {
 		String viePorteAvion = Integer.toString(vie5);
 		lblVie5.setText(viePorteAvion);
 	}
+
 
 	public void restart (ActionEvent event) throws IOException { // um eine neue Runde zu spielen
 		vie2 = 2;
@@ -417,4 +462,5 @@ public class Controller {
 		System.out.println();
 	}
 	
+
 }
