@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import com.example.edu.domain.Schiffe;
 
@@ -72,7 +73,9 @@ public class Controller {
 	Label lblVie2, lblVieA, lblVieB, lblVie4, lblVie5;
 
 	int NbCoups = 0;
-	static int scoreschiff = 0;
+	static int scoreschiff;
+	int scoretime;
+	int scoreschlage;
 
 	static String classement [][] = new String [10][2];
 	Label Player [][] = new Label [10][2];
@@ -92,7 +95,7 @@ public class Controller {
 				rangement[j][k]=0;}}
 		return rangement;
 	}
-
+	
 	@FXML
 	public void classement (ActionEvent event) {
 
@@ -141,12 +144,6 @@ public class Controller {
 			rangement[1][1]= PlusGrand;
 		}
 
-
-
-
-
-
-
 		for (int j=0; j<3; j++) {
 			Player[j][0].setText((classement[j][0]));
 			Player[j][1].setText(Integer.toString(rangement[j][1]));
@@ -154,14 +151,7 @@ public class Controller {
 		}
 
 		i=i+1;
-
 	}
-
-
-
-
-
-
 
 	@FXML // zur Karte und zum Spiel wechseln
 	public void ToKarte (ActionEvent event) throws IOException  {
@@ -184,97 +174,27 @@ public class Controller {
 
 		test.printMap();
 
-		startTime();
+		//Timer timeClass = new Timer();
+		//timeClass.run();
 	}
 
-	@FXML
-	boolean timerStats;
-	@FXML
-	String time;
-	@FXML
-	int timersec, timermin, timerhr, countScore;
-	@FXML
-	Text txtSeconds, txtMinutes, txtHours;
-
-	@FXML
-	public void startTime(){ 
-		if(timerStats == false) 
-		{ 
-			//lbltime.setText("alleluia ca marche");
-			//System.out.println(lbltime.getText());
-			timerStats = true; 
-			Timer timer = new Timer(); 
-			TimerTask timerTask = new TimerTask() { 
-
-				@Override 
-				public void run() {
-					try {
-						Thread.sleep(1000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					timersec++;
-					countScore++;
-					scoreTime(countScore);
-					
-					Platform.runLater(new Runnable(){ 
-						public void run(){   
-							
-							
-							if (timersec == 60) 
-							{ 
-								timersec = 0; 
-								timermin++; 
-							} 
-							if (timermin == 60) 
-							{ 
-								timermin = 0; 
-								timerhr++; 
-							} 
-
-							String seconds = Integer.toString(timersec); 
-							String minutes = Integer.toString(timermin); 
-							String hours = Integer.toString(timerhr); 
-
-							if (timersec <= 9) { 
-								seconds = "0" + Integer.toString(timersec); 
-							} 
-							if (timermin <= 9) { 
-								minutes = "0" + Integer.toString(timermin); 
-							} 
-							if (timerhr <= 9) { 
-								hours = "0" + Integer.toString(timerhr); 
-							} 
-
-							time = (hours + ":" + minutes +":"+ seconds); 
-							System.out.println(time);
-							//txtSeconds.setText(seconds);
-							//lbltime.setText(time);
-						} 
-					}); 
-				} 
-			}; 
-			timer.schedule(timerTask, 50, 50); //lastone is time, milli second 
-		} 
-
-	} 
-
-	public void scoreTime(int countScore) {
-		int scoretime = 830;
-		scoretime = scoretime - countScore;
-		System.out.println(scoretime);
-	}
-	
 	public int scoreSchiffe () {
 		scoreschiff = scoreschiff + 10;
-		String sco = Integer.toString(scoreschiff);
-		lblScore.setText(sco);
+		String scoSch = Integer.toString(scoreschiff);
+		lblScore.setText(scoSch);
 		return scoreschiff;
 	}
-	
+
+	public int scoreSchlage(int schlage) {
+		scoreschlage = (35 - schlage)*10;
+		return scoreschlage;
+	}
+
+
 	public void score() {
-		int endScoreSchiff = scoreSchiffe()
+		int endScore = scoreschiff + scoretime + scoreschlage;
+		String endSco = Integer.toString(endScore);
+		lblScore.setText(endSco);
 		
 	}
 
@@ -323,12 +243,16 @@ public class Controller {
 
 		if (NbCoups==35) {
 			gameOver();
+			score();
+
 		}
-		if (score == 170) {
+		if (scoreschiff == 170) {
 			WIN.setEffect(glow);
 			WIN.setVisible(true);
 			final int a = NbCoups;
+			scoreSchlage(a);
 			System.out.println(a);
+			score();
 		}
 
 	}
@@ -372,7 +296,7 @@ public class Controller {
 
 	}
 
-	
+
 	public void toucher(int y, int x) {
 
 		switch(test.map[y][x]) {
@@ -405,59 +329,6 @@ public class Controller {
 		lblVie5.setText(viePorteAvion);
 	}
 
-	public void restart (ActionEvent event) throws IOException { // um eine neue Runde zu spielen
-
-		GameOver.setVisible(false); //setzt alle Variabeln um 0 ein
-		lblScore.setText("0");
-		score=0;
-		coups.setText("0");
-		NbCoups=0;
-		timersec = 0;
-		timermin = 0;
-		timerhr = 0;
-		countScore = 0;
-
-		//ladert eine neue Karte
-
-		Button [] [] arrayButton = new Button [10] [10];
-
-		Button[] listButton = {
-				b00,b01,b02,b03,b04,b05,b06,b07,b08,b09,
-				b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,
-				b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,
-				b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,
-				b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,
-				b50,b51,b52,b53,b54,b55,b56,b57,b58,b59,
-				b60,b61,b62,b63,b64,b65,b66,b67,b68,b69,
-				b70,b71,b72,b73,b74,b75,b76,b77,b78,b79,
-				b80,b81,b82,b83,b84,b85,b86,b87,b88,b89,
-				b90,b91,b92,b93,b94,b95,b96,b97,b98,b99};
-
-		int k = 0;
-		for (int i = 0; i < 10; i++) {
-			for (int j = 0; j < 10; j++) {
-				arrayButton [i][j] = listButton [k];
-				arrayButton[i][j] .setStyle("-fx-background-color:BLACK;");
-				arrayButton[i][j].setText(null);
-				k++;
-			}
-			Schiffe test = new Schiffe ();
-			test.initializeMap();
-
-			//Schiffe point = new Schiffe (0, 0, "bas", 1);
-
-			Schiffe porteAvion = new Schiffe(5, '5');
-			Schiffe croiseur = new Schiffe(4, '4');
-			Schiffe contreTorpilleur = new Schiffe (3, 'A');
-			Schiffe sousMarin = new Schiffe (3, 'B');
-			Schiffe torpilleur = new Schiffe (2, '2');
-
-			test.printMap();
-		}
-
-
-	}
-
-
+	
 
 }
