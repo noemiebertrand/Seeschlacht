@@ -154,6 +154,8 @@ public class Controller {
 		Scene scene = new Scene(root);
 		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
 		primaryStage.setScene(scene);
+		primaryStage.setMaxHeight(640);
+		primaryStage.setMaxWidth(797);
 		primaryStage.show();
 		Schiffe test = new Schiffe ();
 		test.initializeMap();
