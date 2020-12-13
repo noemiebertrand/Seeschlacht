@@ -3,12 +3,10 @@ package com.example.edu.presentation;
 
 
 import java.io.IOException;
-
-
 import com.example.edu.domain.Schiffe;
 
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
+import javafx.event.ActionEvent; 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,16 +16,19 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 
 public class Controller {
+    @FXML
+	ImageView best, lcd;
 	@FXML
 	Label Player1,Player2, Player3;
 	@FXML
 	Label Score1, Score2, Score3;
 	@FXML
-	Button Exit;
+	Button Exit, levier;
 	@FXML
 	TextField EnterName;
 	@FXML
@@ -104,10 +105,9 @@ public class Controller {
 		if (enterName==false ) {
 			classement[i][0]=EnterName.getText();
 			Player[i][0].setText(classement[i][0]);
-			System.out.println(i);
+	
 
 			classement[i][1]=lblScore.getText();
-			System.out.println(classement[i][1]);
 			Player[i][1].setText(classement[i][1]);
 
 			String PlusGrandNom;
@@ -135,6 +135,7 @@ public class Controller {
 				PlusGrand= rangement [2][1];
 				rangement[2][1]=rangement[1][1];
 				rangement[1][1]= PlusGrand;
+
 			}
 			for (int j=0; j<3; j++) {
 				Player[j][0].setText((classement[j][0]));
@@ -143,6 +144,7 @@ public class Controller {
 			i=i+1;
 			enterName=true;
 			lblCoverLeaderboard.setVisible(true);
+
 		}
 	}
 
@@ -152,8 +154,9 @@ public class Controller {
 		Scene scene = new Scene(root);
 		Stage primaryStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
 		primaryStage.setScene(scene);
+		primaryStage.setMaxHeight(640);
+		primaryStage.setMaxWidth(797);
 		primaryStage.show();
-
 		Schiffe test = new Schiffe ();
 		test.initializeMap();
 
@@ -164,8 +167,10 @@ public class Controller {
 		Schiffe contreTorpilleur = new Schiffe (3, 'A');
 		Schiffe sousMarin = new Schiffe (3, 'B');
 		Schiffe torpilleur = new Schiffe (2, '2');
+		;
 
 		test.printMap();
+		System.out.println();
 	}
 
 	@FXML //
@@ -209,25 +214,66 @@ public class Controller {
 		String CoupsJoues = Integer.toString(NbCoups);
 		coups.setText(CoupsJoues);
 
-		if (NbCoups==35) {
+		if (NbCoups == 35&&score<170) {
 			gameOver();
 		}
 		if (score == 170) {
 			WIN.setEffect(glow);
 			WIN.setVisible(true);
 			final int a = NbCoups;
-			System.out.println(a);
+			lblCoverLeaderboard.setVisible(false);
 		}
+	}
 
-	} 
 
+
+	public int getCoups() {
+		return NbCoups;
+	}
+	
+	// lässt ein Gameover am Ende des Spiles erscheinen, falls der Spieler verloren hat und coloriert die Felder die nicht gefunden worden sind
 	public void gameOver() {
-
 		Effect glow = new Glow(1.0);
-		GameOver.setEffect(glow);
-		GameOver.setVisible(true);
+		GameOver.setEffect(glow); // effect für den Gameover
+		GameOver.setVisible(true); // lässt den GameOver erscheinen 
 		lblCoverLeaderboard.setVisible(false);
 		enterName=false;
+
+		Button [] [] arrayButton = new Button [10] [10];
+
+		Button[] listButton = {
+				b00,b01,b02,b03,b04,b05,b06,b07,b08,b09,
+				b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,
+				b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,
+				b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,
+				b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,
+				b50,b51,b52,b53,b54,b55,b56,b57,b58,b59,
+				b60,b61,b62,b63,b64,b65,b66,b67,b68,b69,
+				b70,b71,b72,b73,b74,b75,b76,b77,b78,b79,
+				b80,b81,b82,b83,b84,b85,b86,b87,b88,b89,
+				b90,b91,b92,b93,b94,b95,b96,b97,b98,b99};
+
+		// doppeleter for loop der nach besetzten Feldern sucht
+		int k = 0;
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+				arrayButton [i][j] = listButton [k];
+				k++;
+			}
+
+		}
+
+		for (int i = 0; i < 10; i++) {
+			for (int j = 0; j < 10; j++) {
+
+				if (test.map[i][j] != '*')	arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
+			}
+		}
+
+	}
+	
+	// knopf der die Position der Schiffe erscheinen lässst in dem er nach besetzten Felder im Array such und coloriert
+	public void secret() {
 
 		Button [] [] arrayButton = new Button [10] [10];
 
@@ -318,6 +364,8 @@ public class Controller {
 
 
 		GameOver.setVisible(false); //setzt alle Variabeln um 0 ein
+		WIN.setVisible(false);
+		
 		lblScore.setText("0");
 		score=0;
 		coups.setText("0");
@@ -348,6 +396,8 @@ public class Controller {
 				arrayButton[i][j].setText(null);
 				k++;
 			}
+			
+		}
 			Schiffe test = new Schiffe ();
 			test.initializeMap();
 
@@ -360,7 +410,7 @@ public class Controller {
 			Schiffe torpilleur = new Schiffe (2, '2');
 
 			test.printMap();
-		}
+		
 
 
 	}
