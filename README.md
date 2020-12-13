@@ -222,16 +222,16 @@ Total geschätzte minimale Zeit: 100 Stunden
   
   #### UML Package, Klassen- und Sequenzdiagramm
   
-  Package diagramm:
+   * Package diagramm:
   
   
   ![image](https://user-images.githubusercontent.com/73692178/101378725-be6c4480-38b3-11eb-8d9b-5d64f59b6efc.png)
 
-  Klassendiagramm:
+   * Klassendiagramm:
   
+  ![Klassendiagramm](https://user-images.githubusercontent.com/73692178/102008291-aec78280-3d2f-11eb-9aec-dd639838786f.png)
   
-  
-  Sequenz diagramm:
+   * Sequenz diagramm:
   
   ![Sequenzdiagramm](https://user-images.githubusercontent.com/73692178/101989287-a58ed500-3c9f-11eb-97c5-05c02676f485.png)
   
