@@ -405,8 +405,9 @@ public class Controller {
 			}
 			i = i + 1;
 			enterName = true;
-
 		}
+		
+		EnterName.clear();
 	}
 
 	public void exit (ActionEvent event) {
