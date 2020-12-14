@@ -7,6 +7,12 @@ public class Schiffe {
 	
 
 	public static char [][] map = new char [10][10]; //Matrix-Karte 
+
+	//default Konstruktor
+	public Schiffe() {
+
+	}
+
 	
 	//manuelle Schifferzeugung
 	public Schiffe(int x, int y, String s, int t) {
@@ -174,12 +180,5 @@ public class Schiffe {
 			System.out.println();
 		}
 	}
-
-
-	public static char[][] getMap() {
-		return map;
-	}
-	
-	
 	
 }
