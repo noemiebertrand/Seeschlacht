@@ -29,6 +29,8 @@ public class Main extends Application {
 			Controller.declarationClassement ();
 			Controller.declarationRangement ();
 			Scene scene = new Scene(root);
+			primaryStage.setMaxHeight(640);
+			primaryStage.setMaxWidth(797);
 			primaryStage.setTitle("Seeschlacht");
 			primaryStage.setScene(scene);
 			primaryStage.show();
