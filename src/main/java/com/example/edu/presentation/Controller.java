@@ -86,7 +86,7 @@ public class Controller {
 		primaryStage.setMaxWidth(797);
 		primaryStage.show();
 		
-		Schiffe.initializeMap();
+		Schiffe.initializeMap(); 
 
 		Schiffe porteAvion = new Schiffe(5, '5');
 		Schiffe croiseur = new Schiffe(4, '4');
