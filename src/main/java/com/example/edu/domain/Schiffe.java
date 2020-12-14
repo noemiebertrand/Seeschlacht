@@ -181,6 +181,4 @@ public class Schiffe {
 		return map;
 	}
 	
-	
-	
 }
