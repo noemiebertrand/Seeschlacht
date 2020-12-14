@@ -1,7 +1,5 @@
 package com.example.edu.presentation;
 
-
-
 import java.io.IOException;
 import com.example.edu.domain.Schiffe;
 
@@ -61,7 +59,8 @@ public class Controller {
 	@FXML
 	private Button b90, b91, b92, b93, b94, b95, b96, b97, b98, b99;
 
-	Schiffe test = new Schiffe();
+	public static char[][] karte = Schiffe.getMap();
+	
 	int vie2 = 2, vieA = 3, vieB = 3, vie4 = 4, vie5 = 5;
 	@FXML
 	Label lblVie2, lblVieA, lblVieB, lblVie4, lblVie5;
@@ -86,20 +85,15 @@ public class Controller {
 		primaryStage.setMaxHeight(640);
 		primaryStage.setMaxWidth(797);
 		primaryStage.show();
-		Schiffe test = new Schiffe ();
-		test.initializeMap();
-
-		//Schiffe point = new Schiffe (0, 0, "bas", 1);
+		
+		Schiffe.initializeMap();
 
 		Schiffe porteAvion = new Schiffe(5, '5');
 		Schiffe croiseur = new Schiffe(4, '4');
 		Schiffe contreTorpilleur = new Schiffe (3, 'A');
 		Schiffe sousMarin = new Schiffe (3, 'B');
 		Schiffe torpilleur = new Schiffe (2, '2');
-		;
-
-		//test.printMap();
-		//System.out.println();
+		
 	}
 
 	@FXML //
@@ -120,7 +114,7 @@ public class Controller {
 			}
 
 
-			if (test.map[int_variabel[1]][int_variabel[2]] == '*') {
+			if (karte[int_variabel[1]][int_variabel[2]] == '*') {
 				bouton.setStyle("-fx-border-color:BLUE; -fx-opacity: 1;");
 				bouton.setText(" ");
 			}
@@ -191,8 +185,8 @@ public class Controller {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 
-				if (test.map[i][j] != '*')	arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
-			}
+				if (karte[i][j] != '*' && arrayButton[i][j].getStyle() != "-fx-border-color:RED; -fx-opacity: 1;" )	
+					arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");			}
 		}
 
 	}
@@ -226,7 +220,7 @@ public class Controller {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < 10; j++) {
 
-				if (test.map [i][j] != '*')	arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
+				if (karte [i][j] != '*')	arrayButton[i][j].setStyle("-fx-background-color:ORANGE;");
 			}
 		}
 
@@ -240,7 +234,7 @@ public class Controller {
 
 	public void toucher(int y, int x) {
 
-		switch(test.map [y][x]) {
+		switch(karte [y][x]) {
 		case '2':
 			vie2 = vie2 - 1;
 			break;
@@ -323,10 +317,8 @@ public class Controller {
 			}
 			
 		}
-			Schiffe test = new Schiffe ();
-			test.initializeMap();
-
-			//Schiffe point = new Schiffe (0, 0, "bas", 1);
+			
+			Schiffe.initializeMap();
 
 			Schiffe porteAvion = new Schiffe(5, '5');
 			Schiffe croiseur = new Schiffe(4, '4');
@@ -334,12 +326,7 @@ public class Controller {
 			Schiffe sousMarin = new Schiffe (3, 'B');
 			Schiffe torpilleur = new Schiffe (2, '2');
 
-			//test.printMap();
-		
-
-
 	}
-	
 
 	public static String[][] declarationClassement () {
 		classement[0][0] = "Player1";
@@ -406,7 +393,7 @@ public class Controller {
 				Player[j][0].setText((classement[j][0]));
 				Player[j][1].setText(Integer.toString(rangement[j][1]));
 			}
-			i = i+1;
+			i = i + 1;
 			enterName = true;
 
 		}
