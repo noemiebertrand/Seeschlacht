@@ -213,10 +213,10 @@
       </ImageView>
 
       <Label fx:id="Score1" layoutX="693.0" layoutY="418.0" text="0" AnchorPane.bottomAnchor="149.0" />
-      <Label fx:id="Player1" alignment="CENTER_RIGHT" layoutX="607.0" layoutY="416.0" text="Player" AnchorPane.bottomAnchor="151.0" />
+      <Label fx:id="Player1" alignment="CENTER_RIGHT" layoutX="591.0" layoutY="418.0" text="Player1" AnchorPane.bottomAnchor="149.0" />
       <Label fx:id="Score3" layoutX="693.0" layoutY="478.0" text="0" AnchorPane.bottomAnchor="89.0" />
-      <Label fx:id="Player2" layoutX="607.0" layoutY="446.0" text="Player" AnchorPane.bottomAnchor="121.0" />
-      <Label fx:id="Player3" layoutX="607.0" layoutY="477.0" text="Player" AnchorPane.bottomAnchor="90.0" />
+      <Label fx:id="Player2" layoutX="591.0" layoutY="447.0" text="Player2" AnchorPane.bottomAnchor="120.0" />
+      <Label fx:id="Player3" layoutX="591.0" layoutY="478.0" text="Player3" AnchorPane.bottomAnchor="89.0" />
       <Label fx:id="Score2" layoutX="693.0" layoutY="447.0" text="0" AnchorPane.bottomAnchor="120.0" />
       <Button fx:id="Exit" layoutX="71.0" layoutY="10.0" mnemonicParsing="false" onAction="#exit" prefHeight="49.0" prefWidth="53.0" />
       <ImageView fx:id="best" fitHeight="21.0" fitWidth="130.0" layoutX="591.0" layoutY="399.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="180.90647506713867">
@@ -224,9 +224,6 @@
             <Image url="@gris4.png" />
          </image>
       </ImageView>
-      <Label fx:id="un" layoutX="565.0" layoutY="416.0" text="1." AnchorPane.bottomAnchor="151.0" />
-      <Label fx:id="deux" layoutX="564.0" layoutY="445.0" text="2." AnchorPane.bottomAnchor="122.0" />
-      <Label fx:id="trois" layoutX="564.0" layoutY="475.0" text="3." AnchorPane.bottomAnchor="92.0" />
       <TextField fx:id="EnterName" layoutX="595.0" layoutY="543.0" onAction="#classement" prefHeight="39.0" prefWidth="157.0" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="28.0" />
       <Label fx:id="lblCoverLeaderboard" layoutX="575.0" layoutY="535.0" prefHeight="49.0" prefWidth="169.0" />
       <Button fx:id="push" layoutX="364.0" layoutY="504.0" mnemonicParsing="false" onAction="#secret" prefHeight="63.0" prefWidth="53.0" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="361.0" />

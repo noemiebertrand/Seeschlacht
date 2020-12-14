@@ -19,7 +19,7 @@ import javafx.stage.Stage;
 
 
 public class Controller {
-    @FXML
+	@FXML
 	ImageView best, lcd;
 	@FXML
 	Label Player1, Player2, Player3;
@@ -60,7 +60,7 @@ public class Controller {
 	private Button b90, b91, b92, b93, b94, b95, b96, b97, b98, b99;
 
 	public static char[][] karte = Schiffe.getMap();
-	
+
 	int vie2 = 2, vieA = 3, vieB = 3, vie4 = 4, vie5 = 5;
 	@FXML
 	Label lblVie2, lblVieA, lblVieB, lblVie4, lblVie5;
@@ -85,7 +85,7 @@ public class Controller {
 		primaryStage.setMaxHeight(640);
 		primaryStage.setMaxWidth(797);
 		primaryStage.show();
-		
+
 		Schiffe.initializeMap();
 
 		Schiffe porteAvion = new Schiffe(5, '5');
@@ -93,7 +93,7 @@ public class Controller {
 		Schiffe contreTorpilleur = new Schiffe (3, 'A');
 		Schiffe sousMarin = new Schiffe (3, 'B');
 		Schiffe torpilleur = new Schiffe (2, '2');
-		
+
 	}
 
 	@FXML //
@@ -153,7 +153,7 @@ public class Controller {
 		}
 	}
 
-	
+
 	// lässt ein Gameover am Ende des Spiles erscheinen, falls der Spieler verloren hat und coloriert die Felder die nicht gefunden worden sind
 	public void gameOver() {
 		Effect glow = new Glow(1.0);
@@ -194,7 +194,7 @@ public class Controller {
 		}
 
 	}
-	
+
 	// Knopf der die Position der Schiffe erscheinen lässst in dem er nach besetzten Felder im Array such und coloriert
 	public void secret() {
 
@@ -236,13 +236,13 @@ public class Controller {
 		lblScore.setText(scoSch);
 		return scoreschiff;
 	}
-	
+
 	//Methode die den end score mit den restlichen schlage und den score von den Schiffe berechnet und ausgibt
 	public void score() {
 		int endScore = scoreschiff + (35 - NbCoups) * 10;
 		String endSco = Integer.toString(endScore);
 		lblScore.setText(endSco);
-		
+
 	}
 
 	public void toucher(int y, int x) {
@@ -286,7 +286,7 @@ public class Controller {
 		vieB = 3;
 		vie4 = 4;
 		vie5 = 5;
-		
+
 		String vieTorpilleur = Integer.toString(vie2);
 		lblVie2.setText(vieTorpilleur);
 		String vieContreTorpilleur = Integer.toString(vieA);
@@ -300,7 +300,7 @@ public class Controller {
 
 		GameOver.setVisible(false); 
 		WIN.setVisible(false);
-		
+
 		lblScore.setText("0");
 
 		scoreschiff = 0;
@@ -334,16 +334,16 @@ public class Controller {
 				arrayButton[i][j].setText(null);
 				k++;
 			}
-			
-		}
-			
-			Schiffe.initializeMap();
 
-			Schiffe porteAvion = new Schiffe(5, '5');
-			Schiffe croiseur = new Schiffe(4, '4');
-			Schiffe contreTorpilleur = new Schiffe (3, 'A');
-			Schiffe sousMarin = new Schiffe (3, 'B');
-			Schiffe torpilleur = new Schiffe (2, '2');
+		}
+
+		Schiffe.initializeMap();
+
+		Schiffe porteAvion = new Schiffe(5, '5');
+		Schiffe croiseur = new Schiffe(4, '4');
+		Schiffe contreTorpilleur = new Schiffe (3, 'A');
+		Schiffe sousMarin = new Schiffe (3, 'B');
+		Schiffe torpilleur = new Schiffe (2, '2');
 
 	}
 
@@ -376,7 +376,7 @@ public class Controller {
 		if (enterName == false && i < 3) {
 			classement[i][0] = EnterName.getText();
 			Player[i][0].setText(classement[i][0]);
-	
+
 
 			classement[i][1] = lblScore.getText();
 			Player[i][1].setText(classement[i][1]);
@@ -393,7 +393,7 @@ public class Controller {
 				PlusGrandNom = classement[2][0];
 				classement[2][0] = classement[1][0];
 				classement[1][0] = PlusGrandNom;}
- 
+
 			if (rangement [1][1] > rangement[0][1]) {
 				PlusGrand = rangement [1][1];
 				rangement[1][1] = rangement[0][1];
@@ -405,9 +405,13 @@ public class Controller {
 			if (rangement [2][1] > rangement[1][1]) {
 				PlusGrand = rangement [2][1];
 				rangement[2][1] = rangement[1][1];
-				rangement[1][1] = PlusGrand;
+				rangement[1][1] = PlusGrand; 
+				PlusGrandNom = classement [2][0];
+				classement[2][0] = classement[1][0];
+				classement[1][0] = PlusGrandNom;}
 
-			}
+
+			
 			for (int j = 0; j < 3; j++) {
 				Player[j][0].setText((classement[j][0]));
 				Player[j][1].setText(Integer.toString(rangement[j][1]));
@@ -416,7 +420,7 @@ public class Controller {
 			enterName = true;
 
 		}
-		
+
 		EnterName.clear();
 
 	}
