@@ -121,7 +121,7 @@ public class Controller {
 			else {
 				bouton.setStyle("-fx-border-color:RED; -fx-opacity: 1;");
 				String empty = bouton.getText();
-				scoreSchiffe(); // Ruf für die Punktzahl
+				scoreSchiffe(); // Ruf für die Punktzahl der Schiffe
 				bouton.setText(" "); //das Feld wird markiert, damit man es nicht 2 Mal rufft
 				toucher(int_variabel[1],int_variabel[2]);
 			}
@@ -227,14 +227,15 @@ public class Controller {
 		}
 
 	}
-
+	//Methode die 10 Punkte am score dazu rechnet jedes mal wenn ein Schiffe getroffen wird
 	public int scoreSchiffe () {
 		scoreschiff = scoreschiff + 10;
 		String scoSch = Integer.toString(scoreschiff);
 		lblScore.setText(scoSch);
 		return scoreschiff;
 	}
-
+	
+	//Methode die den end score mit den restlichen schlage und den score von den Schiffe berechnet
 	public void score() {
 		int endScore = scoreschiff + (35 - NbCoups) * 10;
 		String endSco = Integer.toString(endScore);
@@ -275,7 +276,8 @@ public class Controller {
 	}
 
 	public void restart (ActionEvent event) throws IOException { // um eine neue Runde zu spielen
-		vie2 = 2; //setzt alle Variabeln und ihren Label um 0 ein
+		//setzt alle Variabeln an ihre anfangs wert
+		vie2 = 2; 
 		vieA = 3;
 		vieB = 3;
 		vie4 = 4;
