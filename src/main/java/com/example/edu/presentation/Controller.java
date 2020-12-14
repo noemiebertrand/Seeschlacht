@@ -308,6 +308,7 @@ public class Controller {
 		coups.setText("0");
 		NbCoups = 0;
 		lblCoverLeaderboard.setVisible(true);
+		EnterName.clear();
 
 		//ladert eine neue Karte
 
