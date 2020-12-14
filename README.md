@@ -48,15 +48,6 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
 
   Build-Anleitung
   ---
-![Start](https://user-images.githubusercontent.com/73901029/102114373-65178e80-3e3a-11eb-84d2-02ab49d19dfa.png)
-![1Partie GO](https://user-images.githubusercontent.com/73901029/102114401-6e086000-3e3a-11eb-9184-ab2316abea9f.png)
-![3Partie GO](https://user-images.githubusercontent.com/73901029/102114437-7c567c00-3e3a-11eb-8915-408300cfdbaa.png)
-![Shit Partie ](https://user-images.githubusercontent.com/73901029/102114475-88dad480-3e3a-11eb-9527-9d196ca09296.png)
-![Pas modif](https://user-images.githubusercontent.com/73901029/102114501-909a7900-3e3a-11eb-970c-3c5daea81fa8.png)
-![restart 2Partie](https://user-images.githubusercontent.com/73901029/102114526-998b4a80-3e3a-11eb-894d-4adeca63a60f.png)
-![Shit](https://user-images.githubusercontent.com/73901029/102114555-a1e38580-3e3a-11eb-9eb5-6fdb1d5339ee.png)
-![Win MaxPts](https://user-images.githubusercontent.com/73901029/102114602-ad36b100-3e3a-11eb-8b7e-086d13ffa775.png)
-
 
 
 
@@ -67,13 +58,26 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
   
   Bedienungsanleitung
   ---
-  * Nach der Offnung des Programms:
+
   * Sie können die Regeln <sup id="ap1"> <a href="#nt1">1</a></sup> lesen oder verwerfen.
+  * Nach der Offnung des Programms:
   * Clicken Sie auf "Start".
-  * Raten Sie, wo die Schiffe würden zufällig erstellt. Sie haben 35 Schlagen, um allen Schiffe zu raten, sonst haben Sie verloren.
-  * Am Ende können Sie ihren Name eingeben, damit ein Leaderboard erstellen kann.
-  * Dann können Sie ein neue Spiel mit dem Knopf "Restart" erstellen.
   
+  ![Start](https://user-images.githubusercontent.com/73901029/102114373-65178e80-3e3a-11eb-84d2-02ab49d19dfa.png)
+  ![Pas modif](https://user-images.githubusercontent.com/73901029/102114501-909a7900-3e3a-11eb-970c-3c5daea81fa8.png)
+  
+  * Raten Sie, wo die Schiffe zufällig erstellt würden. Sie haben 35 Runden, um alle Schiffe zu versenken, sonst haben Sie verloren.
+  
+  ![1Partie GO](https://user-images.githubusercontent.com/73901029/102114401-6e086000-3e3a-11eb-9184-ab2316abea9f.png)
+  ![Win MaxPts](https://user-images.githubusercontent.com/73901029/102114602-ad36b100-3e3a-11eb-8b7e-086d13ffa775.png)
+  
+  * Am Ende können Sie ihren Name eingeben, damit ein Leaderboard erstellt werden kann.
+  
+  ![3Partie GO](https://user-images.githubusercontent.com/73901029/102114437-7c567c00-3e3a-11eb-8915-408300cfdbaa.png)
+  
+  * Dann können Sie ein neues Spiel mit dem Knopf "Restart" erstellen.
+  
+  ![restart 2Partie](https://user-images.githubusercontent.com/73901029/102114526-998b4a80-3e3a-11eb-894d-4adeca63a60f.png)
   
   User Stories
   ---
