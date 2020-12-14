@@ -31,6 +31,7 @@
 	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-2">Code Snippets</a>
    	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#uml-package-klassen--und-sequenzdiagramm">UML Package, Klassen- und Sequenzdiagramm</a>
   	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#herleitung-der-testf%C3%A4lle-aus-den-akzeptanzkriterien-der-user-stories">Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories</a>
+	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#kumulierte-flux-diagramm">kumulierte Flux-diagramm</a>
 	 
   </nav>
   
@@ -150,9 +151,6 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
 | Task 3 | Lösung der Karte anzeigen | 3 Stunden |
 | Task 4 | Testen der Umsetzung | 3 Stunden |
 
-
-
-
   Release Plan
   ---
 | Iteration 1 | Iteration 2 |
@@ -221,7 +219,7 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
 						//Wenn error ist false, dann ist das Schiffe erzeugt 
 	}
   ```
-  
+
   Dokumentation Sprint 2
   ---
   
@@ -382,6 +380,10 @@ public class SchiffeTest {
   ![flou](https://user-images.githubusercontent.com/73692178/101982117-06071d80-3c72-11eb-9f9a-47681c526a55.png)
 
   ![Graph-Based Testing 2](https://user-images.githubusercontent.com/73692178/101980859-c5ef6d00-3c68-11eb-9404-fef2519089ac.png)
+  
+  #### kumulierter Flux-diagramm
+  
+  ![image](https://user-images.githubusercontent.com/73692178/102117856-23d5ad80-3e3f-11eb-8a41-f034b83b9039.png)
 
   
   <p id="nt1">
