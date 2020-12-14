@@ -49,12 +49,12 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
   Build-Anleitung
   ---
 
-
-
-  1. Versichern Sie, dass Sie Java Runtime Environment bereit installiert haben.
-  2. Laden Sie die Dateien von unserem Repository runter.
-  3. Entpacken Sie die Dateien in ihrem gewünschten Ordner.
-  4. Viel Spaß !
+  1. Versichern Sie, dass Sie Eclipse oder IntelliJ bereits installiert haben.
+  2. Laden Sie die Dateien (.zip) von unserem Repository runter.
+  3. Entpacken Sie die Dateien in Ihrem gewünschten Ordner.
+  4. Öffnen Sie Ihren Terminal. 
+  5. Schreiben "java -jar shade/Seeschlacht.jar".
+  6. Viel Spaß !
   
   Bedienungsanleitung
   ---
