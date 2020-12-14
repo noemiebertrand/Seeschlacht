@@ -146,6 +146,8 @@ public class Controller {
 			lblCoverLeaderboard.setVisible(true);
 
 		}
+		
+		EnterName.clear();
 	}
 
 	@FXML // zur Karte und zum Spiel wechseln
