@@ -31,6 +31,7 @@
 	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#code-snippets-sprint-2">Code Snippets</a>
    	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#uml-package-klassen--und-sequenzdiagramm">UML Package, Klassen- und Sequenzdiagramm</a>
   	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#herleitung-der-testf%C3%A4lle-aus-den-akzeptanzkriterien-der-user-stories">Herleitung der Testfälle aus den Akzeptanzkriterien der User Stories</a>
+	 * <a href="https://github.com/noemiebertrand/Seeschlacht/blob/main/README.md#kumulierter-flux-diagramm">kumulierter Flux-diagramm</a>
 	 
   </nav>
   
@@ -40,7 +41,7 @@ Mit diesem Programm wollen wir Seeschlacht spielen können. Wir wollen unsere ei
 
   Ziel  
   ---
-Unsere Ziele während dem Projekt waren, die in den Fächer erlernten Kompetenzen in Java und Javafx anhand des Projekt Seeschlacht umzusetzen. Wir wollen ein Spiel gegen den Computer spielen und raten, wo seine Schiffe sind. Der Computer generiert zufällig, wo die Schiff sich befinden. Der Spieler kann die Karte immer sehen und ein Feld anklicken, um es auszuwählen. Es soll dann nach dem Ergebnis gefärbt werden (“nichts” oder “getroffen”). Der Administrator kann mit einem geheimen Code sehen, wo die Schiffe waren. Um zu gewinnen, hat der Spieler eine beschränkte Zahl von Runden. Auf dem User Interface wird die Zeit, die Punktzahl und die verbleibenden Schiffe gezeigt. Je weniger Runden und Zeit der Spieler gebraucht hat gibt es, desto mehr Punkte. Am Ende des Spiels kann er seinen Namen schreiben, um es in einen Leaderboard zu sehen. Falls er irgendwann den Spiel neu starten will, kann er auf einen Knopf drücken.
+Unsere Ziele während dem Projekt waren, die in den Fächer erlernten Kompetenzen in Java und Javafx anhand des Projekt Seeschlacht umzusetzen. Wir wollen ein Spiel gegen den Computer spielen und raten, wo seine Schiffe sind. Der Computer generiert zufällig, wo die Schiff sich befinden. Der Spieler kann die Karte immer sehen und ein Feld anklicken, um es auszuwählen. Es soll dann nach dem Ergebnis gefärbt werden (“nichts” oder “getroffen”). Der Administrator kann mit einem geheimen Code sehen, wo die Schiffe waren. Um zu gewinnen, hat der Spieler eine beschränkte Zahl von Runden. Auf dem User Interface wird die Punktzahl und die verbleibenden Schiffe gezeigt. Je weniger Runden der Spieler gebraucht hat ,desto mehr Punkte gibt es. Am Ende des Spiels kann er seinen Namen schreiben, um es in einen Leaderboard zu sehen. Falls er irgendwann den Spiel neu starten will, kann er auf einen Knopf drücken.
 
   Randbedingungen 
   ---
@@ -48,20 +49,36 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
 
   Build-Anleitung
   ---
-  1. Versichern Sie, dass Sie Java Runtime Environment bereit installiert haben.
-  2. Laden Sie die Dateien von unserem Repository runter.
-  3. Entpacken Sie die Dateien in ihrem gewünschten Ordner.
-  4. Viel Spaß !
+
+  1. Versichern Sie, dass Sie Eclipse oder IntelliJ bereits installiert haben.
+  2. Laden Sie die Dateien (.zip) von unserem Repository runter.
+  3. Entpacken Sie die Dateien in Ihrem gewünschten Ordner.
+  4. Öffnen Sie Ihren Terminal. 
+  5. Schreiben "java -jar shade/Seeschlacht.jar".
+  6. Viel Spaß !
   
   Bedienungsanleitung
   ---
-  * Nach der Offnung des Programms:
+
   * Sie können die Regeln <sup id="ap1"> <a href="#nt1">1</a></sup> lesen oder verwerfen.
+  * Nach der Offnung des Programms:
   * Clicken Sie auf "Start".
-  * Raten Sie, wo die Schiffe würden zufällig erstellt. Sie haben 35 Schlagen, um allen Schiffe zu raten, sonst haben Sie verloren.
-  * Am Ende können Sie ihren Name eingeben, damit ein Leaderboard erstellen kann.
-  * Dann können Sie ein neue Spiel mit dem Knopf "Restart" erstellen.
   
+  ![Start](https://user-images.githubusercontent.com/73901029/102114373-65178e80-3e3a-11eb-84d2-02ab49d19dfa.png)
+  ![Pas modif](https://user-images.githubusercontent.com/73901029/102114501-909a7900-3e3a-11eb-970c-3c5daea81fa8.png)
+  
+  * Raten Sie, wo die Schiffe zufällig erstellt würden. Sie haben 35 Runden, um alle Schiffe zu versenken, sonst haben Sie verloren.
+  
+  ![1Partie GO](https://user-images.githubusercontent.com/73901029/102114401-6e086000-3e3a-11eb-9184-ab2316abea9f.png)
+  ![Win MaxPts](https://user-images.githubusercontent.com/73901029/102114602-ad36b100-3e3a-11eb-8b7e-086d13ffa775.png)
+  
+  * Am Ende können Sie ihren Name eingeben, damit ein Leaderboard erstellt werden kann.
+  
+  ![3Partie GO](https://user-images.githubusercontent.com/73901029/102114437-7c567c00-3e3a-11eb-8915-408300cfdbaa.png)
+  
+  * Dann können Sie ein neues Spiel mit dem Knopf "Restart" erstellen.
+  
+  ![restart 2Partie](https://user-images.githubusercontent.com/73901029/102114526-998b4a80-3e3a-11eb-894d-4adeca63a60f.png)
   
   User Stories
   ---
@@ -72,7 +89,7 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
 | 3 | Spiel beginnen | Als Spieler möchte ich das Programm beginnen können, um das Spiel zu spielen. | 1 | 2 | Angenommen das Programm wurde gestartet, wenn ich auf den startknopf drücke, dann startet sich das Spiel |
 | 4 | Karte anzeigen | Als Spieler möchte ich die interaktive Karte immer sehen, um meine Strategie zu entwickeln. | 5 | 1 | Angenommen das Programm hat die Karte generiert,  wenn ich eine Feld anklicke, dann muss er die neue Karte generieren |
 | 5 | Namen eingeben | Als Spieler möchte ich meinen Namen eintragen, um mein Score in einen Leaderboard zu speichern | 3 | 3 | Angenommen ein Spieler hat das Programm begonnen, wenn der Spieler wechselt, dann sind verschiedene Infos gespeichert |
-| 6 | Meine informationen | Als Spieler möchte ich Informationen wie die Zeit, die Punktzahl, den Leaderboard sehen, um meine Punkte zu verstehen | 5 | 3 | Angenommen der Spieler hat das Spiel begonnen, wenn man auf das Scoreboard schaut, dann sieht man die Punkte, die Zeit und das Leaderboard |
+| 6 | Meine informationen | Als Spieler möchte ich Informationen wie die Punktzahl und den Leaderboard sehen, um meine Punkte zu verstehen | 5 | 3 | Angenommen der Spieler hat das Spiel begonnen, wenn man auf das Scoreboard schaut, dann sieht man die Punkte und das Leaderboard |
 | 7 | Neue Spiel starten | Als Spieler auf einem Knopf drücken um das  Spiel neu zu starten  | 2 | 2 | Angenommen ein Versuch wurde bereits durchgeführt, wenn man auf einem Taste drückt, dann erscheint die Option eines neuen Versuches |
 | 8 | Spiel beenden | Als Spieler möchte ich das Ergebnis des Spiels sehen und danach es schliessen. | 3 | 2 | Angenommen des Spiels wurde beendet, entsprechend des Ergebnisses soll das Programm “Game Over” oder “Win” generieren. |
 
@@ -112,21 +129,19 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
 | Task 3 | Design des Leaderboards | 2 Stunden |
 | Task 4 | Testen der Umsetzung | 3 Stunden |
 
-|User Story 6 | Als Spieler möchte ich Informationen wie die Zeit, die Punktzahl, den Leaderboard sehen, um meine Punkte zu verstehen | Schatzungen |
+|User Story 6 | Als Spieler möchte ich Informationen wie die Punktzahl und den Leaderboard sehen, um meine Punkte zu verstehen | Schatzungen |
 |-|-|-|
-| Task 1 | Label für die Zeit erstellen | 2 Stunden |
-| Task 2 | Play/Pause Knopf programmieren | 1 Stunden |
-| Task 3 | Label für die Punktzahl erstellen |  15 Minuten |
-| Task 4 | Punktzahl in funktion der Zeit rechnen | 2 Stunden |
-| Task 5 | Tabelle für den Leaderboard erstellen | 1 Stunden |
-| Task 6 | Testen der Umsetzung | 3 Stunden |
+| Task 1 | Label für die Punktzahl erstellen |  15 Minuten |
+| Task 2 | Punktzahl rechnen | 2 Stunden |
+| Task 3 | Tabelle für den Leaderboard erstellen | 1 Stunden |
+| Task 4 | Testen der Umsetzung | 3 Stunden |
 
 | User Story 7 | Als Spieler auf einem Knopf drücken um das Spiel neu zu starten | Schatzungen |
 |-|-|-|
 | Task 1 | Design des Knopfs | 1 Stunde |
 | Task 2 | Controller schreiben | 4 Stunden |
 | Task 3 | Implementierung des User Interface | 3 Stunden |
-| Task 4 | Farbe der Knopfe, der Score, die Zeit und die getroffene Schiffe werden reinitializiert und eine neue Karte wird erstellt | 2 Stunden |
+| Task 4 | Farbe der Knopfe, der Score und die getroffene Schiffe werden reinitializiert und eine neue Karte wird erstellt | 2 Stunden |
 | Task 5 | Testen der Umsetzung | 3 Stunden |
 
 |User Story 8 | Als Spieler möchte ich das Ergebnis des Spiels sehen und danach es schliessen | Schatzungen |
@@ -135,9 +150,6 @@ Nur der Spieler ratet wo die Schiffe des Computers sind, die zufällig gesetzt w
 | Task 2 | Leaderboard aktualisieren | 3 Stunden |
 | Task 3 | Lösung der Karte anzeigen | 3 Stunden |
 | Task 4 | Testen der Umsetzung | 3 Stunden |
-
-Total geschätzte minimale Zeit: 100 Stunden
-
 
   Release Plan
   ---
@@ -207,7 +219,7 @@ Total geschätzte minimale Zeit: 100 Stunden
 						//Wenn error ist false, dann ist das Schiffe erzeugt 
 	}
   ```
-  
+
   Dokumentation Sprint 2
   ---
   
@@ -368,10 +380,14 @@ public class SchiffeTest {
   ![flou](https://user-images.githubusercontent.com/73692178/101982117-06071d80-3c72-11eb-9f9a-47681c526a55.png)
 
   ![Graph-Based Testing 2](https://user-images.githubusercontent.com/73692178/101980859-c5ef6d00-3c68-11eb-9404-fef2519089ac.png)
+  
+  #### kumulierter Flux-diagramm
+  
+  ![image](https://user-images.githubusercontent.com/73692178/102117856-23d5ad80-3e3f-11eb-8a41-f034b83b9039.png)
 
   
   <p id="nt1">
    <sup><a href="#nt1">1 </a> Seeschlacht Spielregeln:
-Um das Spiel zu starten drücken Sie auf dem “Start“ Knopf. Ein leeres Spielgitter wird auf dem Bildschirm angezeigt und die Zeit fängt an zu laufen. Sie können jetzt auf die Felder klicken um die Schiffe* zu finden, aber Achtung Sie haben nur 35 versuche pro Runde. Ihr score, Ihre abgelaufene Zeit und die Anzahl von Schlägen werden unten links ausgeblendet. Falls Sie eine neue Runde anfangen wollen und die aktuelle nicht fertig ist, dann können Sie auf den “Restart“ Knopf, oben links, drücken um eine neue Runde anzufangen. Jedes Feld mit einem Schiff drauf gibt Ihnen 10 Punkte, am Ende der Runde wird noch Ihre Zeit umgerechnet um ihr end score zu erhalten. Die Runde ist zu Ende, wenn Sie ihre 35 Schlage ausgeführt haben oder, wenn Sie alle 5 Schiffe gefunden haben. Danach müssen Sie einen Namen eingeben um ihr score in den “Leaderboard“ zu speichern. Sie können dann wieder eine neue Runde Starten oder das Spiel schlissen. (-1x Flugzeugträger (5) -1x Kreuzer (4) -1x U-Boot (3) -1x Torpedo (3) -1x Gegentorpedo (2))
+Um das Spiel zu starten drücken Sie auf dem “Start“ Knopf. Ein leeres Spielgitter wird auf dem Bildschirm angezeigt. Sie können jetzt auf die Felder klicken um die Schiffe* zu finden, aber Achtung Sie haben nur 35 versuche pro Runde. Ihr score, Ihre Anzahl von Schlägen werden unten links ausgeblendet. Falls Sie eine neue Runde anfangen wollen und die aktuelle nicht fertig ist, dann können Sie auf den “Restart“ Knopf, oben links, drücken um eine neue Runde anzufangen. Jedes Feld mit einem Schiff drauf gibt Ihnen 10 Punkte, am Ende der Runde wirden noch die restliche schlage umgerechnet um ihr end score zu erhalten. Die Runde ist zu Ende, wenn Sie ihre 35 Schlage ausgeführt haben oder, wenn Sie alle 5 Schiffe gefunden haben. Danach müssen Sie einen Namen eingeben um ihr score in den “Leaderboard“ zu speichern. Sie können dann wieder eine neue Runde Starten oder das Spiel schlissen. (-1x Flugzeugträger (5) -1x Kreuzer (4) -1x U-Boot (3) -1x Torpedo (3) -1x Gegentorpedo (2))
 
 </p>
