@@ -235,7 +235,7 @@ public class Controller {
 		return scoreschiff;
 	}
 	
-	//Methode die den end score mit den restlichen schlage und den score von den Schiffe berechnet
+	//Methode die den end score mit den restlichen schlage und den score von den Schiffe berechnet und ausgibt
 	public void score() {
 		int endScore = scoreschiff + (35 - NbCoups) * 10;
 		String endSco = Integer.toString(endScore);
