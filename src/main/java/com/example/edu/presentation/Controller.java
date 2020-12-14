@@ -66,7 +66,7 @@ public class Controller {
 	Label lblVie2, lblVieA, lblVieB, lblVie4, lblVie5;
 
 	int NbCoups = 0;
-	int scoreschiff;
+	static int score = 0;
 
 	static String classement [][] = new String [10][2];
 	Label Player [][] = new Label [10][2];
@@ -121,7 +121,7 @@ public class Controller {
 			else {
 				bouton.setStyle("-fx-border-color:RED; -fx-opacity: 1;");
 				String empty = bouton.getText();
-				scoreSchiffe(); // Ruf für die Punktzahl der Schiffe
+				Score(); // Ruf für die Punktzahl
 				bouton.setText(" "); //das Feld wird markiert, damit man es nicht 2 Mal rufft
 				toucher(int_variabel[1],int_variabel[2]);
 			}
@@ -137,12 +137,10 @@ public class Controller {
 		String CoupsJoues = Integer.toString(NbCoups);
 		coups.setText(CoupsJoues);
 
-		if (NbCoups == 35 && scoreschiff < 170) {
-			score();
+		if (NbCoups == 35 && score < 170) {
 			gameOver();
 		}
-		if (scoreschiff == 170) {
-			score();
+		if (score == 170) {
 			WIN.setEffect(glow);
 			WIN.setVisible(true);
 			final int a = NbCoups;
@@ -227,20 +225,11 @@ public class Controller {
 		}
 
 	}
-	//Methode die 10 Punkte am score dazu rechnet jedes mal wenn ein Schiffe getroffen wird
-	public int scoreSchiffe () {
-		scoreschiff = scoreschiff + 10;
-		String scoSch = Integer.toString(scoreschiff);
-		lblScore.setText(scoSch);
-		return scoreschiff;
-	}
-	
-	//Methode die den end score mit den restlichen schlage und den score von den Schiffe berechnet und ausgibt
-	public void score() {
-		int endScore = scoreschiff + (35 - NbCoups) * 10;
-		String endSco = Integer.toString(endScore);
-		lblScore.setText(endSco);
-		
+
+	public void Score () {
+		score = score + 10;
+		String sco = Integer.toString(score);
+		lblScore.setText(sco);
 	}
 
 	public void toucher(int y, int x) {
@@ -276,8 +265,7 @@ public class Controller {
 	}
 
 	public void restart (ActionEvent event) throws IOException { // um eine neue Runde zu spielen
-		//setzt alle Variabeln an ihre anfangs wert
-		vie2 = 2; 
+		vie2 = 2; //setzt alle Variabeln und ihren Label um 0 ein
 		vieA = 3;
 		vieB = 3;
 		vie4 = 4;
@@ -298,7 +286,7 @@ public class Controller {
 		WIN.setVisible(false);
 		
 		lblScore.setText("0");
-		scoreschiff = 0;
+		score= 0;
 		coups.setText("0");
 		NbCoups = 0;
 		lblCoverLeaderboard.setVisible(true);
@@ -407,9 +395,8 @@ public class Controller {
 			}
 			i = i + 1;
 			enterName = true;
+
 		}
-		
-		EnterName.clear();
 	}
 
 	public void exit (ActionEvent event) {

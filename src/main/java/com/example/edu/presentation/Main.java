@@ -3,7 +3,8 @@ package com.example.edu.presentation;
 import java.io.File;
 import java.io.FileInputStream;
 
-
+import com.example.edu.domain.Schiffe;
+import com.example.edu.presentation.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
