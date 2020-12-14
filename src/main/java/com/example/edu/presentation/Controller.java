@@ -137,8 +137,10 @@ public class Controller {
 		String CoupsJoues = Integer.toString(NbCoups);
 		coups.setText(CoupsJoues);
 
+
 		if (NbCoups == 35 && scoreschiff < 170) {
 			score();
+
 			gameOver();
 		}
 		if (scoreschiff == 170) {
@@ -276,8 +278,10 @@ public class Controller {
 	}
 
 	public void restart (ActionEvent event) throws IOException { // um eine neue Runde zu spielen
+
 		//setzt alle Variabeln an ihre anfangs wert
 		vie2 = 2; 
+
 		vieA = 3;
 		vieB = 3;
 		vie4 = 4;
@@ -298,7 +302,9 @@ public class Controller {
 		WIN.setVisible(false);
 		
 		lblScore.setText("0");
+
 		scoreschiff = 0;
+
 		coups.setText("0");
 		NbCoups = 0;
 		lblCoverLeaderboard.setVisible(true);
@@ -407,9 +413,11 @@ public class Controller {
 			}
 			i = i + 1;
 			enterName = true;
+
 		}
 		
 		EnterName.clear();
+
 	}
 
 	public void exit (ActionEvent event) {
